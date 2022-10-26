@@ -4,32 +4,37 @@
 ## its a very cool chattriggers module with a couple cheats
 
 ### Feature list: 
-#### antikb (VERY WIP)
-#### autoblock (kinda mid)
-#### autoclicker
-#### auto p transfer (for when you dont want p leader
-#### bankey (bans you from hypixel)
-#### alot of chat macros
-#### chest, skull and lever aura (work anywhere but mainly used for secret aura
-#### chest and skull esp 
-#### clickmultiplier (WIP)
-#### vclip (WIP)
-#### discord rpc (very cool)
-#### not enough spanish!! (makes you speak spanish)
-#### ESP (WIP)
-#### Fakeban keybind (very cool)
-#### Images in chat (uploads image to imgur to copy paste images)
-#### Killaura (WIP)
-#### mapdisplay?? (dont know what this is ilr made it it does nothing)
-#### Autoquickmaths (also works in guild chat)
-#### NPC reach (the same code used in bankey ._.)
-#### lots of commands
-#### Reach (WIP)
-#### Scaffold (semi WIP)
-#### Swordswap (auto swap to snowballs when you click with sword)
-#### Zombies macro (swaps guns in zombies for maxium damage)
 
-### Skyblock:
-#### Ghostblocks
-#### f7 p3 ghostblocks
-#### auto auction snipe
+#### Combat cheats:
+- antikb (VERY WIP)
+- autoblock (kinda mid)
+- autoclicker
+- clickmultiplier (WIP)
+- vclip (WIP)
+- Killaura (WIP)
+- Reach (WIP)
+- Swordswap (auto swap to snowballs when you click with sword)
+#### Macros:
+- chest, skull and lever aura (work anywhere but mainly used for secret aura
+- Scaffold (semi WIP)
+- Zombies macro (swaps guns in zombies for maxium damage)
+#### Chat Macros:
+- Images in chat (uploads image to imgur to copy paste images)
+- Autoquickmaths (also works in guild chat)
+- auto p transfer (for when you dont want p leader
+- alot of chat macros
+#### Visual:
+- chest and skull esp 
+- mapdisplay?? (dont know what this is ilr made it it does nothing)
+- ESP (WIP)
+#### Other:
+- discord rpc (very cool)
+- not enough spanish!! (makes you speak spanish)
+- lots of commands
+- Fakeban keybind (very cool)
+- bankey (bans you from hypixel)
+- NPC reach (the same code used in bankey ._.)
+#### Skyblock:
+- Ghostblocks
+- f7 p3 ghostblocks
+- auto auction snipe
