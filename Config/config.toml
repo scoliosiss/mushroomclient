@@ -1,0 +1,114 @@
+
+[macro]
+	"&cchest_stealer" = false
+	"&cskull_aura" = false
+	"&clever_aura" = false
+	"&cchest_aura" = false
+
+	[macro.__]
+		"&csnowball_swap" = false
+		"&cfishing_rod_swap" = false
+
+	[macro.___]
+		"&cauction_sniper" = false
+		"&cauction_sniper_p2" = false
+
+	[macro._]
+		"&cscaffold" = false
+
+[other]
+
+	[other.__]
+		"&2mushroom_rainbow" = true
+		"&bmushroom_client_text" = false
+		"&cmushroom_client_on_top" = false
+		"&9mushroom_shadow" = false
+		"&amushroom_client_logo" = false
+
+	[other.____]
+		"&aclick_for_updates!" = false
+		"&3p3_ghostblocks" = true
+
+	[other.___]
+		"&cdiscord_rpc_bottom_text" = "[insert text here]"
+		"&cdiscord_rpc_text" = "[insert text here]"
+		"&ddiscord_rpc_picture" = 0
+		"&3discord_rpc" = true
+		"&3discord_rpc_location" = true
+
+	[other._]
+		"&cs&ep&ca&en&ci&es&ch" = false
+
+[chat_macro]
+	"&awelcome_guild!!!" = true
+	"&bwelcome_guild_message" = "Good morning"
+	"&awelcome_guild_message_part_2" = "how are you doing?"
+
+	[chat_macro.__]
+		"&cauto_send_quickmaths_answer" = true
+		"&aquickmaths_solver!" = true
+
+	[chat_macro.______]
+		"&5self_death_message" = "TANKS FAULT!"
+		"&cl_guy_died!" = true
+		"&cdeath_message" = "OMG LOOK AT THIS NON! player has died! BAD"
+
+	[chat_macro.____]
+		"&dauto_party_transfer" = true
+
+	[chat_macro.___]
+		"&5\"wrong_chat\"" = true
+		"&b\"gg\"" = true
+		"&b\"gg\"_in_guild_chat" = true
+		"&5\"wrong_chat\"_in_guild_chat" = true
+		"&5\"wrong_chat\"_in_party_chat" = true
+		"&b\"gg\"_in_party_chat" = true
+
+	[chat_macro._]
+		"&18ball" = true
+		"&1guild_maths_bot" = true
+
+[visual]
+	"&aesp_color" = "255,0,255,0"
+	"&cskull_esp" = false
+	"&cchest_esp" = false
+	"&centity_esp" = false
+
+	[visual.__]
+		"&afakeban_time" = 0
+		"&5custom_fakeban_reason" = "Heckering cheter gat bend"
+		"&4custom_fakeban_perm" = false
+		"&dfakeban_type" = 0
+		"&ecustom_fakeban_time" = "4d 2h 0m 6s"
+
+	[visual._]
+		"&bfake_rank_you_want_to_show" = "§c§lM§f§lu§c§ls§f§lh§c§lr§f§lo§c§lo§f§lo§c§lm §lClient§f§l"
+		"&3fakename" = false
+		"&bfake_name_you_want_to_show" = "§c§lM§f§lu§c§ls§f§lh§c§lr§f§lo§c§lo§f§lo§c§lm §lClient§f§l"
+
+[combat]
+	"&ccps_multiplier" = false
+
+	[combat.__]
+		"&creach" = false
+		"&ckillaura" = false
+
+	[combat._]
+		"&cautoblock" = false
+
+[sliders]
+	"&cping" = 100
+
+	[sliders.____]
+		"&4left_click_auto_clicker_speed" = 20
+
+	[sliders.___]
+		"&4right_click_auto_clicker_speed" = 20
+		"&4zombies_gun_macro_speed" = 500
+
+	[sliders._]
+		"&cskull_aura_reach" = 5
+		"&clever_aura_reach" = 5
+		"&bquickmaths_solver_speed" = 50
+		"&cchest_aura_reach" = 5
+
