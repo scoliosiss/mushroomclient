@@ -4,9 +4,9 @@
 ## its a very cool chattriggers module with a couple cheats
 
 ### Feature list: 
-##### antikb (VERY WIP)
-##### autoblock (kinda mid)
-##### autoclicker
+#### antikb (VERY WIP)
+#### autoblock (kinda mid)
+#### autoclicker
 #### auto p transfer (for when you dont want p leader
 #### bankey (bans you from hypixel)
 #### alot of chat macros
