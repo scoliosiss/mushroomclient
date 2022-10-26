@@ -1,4 +1,4 @@
-# MUSHROOM Client
+# Mushroom Client
 
 ## Mushroom client is a qol hypixel mod made by me (Scale) and ilr (you may know him)
 ## its a very cool chattriggers module with a couple cheats
