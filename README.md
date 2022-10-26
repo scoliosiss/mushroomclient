@@ -6,14 +6,14 @@
 ### Feature list: 
 
 #### Combat cheats:
-- antikb (VERY WIP)
-- autoblock (kinda mid)
 - autoclicker
+- Swordswap (auto swap to snowballs when you click with sword)
+- autoblock (kinda mid)
 - clickmultiplier (WIP)
 - vclip (WIP)
 - Killaura (WIP)
 - Reach (WIP)
-- Swordswap (auto swap to snowballs when you click with sword)
+- antikb (VERY WIP)
 #### Macros:
 - chest, skull and lever aura (work anywhere but mainly used for secret aura
 - Scaffold (semi WIP)
