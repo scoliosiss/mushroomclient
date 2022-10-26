@@ -4,7 +4,7 @@
 ## its a very cool chattriggers module with a couple cheats
 
 ### Feature list: 
-#### antikb (VERY WIP)
+###### antikb (VERY WIP)
 #### autoblock (kinda mid)
 #### autoclicker
 #### auto p transfer (for when you dont want p leader
