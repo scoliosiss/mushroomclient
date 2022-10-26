@@ -16,8 +16,8 @@
 - antikb (VERY WIP)
 #### Macros:
 - chest, skull and lever aura (work anywhere but mainly used for secret aura
-- Scaffold (semi WIP)
 - Zombies macro (swaps guns in zombies for maxium damage)
+- Scaffold (semi WIP)
 #### Chat Macros:
 - Images in chat (uploads image to imgur to copy paste images)
 - Autoquickmaths (also works in guild chat)
@@ -26,7 +26,7 @@
 #### Visual:
 - chest and skull esp 
 - mapdisplay?? (dont know what this is ilr made it it does nothing)
-- ESP (WIP)
+- ESP (semi WIP)
 #### Other:
 - discord rpc (very cool)
 - not enough spanish!! (makes you speak spanish)
