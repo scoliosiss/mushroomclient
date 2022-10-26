@@ -5,7 +5,7 @@
 
 ### Feature list: 
 ###### antikb (VERY WIP)
-#### autoblock (kinda mid)
+###### autoblock (kinda mid)
 #### autoclicker
 #### auto p transfer (for when you dont want p leader
 #### bankey (bans you from hypixel)
