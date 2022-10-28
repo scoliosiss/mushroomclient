@@ -16,7 +16,7 @@
 - Reach (WIP)
 - antikb (VERY WIP)
 #### Macros:
-- chest, skull and lever aura (work anywhere but mainly used for secret aura
+- chest, skull and lever aura (work anywhere but mainly used for secret aura)
 - Zombies macro (swaps guns in zombies for maxium damage)
 - Scaffold (semi WIP)
 #### Chat Macros:
@@ -39,3 +39,4 @@
 - Ghostblocks
 - f7 p3 ghostblocks
 - auto auction snipe
+- score calc!
