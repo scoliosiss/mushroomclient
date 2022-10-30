@@ -33,6 +33,7 @@ import "./Code/BANKEY"
 import "./Code/ImagePaste"
 import "./Code/DungeonScore"
 import "./Code/DungeonScoreMessage"
+import "./Code/UpdateChecker"
 import {prefix, getVersion} from "./Code/Utils"
 var text = new Text(prefix, 55, 17.5);
 var text2 = new Text(prefix, 5, 17.5);
