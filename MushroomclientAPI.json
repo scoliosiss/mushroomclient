@@ -1,0 +1,8 @@
+{
+    "moduleName": "Mushroom",
+    "latestVersion": "2.0",
+    "author": "Scoliosis and ilr",
+    "changelog": [
+        "added update notifier"
+    ]
+}
