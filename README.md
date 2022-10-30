@@ -26,7 +26,7 @@
 - alot of chat macros
 #### Visual:
 - chest and skull esp 
-- mapdisplay?? (dont know what this is ilr made it it does nothing)
+- mapdisplay?? (dont know what this is ilr made it, it does nothing)
 - ESP (semi WIP)
 #### Other:
 - discord rpc (very cool)
