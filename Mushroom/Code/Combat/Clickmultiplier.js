@@ -1,25 +1,20 @@
 import Config from "../../Config/Config"
-import {prefix, mc, RightClick, LeftClick} from "../Utils";
+import {mc, RightClick} from "../Utils";
 
-// doesnt work?
+// works now (ilr saves the day again)
 
-const doublerightclick = (action) => {
-    if (action.toString() === "RIGHT_CLICK_BLOCK" || action.toString() === "RIGHT_CLICK_AIR") {
-        RightClick.invoke(mc);
-        RightClick.invoke(mc);
-    }
-}
+let delay = Date.now();
 
-        register("Tick", (clickType) => {
-            this.clickType = clickType;
-            if (Config.cpsmultiplier) {
-                if (this.clickType === "right") {
-                    RightClick.invoke(mc)
-                    RightClick.invoke(mc)
-                }
-                else if (this.clickType === "left") {
-                    LeftClick.invoke(mc)
-                    LeftClick.invoke(mc)
+register("playerInteract", (action) => {
+    if (Date.now() - delay > 100) {
+        if (Config.cpsmultiplier) {
+            if (action.toString() === "RIGHT_CLICK_BLOCK" || action.toString() === "RIGHT_CLICK_EMPTY") {
+                new Thread(() => {
+                    Thread.sleep(1);
+                    RightClick.invoke(mc);
+                    delay = Date.now();
+                }).start()
                 }
             }
-        });
+        }
+});
