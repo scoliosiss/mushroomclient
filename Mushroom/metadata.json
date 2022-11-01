@@ -1,0 +1,8 @@
+{
+    "name": "Mushroom",
+    "description": "Shroom",
+    "author": "Scalesy",
+    "entry": "index.js",
+    "requires":["RenderLib", "requestV2"],
+    "version":"&c&l&n2&9&l&n.&d&l&n1&5&l&n!"
+  }
