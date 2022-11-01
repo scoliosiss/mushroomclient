@@ -123,7 +123,7 @@ class Config {
 
     @SwitchProperty({
         name: "&cCPS multiplier",
-        description: "&4Doubles every click you do",
+        description: "&4Doubles every right click you do",
         category: "Combat",
         subcategory: ""
     })
