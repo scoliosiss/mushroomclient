@@ -1,6 +1,6 @@
 # Mushroom Client
 
-## Mushroom client is a qol hypixel mod made by me (Scale) and ilr (you may know him)
+## Mushroom client is a qol hypixel mod made by Scale and iLoveRat (Scale#6623 and i love rat#9200)
 ## its a very cool chattriggers module with a couple cheats
 ### yes I am aware all of this code is awful, I dont care about optimization I just want it working.
 ### also WIP basically just means not working
@@ -10,7 +10,7 @@
 - autoclicker
 - Swordswap (auto swap to snowballs when you click with sword)
 - autoblock (kinda mid)
-- clickmultiplier (WIP)
+- clickmultiplier (semi WIP)
 - vclip (WIP)
 - Killaura (WIP)
 - Reach (WIP)
@@ -26,17 +26,15 @@
 - alot of chat macros
 #### Visual:
 - chest and skull esp 
-- mapdisplay?? (dont know what this is ilr made it, it does nothing)
 - ESP (semi WIP)
+#### Skyblock:
+- Ghostblocks
+- f7 p3 ghostblocks
+- auto auction snipe
+- score calc!
 #### Other:
 - discord rpc (very cool)
 - not enough spanish!! (makes you speak spanish)
 - lots of commands
 - Fakeban keybind (very cool)
 - bankey (bans you from hypixel)
-- NPC reach (the same code used in bankey ._.)
-#### Skyblock:
-- Ghostblocks
-- f7 p3 ghostblocks
-- auto auction snipe
-- score calc!
