@@ -4,6 +4,8 @@
 ## its a very cool chattriggers module with a couple cheats
 ### yes I am aware all of this code is awful, I dont care about optimization I just want it working.
 ### also WIP basically just means not working
+### new gui soon because i just found out soopys gui thing is public and it looks cool
+
 ### Feature list: 
 
 #### Combat cheats:
