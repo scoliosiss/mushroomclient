@@ -17,6 +17,7 @@
 - antikb (VERY WIP)
 #### Macros:
 - chest, skull and lever aura (work anywhere but mainly used for secret aura)
+skull aura is very good for halloween simualtor!
 ![im very good at halloween simulator](https://cdn.discordapp.com/attachments/865636628318912522/1038930195962400848/halloween_simulator.png)
 - Zombies macro (swaps guns in zombies for maxium damage)
 - Scaffold (semi WIP)
