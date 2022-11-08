@@ -608,6 +608,14 @@ scaffoldi = false;
         subcategory: ""
         })
     funnyscorecalc = true;
+    
+    @SwitchProperty({
+        name: "&3autoharp",
+        description: "&9automatically does melody harp",
+        category: "Skyblock",
+        subcategory: ""
+        })
+    autoharp = true;
 
 // ----------------------------------------------------------------------
 // Other
