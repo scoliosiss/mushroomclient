@@ -33,6 +33,7 @@ import "./Code/Skyblock/AuctionSnipe"
 import "./Code/Skyblock/DungeonScore"
 import "./Code/Skyblock/DungeonScoreMessage"
 import "./Code/Skyblock/GhostBlocks"
+import "./Code/Skyblock/MelodyMacro"
 
 import "./Code/Other/BANKEY"
 import "./Code/Other/Clip"
