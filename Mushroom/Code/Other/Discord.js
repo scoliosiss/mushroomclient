@@ -74,7 +74,7 @@ class Discord {
                     if (line.includes("purse")) {
                         this.details = "playing skyblock"
                     }
-                    let playername = Player.getName().replace("SpookyScale", "pee").replace("OhTeddy", "beamed bozo").replace("Unif", "IM A RATTER")
+                    let playername = Player.getName().replace("CatgirlScale", "pee").replace("OhTeddy", "beamed bozo").replace("Unif", "IM A RATTER")
                     this.state = `ign: ${playername}`
                 })
 
