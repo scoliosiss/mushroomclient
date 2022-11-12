@@ -58,17 +58,16 @@ register("chat", (chat) => {
   // Guild Welcome messages!
   register("chat", (gamer) => {
     if (!Config.welcomeguild) return;
-    let fullMessage = ChatLib.getChatMessage(gamer);
-    let welcomeguildmessage1 = Config.welcomeguildmessage
-    let welcomeguildmessage2 = Config.welcomeguildmessage2
-    if (fullMessage.includes(`Guild >`) && fullMessage.endsWith("joined.") && fullMessage.indexOf(":") == -1) {
+    let fullMessage = ChatLib.getChatMessage(gamer).toLowerCase();
+    if (fullMessage.includes(`guild >`) && fullMessage.endsWith("joined.") && fullMessage.indexOf(":") == -1) {
       let guildmember1 = fullMessage.split(" ")
       let guildmember2 = guildmember1.slice(2)
       let guildmember3 = guildmember2.shift(1)
+      let welcomemessage = Config.welcomeguildmessage.replace("player", guildmember3)
       setTimeout() ; 1000
       var delayInMilliseconds = 1000;
       setTimeout(function() {
-        ChatLib.say ("/gc " + welcomeguildmessage1 + " " + guildmember3 + " " + welcomeguildmessage2)
+        ChatLib.say ("/gc " + welcomemessage)
     }, delayInMilliseconds);
     }
   })
@@ -78,22 +77,21 @@ register("chat", (chat) => {
   // Guild Welcome messages! (spanish)
   register("chat", (gamer) => {
     if (!Config.welcomeguild) return;
-    const guildjoinmessage = ChatLib.getChatMessage(gamer);
-    let welcomeguildmessage1 = Config.welcomeguildmessage
-    let welcomeguildmessage2 = Config.welcomeguildmessage2
-    if (guildjoinmessage.includes(`Guild >`) && guildjoinmessage.endsWith("entró.") && guildjoinmessage.indexOf(":") == -1) {
+    const guildjoinmessage = ChatLib.getChatMessage(gamer).toLowerCase();
+    let welcomemessage = Config.welcomeguildmessage.replace("player", guildmember3)
+    if (guildjoinmessage.includes(`guild >`) && guildjoinmessage.endsWith("entró.") && guildjoinmessage.indexOf(":") == -1) {
       let guildmember1 = guildjoinmessage.split(" ")
       let guildmember2 = guildmember1.slice(2)
       let guildmember3 = guildmember2.shift(1)
       setTimeout() ; 1000
       var delayInMilliseconds = 1000;
       setTimeout(function() {
-        ChatLib.say ("/gc " + welcomeguildmessage1 + " " + guildmember3 + " " + welcomeguildmessage2)
+        ChatLib.say ("/gc " + welcomemessage)
     }, delayInMilliseconds);
     }
   })
     register("chat", (gamer) => ChatLib.say('/gc ' + joinguild + ' ' + gamer + ' ' + joinguild2)).setCriteria('${gamer} joined the guild!')
-  
+
   // -----------------------------------------------
   // sorry yeeter if u ever read this...
   // register("chat", (yeetermessage) => ChatLib.say('/pc ' + quote + yeetermessage + quote + ' ' + fromyeeter)).setCriteria("Party > [MVP++] Ender_Yeeter: ${yeetermessage}")
