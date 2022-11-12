@@ -203,22 +203,6 @@ class Config {
 chestaurabased = false;
 
 @SwitchProperty({
-    name: "&cAuction Sniper",
-    description: "&4Snipes items in skyblock",
-    category: "Macro",
-    subcategory: "   "
-})
-ahsniper = false;
-
-@SwitchProperty({
-    name: "&cAuction Sniper p2",
-    description: "&4Auto Confirms buying items",
-    category: "Macro",
-    subcategory: "   "
-})
-ahsniper2 = false;
-
-@SwitchProperty({
     name: "&cSkull Aura",
     description: "&4Auto right clicks nearby skulls",
     category: "Macro",
@@ -596,6 +580,30 @@ scaffoldi = false;
         subcategory: "      "
     })
     toxicdeath = true;
+
+    @SwitchProperty({
+        name: "&3autoterms",
+        description: "&9automatically does necron terminals",
+        category: "Skyblock",
+        subcategory: "  "
+        })
+    autoterms = true;
+
+    @SwitchProperty({
+        name: "&cAuction Sniper",
+        description: "&4Snipes items in skyblock",
+        category: "Skyblock",
+        subcategory: "   "
+    })
+    ahsniper = false;
+    
+    @SwitchProperty({
+        name: "&cAuction Sniper p2",
+        description: "&4Auto Confirms buying items",
+        category: "Skyblock",
+        subcategory: "   "
+    })
+    ahsniper2 = false;
 
     @TextProperty({
         name: "&5Self death message",
