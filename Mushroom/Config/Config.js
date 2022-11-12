@@ -264,7 +264,7 @@ scaffoldi = false;
 
     @TextProperty({
         name: "&bwelcome guild message",
-        description: "&1set the welcome message",
+        description: '&1set the welcome message\n&1type "player" to say username',
         category: "Chat Macro",
         subcategory: "",
         placeholder: "put message here!"
