@@ -2,17 +2,18 @@ import Config from "../../Config/Config"
 
 const randomnumber = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
 const Coinflip = ["Heads", "Tails"]
-// cum child const fromyeeter = ["Ender_Yeeter 2022"]
 const joinguild = ["whalecum"]
 const joinguild2 = ["you have joined the best guild ww!"]
 const quote = ['"']
+const eightball = ["As I see it, yes.", "Ask again later.", "Better not tell you now.", "Cannot predict now.", "Concentrate and ask again.", "Don’t count on it.", "It is certain.", "It is decidedly so.", "Most likely.", "My reply is no.", "My sources say no.", "Outlook not so good.", "Outlook good.", "Reply hazy, try again.", "Signs point to yes.", "Very doubtful.", "Without a doubt.", "Yes.", "Yes – definitely.", "You may rely on it."]
+/*
 const fromema = ["EmaAG_ 2022"]
 const fromchomp = ["oChump 2022"]
 const fromterror = ["Lord Terror23 2022"]
 const fromlucee = ["stfu unmute"]
 const fromtwiftan = ["Twiftan 2022"]
-const eightball = ["As I see it, yes.", "Ask again later.", "Better not tell you now.", "Cannot predict now.", "Concentrate and ask again.", "Don’t count on it.", "It is certain.", "It is decidedly so.", "Most likely.", "My reply is no.", "My sources say no.", "Outlook not so good.", "Outlook good.", "Reply hazy, try again.", "Signs point to yes.", "Very doubtful.", "Without a doubt.", "Yes.", "Yes – definitely.", "You may rely on it."]
-deadmessage = ""
+const fromyeeter = ["Ender_Yeeter 2022"]
+*/
 
   // -----------------------------------------------
   // Code from Xef Addons didnt work so i made it myself now
