@@ -16,6 +16,7 @@ deadmessage = ""
 
   // -----------------------------------------------
   // Code from Xef Addons didnt work so i made it myself now
+  // crys when someone dies in a dungeon
   register("chat", (ripbozo, eitherwereorwas, killedby) => {
     if (!Config.toxicdeath) return;
     let deathmessage = Config.toxicdeathmessage.replace("player", ripbozo)
