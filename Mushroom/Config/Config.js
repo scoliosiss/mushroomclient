@@ -384,34 +384,6 @@ scaffoldi = false;
     })
     autoTransfer = true;
 
-
-    @SwitchProperty({
-        name: "&cL guy died!",
-        description: "&5sends message when someone dies in skyblock dungeons",
-        category: "Chat Macro",
-        subcategory: "      "
-    })
-    toxicdeath = true;
-
-    @TextProperty({
-        name: "&5Self death message",
-        description: '&amessage to send when you die',
-        category: "Chat Macro",
-        subcategory: "      ",
-        placeholder: "TYPE HERE"
-    })
-    idiedmessage = "TANKS FAULT!";
-
-    @TextProperty({
-        name: "&cDeath message",
-        description: '&aput "player" to say the persons name',
-        category: "Chat Macro",
-        subcategory: "      ",
-        placeholder: "Toxic Death Message"
-    })
-    toxicdeathmessage = "OMG LOOK AT THIS NON! player has died! BAD";
-
-
 // --------------------------------------------------------------------------------
 //Fake Ban
 
@@ -616,6 +588,32 @@ scaffoldi = false;
         subcategory: ""
         })
     autoharp = true;
+    
+        @SwitchProperty({
+        name: "&cL guy died!",
+        description: "&5sends message when someone dies in skyblock dungeons",
+        category: "Skyblock",
+        subcategory: "      "
+    })
+    toxicdeath = true;
+
+    @TextProperty({
+        name: "&5Self death message",
+        description: '&amessage to send when you die',
+        category: "Skyblock",
+        subcategory: "      ",
+        placeholder: "TYPE HERE"
+    })
+    idiedmessage = "TANKS FAULT! OMFG WHY IS HE NOT NEAR ME WHERES THE HEALER MAN PLEASE MASTIFF WISH AND WHY IS NO ONE CLEARING MY ROOMS FOR ME YOUR ALL THROWING";
+
+    @TextProperty({
+        name: "&cDeath message",
+        description: '&aput "player" to say the persons name',
+        category: "Skyblock",
+        subcategory: "      ",
+        placeholder: "Toxic Death Message"
+    })
+    toxicdeathmessage = "OMG LOOK AT THIS NON! player has died! BAD";
 
 // ----------------------------------------------------------------------
 // Other
