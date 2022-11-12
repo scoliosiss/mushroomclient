@@ -15,21 +15,17 @@ const eightball = ["As I see it, yes.", "Ask again later.", "Better not tell you
 deadmessage = ""
 
   // -----------------------------------------------
-  // Code from Xef Addons because im lazy
-  register("chat", (msg) => {
+  // Code from Xef Addons didnt work so i made it myself now
+  register("chat", (ripbozo, eitherwereorwas, killedby) => {
     if (!Config.toxicdeath) return;
-    let deadmessage = ChatLib.getChatMessage(msg); //making the message into a variable
-    if (deadmessage.includes(`☠`) && deadmessage.endsWith("became a ghost.") && deadmessage.indexOf(":") == -1) { //making sure that someone died //making sure it's not send by a player
-        let deadPlayer1 = deadmessage.split(" ")
-        let deadPlayer2 = deadPlayer1.slice(2)
-        let deadPlayer3 = deadPlayer2.toString()
-        let deadPlayer = deadPlayer3.split(',')[0]
-        if (deadPlayer = "You") return;
-        let customMessage = Config.toxicdeathmessage.replace("player", deadPlayer)
-        ChatLib.command("pc " + customMessage)         
-    } 
-  })
-  
+    let deathmessage = Config.toxicdeathmessage.replace("player", ripbozo)
+    if (ripbozo !== "You") {
+    ChatLib.say("/pc " + deathmessage)
+    }
+    else {
+    ChatLib.say("/pc " + Config.idiedmessage)
+    }
+}).setCriteria(" ☠ ${ripbozo} w${eitherwereorwas} ${killedby} and became a ghost.")
 
 // -----------------------------------------------
 // 8ball
