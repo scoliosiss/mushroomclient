@@ -12,7 +12,7 @@
 - autoclicker
 - Swordswap (auto swap to snowballs when you click with sword)
 - autoblock (kinda mid)
-- clickmultiplier (semi WIP)
+- clickmultiplier (kinda mid)
 - vclip (WIP)
 - Killaura (WIP)
 - Reach (WIP)
@@ -37,6 +37,8 @@ skull aura is very good for halloween simualtor!
 - f7 p3 ghostblocks
 - auto auction snipe
 - score calc!
+- auto harp
+- auto terms (WIP)
 #### Other:
 - discord rpc (very cool)
 - not enough spanish!! (makes you speak spanish)
