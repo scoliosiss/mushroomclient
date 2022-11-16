@@ -12,7 +12,6 @@ register('renderWorld', () => { // yay rendering i love watching my fps die due 
 }
 });
 
-
 function seechests () {
     queueRenderGreen = []
     listTileEntitiesData1 = World.getAllTileEntitiesOfType(net.minecraft.tileentity.TileEntityChest) // gets all chests 

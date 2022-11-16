@@ -17,7 +17,7 @@ function seeskulls () {
     queueRenderGreen = []
     listTileEntitiesData1 = World.getAllTileEntitiesOfType(net.minecraft.tileentity.TileEntitySkull)
     listTileEntitiesData1.forEach((i) => {
-                    queueRenderGreen.push(i)
+        queueRenderGreen.push(i)
     })
 }
 

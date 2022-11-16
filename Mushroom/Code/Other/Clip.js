@@ -9,5 +9,3 @@ register("tick", () => {
         Client.sendPacket(new positionset(Player.getX(), Player.getY()-1, Player.getZ()));
     }
 });
-
-

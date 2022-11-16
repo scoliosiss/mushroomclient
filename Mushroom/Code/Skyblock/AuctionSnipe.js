@@ -22,7 +22,7 @@ register("step", () => {
     if (Config.ahsniper) {
         ahsnipe();
     }
-}).setFps(1)
+}).setFps(5)
 
 
 const ahsnipe2 = () => {
@@ -38,4 +38,4 @@ register("step", () => {
         if (Config.ahsniper2) {
             ahsnipe2();
     }
-}).setFps(1)
+}).setFps(5)

@@ -679,7 +679,7 @@ scaffoldi = false;
 
     @SwitchProperty({
         name: "&4large hilarity",
-        description: '&dnot recomended if you dont want to get kicked from hypixel alot',
+        description: '&dnot recomended if you die in dungeons alot',
         category: "Other",
         subcategory: " "
         })

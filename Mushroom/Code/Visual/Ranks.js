@@ -5,7 +5,7 @@ fullMessage = ""
   register("chat", (msg) => { // if message received
     if (!Config.nickhider) return; // if custom ranks config is false end
     let fullMessage = ChatLib.getChatMessage(msg, true); // make the message into a formatted variable
-    if (fullMessage.includes("Scalese") || fullMessage.includes("EmaAG_") || fullMessage.includes("pewing") || fullMessage.includes("iSoldCoins") || fullMessage.includes("Ender_Yeeter") || fullMessage.includes("DoDG321") || fullMessage.includes("simplawthedum") || fullMessage.includes("You_R_You") || fullMessage.includes("Impressionn") || fullMessage.includes("shaitur") || fullMessage.includes("SlowSorrow")|| fullMessage.includes("SuedPolecat4050")|| fullMessage.includes("Langstob")|| fullMessage.includes("xzenocy")|| fullMessage.includes("Ender_Yeeter")|| fullMessage.includes("eBoyBogdi")|| fullMessage.includes("oChamp")|| fullMessage.includes("Strongchaff")|| fullMessage.includes("pewing")|| fullMessage.includes("SeBook")|| fullMessage.includes("Protoblade")|| fullMessage.includes("Aditive")|| fullMessage.includes("choowu")|| fullMessage.includes("wFlax")|| fullMessage.includes("cokoc")|| fullMessage.includes("Mlehkb")|| fullMessage.includes("mushroomclient")|| fullMessage.includes("Furnessed")|| fullMessage.includes("Manthefridge")|| fullMessage.includes("sushuiii")|| fullMessage.includes("_Thomas_P_")|| fullMessage.includes("oxsL")|| fullMessage.includes("Darkloc")|| fullMessage.includes("iBoughtCoins")|| fullMessage.includes("Captain_Zingo")|| fullMessage.includes("weakchaff")|| fullMessage.includes("SwigWasTaken")|| fullMessage.includes("StormRaiser21")|| fullMessage.includes("IMainABlockGame")|| fullMessage.includes("nightminutes")|| fullMessage.includes("Strafelogical")|| fullMessage.includes("unificity")|| fullMessage.includes("W4lru5")|| fullMessage.includes("thirtyvirus")|| fullMessage.includes("mushroom"), fullMessage.includes(Player.getName(),)) { // if a message contains any of the names
+    if (fullMessage.includes("Scalese") || fullMessage.includes("EmaAG_") || fullMessage.includes("pewing") || fullMessage.includes("iSoldCoins") || fullMessage.includes("Ender_Yeeter") || fullMessage.includes("DoDG321") || fullMessage.includes("simplawthedum") || fullMessage.includes("You_R_You") || fullMessage.includes("goodrng") || fullMessage.includes("shaitur") || fullMessage.includes("SlowSorrow")|| fullMessage.includes("SuedPolecat4050")|| fullMessage.includes("Langstob")|| fullMessage.includes("Zxnl")|| fullMessage.includes("Ender_Yeeter")|| fullMessage.includes("eBoyBogdi")|| fullMessage.includes("MCchamq")|| fullMessage.includes("Strongchaff")|| fullMessage.includes("pewing")|| fullMessage.includes("SeBook")|| fullMessage.includes("Protoblade")|| fullMessage.includes("Aditive")|| fullMessage.includes("choowu")|| fullMessage.includes("unwarped")|| fullMessage.includes("cokoc")|| fullMessage.includes("Mlehkb")|| fullMessage.includes("mushroomclient")|| fullMessage.includes("Furnessed")|| fullMessage.includes("Manthefridge")|| fullMessage.includes("sushuiii")|| fullMessage.includes("_Thomas_P_")|| fullMessage.includes("oxsL")|| fullMessage.includes("Darkloc")|| fullMessage.includes("iBoughtCoins")|| fullMessage.includes("Captain_Zingo")|| fullMessage.includes("weakchaff")|| fullMessage.includes("SwigWasTaken")|| fullMessage.includes("StormRaiser21")|| fullMessage.includes("IMainABlockGame")|| fullMessage.includes("nightminutes")|| fullMessage.includes("Strafelogical")|| fullMessage.includes("unificity")|| fullMessage.includes("W4lru5")|| fullMessage.includes("thirtyvirus")|| fullMessage.includes("mushroom"), fullMessage.includes(Player.getName(),)) { // if a message contains any of the names
       cancel(msg); // cancel the message
       fullMessage = fullMessage.replace(Player.getName(), `${Config.fakename}&f`);
       fullMessage = fullMessage.replace(/\[MVP.+\] escamas/g, "&c[&fOWNER&c] 180 day banned&f"); // change the names in the message
@@ -29,7 +29,7 @@ fullMessage = ""
       fullMessage = fullMessage.replace(/\[MVP+\] cokoc/g, "&b[&fcocks&b] cocks boy&f");
       fullMessage = fullMessage.replace(/\[MVP.+\] DoDG321/g, "&6[&breal&6] DoDG321&f");
       fullMessage = fullMessage.replace(/\[MVP.+\] W4lru5/g, "&c[&fnigger&c] hunggraal&f");
-      fullMessage = fullMessage.replace(/\[VIP.+\] wFlax/g, "&a[&fMUSHROOM&a] wFlax&f");
+      fullMessage = fullMessage.replace(/\[VIP.+\] unwarped/g, "&a[&fMUSHROOM&a] unwarped&f");
       fullMessage = fullMessage.replace(/\[VIP.+\] Mlehkb/g, "&2[&5knockback&2] &dMleh knockback&f");
       fullMessage = fullMessage.replace(/\[VIP.+\] Impressionn/g, "&0[racist] &0Impressionn&f");
       fullMessage = fullMessage.replace("[VIP] SpookyScale", "&2[&fOWNER&2] Mushroom&f");
@@ -49,7 +49,7 @@ fullMessage = ""
       fullMessage = fullMessage.replace("escamas", "&cScales&f");
       fullMessage = fullMessage.replace("SpookyScale", "&2Mushroom&f");
       fullMessage = fullMessage.replace("Furnessed", "&5Furness&f");
-      fullMessage = fullMessage.replace("wFlax", "§c§lM§f§lu§c§ls§f§lh§c§lr§f§lo§c§lo§f§lo§c§lm §lClient&f");
+      fullMessage = fullMessage.replace("unwarped", "§c§lM§f§lu§c§ls§f§lh§c§lr§f§lo§c§lo§f§lo§c§lm §lClient&f");
       fullMessage = fullMessage.replace(/ItsWeekdays/g, "&3Weekdays&f");
       fullMessage = fullMessage.replace(/eBoyBogdi/g, "&drng carried shitter&f");
       fullMessage = fullMessage.replace("nightminutes", "&drng carried shitter's alt&f");
@@ -115,7 +115,7 @@ register("renderPlayerList", () => {
     ChatLib.chat(`
     mushroomclient
     you_are_a
-    wFlax
+    unwarped
     eBoyBogdi
     nightminutes
     Manthefridge

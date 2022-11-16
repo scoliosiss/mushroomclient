@@ -85,4 +85,4 @@ register("step", () => {
         World.getWorld().func_175698_g(new BP(coord[0], coord[1], coord[2]));
     })
 })
-*/
+*/ // better code ^^^

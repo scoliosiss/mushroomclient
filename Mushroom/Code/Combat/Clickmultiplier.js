@@ -1,12 +1,12 @@
 import Config from "../../Config/Config"
-import {mc, RightClick} from "../Utils";
+import {prefix, mc, RightClick, LeftClick} from "../Utils";
 
-// works now (ilr saves the day again)
+// doesnt work?
 
 let delay = Date.now();
 
 register("playerInteract", (action) => {
-    if (Date.now() - delay > 100) {
+    if (Date.now() - delay > 50) {
         if (Config.cpsmultiplier) {
             if (action.toString() === "RIGHT_CLICK_BLOCK" || action.toString() === "RIGHT_CLICK_EMPTY") {
                 new Thread(() => {

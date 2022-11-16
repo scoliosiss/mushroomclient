@@ -26,11 +26,13 @@ import "./Code/Macros/ZombiesMacro"
 import "./Code/ChatMacros/Autoptransfer"
 import "./Code/ChatMacros/ChatMacros"
 import "./Code/ChatMacros/Emotes"
+import "./Code/ChatMacros/GuildBridge"
 import "./Code/ChatMacros/MathsBot"
 import "./Code/ChatMacros/RandomCommands"
 
 import "./Code/Skyblock/AuctionSnipe"
 import "./Code/Skyblock/Autoterms"
+import "./Code/Skyblock/Bonzomask"
 import "./Code/Skyblock/DungeonScore"
 import "./Code/Skyblock/DungeonScoreMessage"
 import "./Code/Skyblock/GhostBlocks"
@@ -106,7 +108,6 @@ const currentZ = Player.getZ();
       .pos(0.5, 0.5, -0.5).tex(1, 0)
       .draw();
   }
-
 
 // each letter rendered in seperate variables :skull:
 // prob why my fps dies
@@ -215,9 +216,9 @@ mcversion.draw();
 // omg small bit of code wtf!?!?!?
 
 register("renderPlayerList", () => {
-    if (!Config.mushroomclientontop) return;
-              TabList.setHeader("§c§lM§f§lu§c§ls§f§lh§c§lr§f§lo§c§lo§f§lo§c§lm §lClient on top!\n");
-          }
-  );
+  if (!Config.mushroomclientontop) return;
+    TabList.setHeader("§c§lM§f§lu§c§ls§f§lh§c§lr§f§lo§c§lo§f§lo§c§lm §lClient on top!\n");
+  }
+);
 
 export {mushroomshadowimg, logo}
