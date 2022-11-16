@@ -39,7 +39,7 @@ import "./Code/Skyblock/MelodyMacro"
 
 import "./Code/Other/BANKEY"
 import "./Code/Other/Clip"
-import "./Code/Other/FunnyDeath"
+import "./Code/Other/Hilarity"
 import "./Code/Other/ImagePaste"
 import "./Code/Other/UpdateChecker"
 
