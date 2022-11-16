@@ -30,6 +30,7 @@ import "./Code/ChatMacros/MathsBot"
 import "./Code/ChatMacros/RandomCommands"
 
 import "./Code/Skyblock/AuctionSnipe"
+import "./Code/Skyblock/Autoterms"
 import "./Code/Skyblock/DungeonScore"
 import "./Code/Skyblock/DungeonScoreMessage"
 import "./Code/Skyblock/GhostBlocks"
