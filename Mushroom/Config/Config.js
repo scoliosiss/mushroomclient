@@ -271,14 +271,23 @@ scaffoldi = false;
     })
     welcomeguildmessage = "Good morning";
 
+    @SwitchProperty({
+        name: "&aguild bridge bot",
+        description: "&2makes guild bridge bot look cleaner",
+        category: "Chat Macro",
+        subcategory: ""
+    })
+    guildbridge = true;
+
+
     @TextProperty({
-        name: "&awelcome guild message part 2",
-        description: "&2what to be said after persons name",
+        name: "&bguild bridge bots name",
+        description: '&1username of bridge bot',
         category: "Chat Macro",
         subcategory: "",
-        placeholder: "put message here!"
+        placeholder: "put bridge bots name here"
     })
-    welcomeguildmessage2 = "how are you doing?";
+    guildbotsname = "";
 
     @SwitchProperty({
         name: "&cAuto send quickmaths answer",
@@ -502,13 +511,23 @@ scaffoldi = false;
     
     @SliderProperty({
         name: "&bQuickmaths solver speed",
-        description: "&9(Speed of auto send in milliseconds)",
+        description: "&9Speed of auto send in milliseconds",
         category: "Sliders",
         subcategory: " ",
         min: 1,
         max: 10000
     })
     quickmathsautosendcooldown = 50;
+
+    @SliderProperty({
+        name: "&4autoterm speed",
+        description: "&cSpeed of autoterms in millisecconds",
+        category: "Sliders",
+        subcategory: "    ",
+        min: 100,
+        max: 1000
+    })
+    autotermspeed = 200;
 
 
 // ----------------------------------------------------------------------
@@ -605,6 +624,14 @@ scaffoldi = false;
     })
     ahsniper2 = false;
 
+    @SwitchProperty({
+        name: "&cM6 gyro times for mage",
+        description: "&4Timing for mage gyros if your team insta kills teras",
+        category: "Skyblock",
+        subcategory: "   "
+    })
+    m6gyros = false;
+
     @TextProperty({
         name: "&5Self death message",
         description: '&amessage to send when you die',
@@ -633,6 +660,30 @@ scaffoldi = false;
         subcategory: " "
         })
     spanish = true;
+
+    @SwitchProperty({
+        name: "&ahilarity",
+        description: '&d:trol:',
+        category: "Other",
+        subcategory: " "
+        })
+    hilarity = true;
+
+    @SwitchProperty({
+        name: "&comega hilarity",
+        description: '&dnot recomended if you die alot',
+        category: "Other",
+        subcategory: " "
+        })
+    omegahilarity = false;
+
+    @SwitchProperty({
+        name: "&4large hilarity",
+        description: '&dnot recomended if you dont want to get kicked from hypixel alot',
+        category: "Other",
+        subcategory: " "
+        })
+    largehilarity = false;
     
   @ButtonProperty({
     name: "join the discord!",
