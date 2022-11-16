@@ -1,24 +1,49 @@
 import Config from "../../Config/Config"
-import {prefix, mc, Vec3, EnumFacing} from "../Utils";
+import {prefix, mc, Vec3, EnumFacing, LeftClick} from "../Utils";
 
 const killaurakey = new KeyBind("Chest aura", Keyboard.KEY_NONE, "Mushroom");
-// no worky plz fix
-const killauraer = () => {
-    new Thread(() => {
-        if (Client.currentGui.get() == null) {
-            for (let x = Player.getX() - 10; x < Player.getX() + 10; x++) {
-                for (let y = Player.getY() - 10; y < Player.getY() + 10; y++) {
-                    for (let z = Player.getZ() - 10; z < Player.getZ() + 10; z++) {
-                        let position = World.getAllEntitiesOfType(Player)
-                        if (mc.field_71439_g.func_70011_f(position.func_177958_n(), position.func_177956_o() - mc.field_71439_g.func_70047_e(), position.func_177952_p()) < 3) {
-                                mc.field_71442_b.func_178890_a(Player.getPlayer(), World.getWorld(), mc.field_71439_g.field_71071_by.func_70448_g(), position, EnumFacing.func_176733_a(mc.field_71439_g.field_70177_z), new Vec3(0.0, 0.0, 0.0));
-                        }           
-                    }
-                }
-            }
-        }
-    }).start()
+// works now lets go
+function distanceToPlayer(x,y,z) {
+    let dX = Player.getX() - x
+    let dZ = Player.getZ() - z
+    let dY = Player.getY() - y
+    let dis = Math.sqrt((dX * dX) + (dZ * dZ))
+    let dis2 = Math.sqrt((dis * dis) + (dY * dY))
+    return dis2
 }
+
+let hoekYaw
+let hoekPitch
+function lookAt(x, y, z) {
+    let PlayerAngleYaw = Player.getPlayer().field_70177_z
+    let AngleYaw
+    PlayerAngleYaw %= 360
+    let dX = Player.getX() - x + 0.00001
+    let dZ = Player.getZ() - z + 0.00001
+    let dY = Player.getY() - y + 0.00001
+    let dis = Math.sqrt((dX * dX) + (dZ * dZ))
+    if(dX < 0.0 && dZ < 0.0) {
+        AngleYaw = radians_to_degrees(Math.atan(dZ/dX)) + 180
+    } else if(dZ < 0.0 && dX > 0.0) {
+        AngleYaw = radians_to_degrees(Math.atan(dZ/dX)) + 360
+    } else if(dZ > 0.0 && dX < 0.0) {
+        AngleYaw = radians_to_degrees(Math.atan(dZ/dX)) + 180
+    } else if(dZ > 0.0 && dX > 0.0){
+        AngleYaw = radians_to_degrees(Math.atan(dZ/dX))
+    }
+    hoekYaw = AngleYaw - PlayerAngleYaw + 90
+
+    vlookSmooth = 0
+    Player.getPlayer().field_70177_z += hoekYaw 
+    hoekPitch = radians_to_degrees(Math.atan(dY/dis)) - Player.getPlayer().field_70125_A
+    Player.getPlayer().field_70125_A += hoekPitch 
+}
+
+//field_73088_d
+function radians_to_degrees(radians) {
+    var pi = Math.PI;
+    return radians * (180/pi);
+  }
 
 register("tick", () => {
     if (killaurakey.isPressed()) {
@@ -31,6 +56,21 @@ register("tick", () => {
     }
 });
 
+register("step", () => {
+    if (!Config.killaura) return;
+    let allEntity = World.getAllPlayers()
+    for(let i = 0; i < allEntity.length; i++) {
+        if(distanceToPlayer(allEntity[i].getX(), allEntity[i].getY(), allEntity[i].getZ()) < 5) {
+            for(let j = 0; j < allEntity.length; j++) {
+                if(distanceToPlayer(allEntity[j].getX(), allEntity[j].getY(), allEntity[j].getZ()) < 5) {
+                    lookAt(allEntity[j].getX(), allEntity[j].getY(), allEntity[j].getZ())
+                    LeftClick.invoke(mc)
+                }
+            }
+        }
+    }
+}).setFps(12)
+
 register("command", () => {
     ChatLib.chat(`${
         (Config.killaura = !Config.killaura) 
@@ -39,9 +79,3 @@ register("command", () => {
     }`
     );
 }).setName("ka")
-
-register("step", () => {
-    if (Config.killaura) {
-        killauraer();
-    }
-}).setFps(12)
