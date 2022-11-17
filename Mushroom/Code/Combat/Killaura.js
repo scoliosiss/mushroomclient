@@ -2,7 +2,8 @@ import Config from "../../Config/Config"
 import {prefix, mc, Vec3, EnumFacing, LeftClick} from "../Utils";
 
 const killaurakey = new KeyBind("Chest aura", Keyboard.KEY_NONE, "Mushroom");
-// no it doesnt lol
+
+// fixed by ilr again lets go
 function distanceToPlayer(x,y,z) {
     let dX = Player.getX() - x
     let dZ = Player.getZ() - z
@@ -60,12 +61,10 @@ register("step", () => {
     if (!Config.killaura) return;
     let allEntity = World.getAllPlayers()
     for(let i = 0; i < allEntity.length; i++) {
-        if(distanceToPlayer(allEntity[i].getX(), allEntity[i].getY(), allEntity[i].getZ()) < 5) {
-            for(let j = 0; j < allEntity.length; j++) {
-                if(distanceToPlayer(allEntity[j].getX(), allEntity[j].getY(), allEntity[j].getZ()) < 5) {
-                    lookAt(allEntity[j].getX(), allEntity[j].getY(), allEntity[j].getZ())
+        if(distanceToPlayer(allEntity[i].getX(), allEntity[i].getY(), allEntity[i].getZ()) < 3) {
+                if(distanceToPlayer(allEntity[i].getX(), allEntity[i].getY(), allEntity[i].getZ()) > 0.1) {
+                    lookAt(allEntity[i].getX(), allEntity[i].getY(), allEntity[i].getZ())
                     LeftClick.invoke(mc)
-                }
             }
         }
     }
