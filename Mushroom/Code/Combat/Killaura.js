@@ -2,7 +2,7 @@ import Config from "../../Config/Config"
 import {prefix, mc, Vec3, EnumFacing, LeftClick} from "../Utils";
 
 const killaurakey = new KeyBind("Chest aura", Keyboard.KEY_NONE, "Mushroom");
-// works now lets go
+// no it doesnt lol
 function distanceToPlayer(x,y,z) {
     let dX = Player.getX() - x
     let dZ = Player.getZ() - z
