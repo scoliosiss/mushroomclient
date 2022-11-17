@@ -11,10 +11,10 @@
 #### Combat cheats:
 - autoclicker
 - Swordswap (auto swap to snowballs when you click with sword)
+- Killaura
 - autoblock (kinda mid)
 - clickmultiplier (kinda mid)
 - vclip (WIP)
-- Killaura (WIP)
 - Reach (WIP)
 - antikb (VERY WIP)
 #### Macros:
