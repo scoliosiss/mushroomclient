@@ -1,8 +1,8 @@
 {
     "moduleName": "Mushroom",
-    "latestVersion": "&c&l&n2&9&l&n.&d&l&n1&5&l&n!",
+    "latestVersion": "&c&l&n2&9&l&n.&d&l&n0&5&l&n!",
     "author": "Scoliosis and ilr",
     "changelog": [
-        "fixed dungeon death message"
+        "fixed killaura + added hilarity"
     ]
 }
