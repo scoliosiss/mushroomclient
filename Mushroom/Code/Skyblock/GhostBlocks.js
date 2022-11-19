@@ -27,7 +27,7 @@ register("step", () => { // auto
     if (!Config.p3termghostblocks) return;
     let scoreboardInfoData = Scoreboard.getLines()
     let scoreboardInfo = scoreboardInfoData.join()
-    if (scoreboardInfo.includes("(F7)")) { //making sure it's in floor 7
+    if (scoreboardInfo.includes("(F7)" || "(M7)")) { //making sure it's in floor 7
         World.getWorld().func_175698_g(new BP(91, 165, 39));
         World.getWorld().func_175698_g(new BP(91, 166, 39));
         World.getWorld().func_175698_g(new BP(91, 167, 39));

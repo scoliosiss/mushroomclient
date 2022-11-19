@@ -1,5 +1,5 @@
 import Config from "../../Config/Config"
-import {prefix, mc, Vec3, EnumFacing, LeftClick} from "../Utils";
+import {prefix, mc, Vec3, EnumFacing, LeftClick, BP} from "../Utils";
 
 const killaurakey = new KeyBind("Chest aura", Keyboard.KEY_NONE, "Mushroom");
 
@@ -33,8 +33,6 @@ function lookAt(x, y, z) {
         AngleYaw = radians_to_degrees(Math.atan(dZ/dX))
     }
     hoekYaw = AngleYaw - PlayerAngleYaw + 90
-
-    vlookSmooth = 0
     Player.getPlayer().field_70177_z += hoekYaw 
     hoekPitch = radians_to_degrees(Math.atan(dY/dis)) - Player.getPlayer().field_70125_A
     Player.getPlayer().field_70125_A += hoekPitch 
@@ -61,10 +59,16 @@ register("step", () => {
     if (!Config.killaura) return;
     let allEntity = World.getAllPlayers()
     for(let i = 0; i < allEntity.length; i++) {
-        if(distanceToPlayer(allEntity[i].getX(), allEntity[i].getY(), allEntity[i].getZ()) < 3) {
-                if(distanceToPlayer(allEntity[i].getX(), allEntity[i].getY(), allEntity[i].getZ()) > 0.1) {
-                    lookAt(allEntity[i].getX(), allEntity[i].getY(), allEntity[i].getZ())
+        if(distanceToPlayer(allEntity[i].getX(), allEntity[i].getY(), allEntity[i].getZ()) < 5) {
+            if(distanceToPlayer(allEntity[i].getX(), allEntity[i].getY(), allEntity[i].getZ()) > 0.1) {
+                lookAt(allEntity[i].getX(), allEntity[i].getY(), allEntity[i].getZ())
+                if(distanceToPlayer(allEntity[i].getX(), allEntity[i].getY(), allEntity[i].getZ()) < 3) {
+                    let lookingAt = Player.lookingAt();
+                    if (lookingAt.getClass() === Block) {
+                    World.getWorld().func_175698_g(new BP(lookingAt.getX(), lookingAt.getY(), lookingAt.getZ())); 
+                    }  
                     LeftClick.invoke(mc)
+                }
             }
         }
     }

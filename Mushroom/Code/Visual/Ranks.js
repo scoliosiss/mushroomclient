@@ -95,16 +95,232 @@ fullMessage = ""
     }     
   })
 
-  register("chat", (startofmessage, name, restofmessage) => { // fixing messages from custom ranked people not being clickable
-    if (!Config.nickhider) return;
-    setTimeout(function(){
-    var partymessage = new Message(
-       new TextComponent("\n&9&lClick Here to party &c&l" + name + "&9&l back!\n").setClick("run_command", "/p  " + name), // new message thats clickable
-       new TextComponent("\n&6&lClick Here to join &c&l" + name + "'s &6&lparty!\n").setClick("run_command", "/p join " + name),
-       new TextComponent("\n&5&lClick Here to leave your current party!\n").setClick("run_command", "/p leave")); // just a qol thing because i dont like having to type /p leave
-    ChatLib.chat(partymessage)
-  },500);
-  }).setChatCriteria("-${startofmessage}-${name} has invited you to join their party!${restofmessage}")
+  let players
+  let onlyNameList = {}
+  let replacions = {}
+  let rankReplactions = [
+    "&c[OWNER]",
+    "&c[ADMIN] ",
+    "&c[MCPROHOSTING]",
+    "&c[SLOTH]",
+    "&2[MOD]",
+    "&1[HELPER]",
+    "&c[&r&fYOUTUBE&r&c]",
+    "&c[&fYOUTUBE&c]",
+    "&3[BUILD TEAM]",
+    "&6[MVP&r&1++&r&6] ",
+    "&6[MVP&r&9++&r&6] ",
+    "&6[MVP&r&3++&r&6] ",
+    "&6[MVP&r&b++&r&6] ",
+    "&6[MVP&r&4++&r&6] ",
+    "&6[MVP&r&c++&r&6] ",
+    "&6[MVP&r&e++&r&6] ",
+    "&6[MVP&r&6++&r&6] ",
+    "&6[MVP&r&2++&r&6] ",
+    "&6[MVP&r&a++&r&6] ",
+    "&6[MVP&r&5++&r&6] ",
+    "&6[MVP&r&d++&r&6] ",
+    "&6[MVP&r&f++&r&6] ",
+    "&6[MVP&r&7++&r&6] ",
+    "&6[MVP&r&8++&r&6] ",
+    "&6[MVP&r&0++&r&6] ",
+    "&b[MVP&r&1++&r&b] ",
+    "&b[MVP&r&9++&r&b] ",
+    "&b[MVP&r&3++&r&b] ",
+    "&b[MVP&r&b++&r&b] ",
+    "&b[MVP&r&4++&r&b] ",
+    "&b[MVP&r&c++&r&b] ",
+    "&b[MVP&r&e++&r&b] ",
+    "&b[MVP&r&6++&r&b] ",
+    "&b[MVP&r&2++&r&b] ",
+    "&b[MVP&r&a++&r&b] ",
+    "&b[MVP&r&5++&r&b] ",
+    "&b[MVP&r&d++&r&b] ",
+    "&b[MVP&r&f++&r&b] ",
+    "&b[MVP&r&7++&r&b] ",
+    "&b[MVP&r&8++&r&b] ",
+    "&b[MVP&r&0++&r&b] ",
+    "&b[MVP&r&1+&r&b] ",
+    "&b[MVP&r&9+&r&b] ",
+    "&b[MVP&r&3+&r&b] ",
+    "&b[MVP&r&b+&r&b] ",
+    "&b[MVP&r&4+&r&b] ",
+    "&b[MVP&r&c+&r&b] ",
+    "&b[MVP&r&e+&r&b] ",
+    "&b[MVP&r&6+&r&b] ",
+    "&b[MVP&r&2+&r&b] ",
+    "&b[MVP&r&a+&r&b] ",
+    "&b[MVP&r&5+&r&b] ",
+    "&b[MVP&r&d+&r&b] ",
+    "&b[MVP&r&f+&r&b] ",
+    "&b[MVP&r&7+&r&b] ",
+    "&b[MVP&r&8+&r&b] ",
+    "&b[MVP&r&0+&r&b] ",
+    "&a[VIP&r&1+&r&a] ",
+    "&a[VIP&r&9+&r&a] ",
+    "&a[VIP&r&3+&r&a] ",
+    "&a[VIP&r&b+&r&a] ",
+    "&a[VIP&r&4+&r&a] ",
+    "&a[VIP&r&c+&r&a] ",
+    "&a[VIP&r&6+&r&a] ",
+    "&a[VIP&r&e+&r&a] ",
+    "&a[VIP&r&2+&r&a] ",
+    "&a[VIP&r&a+&r&a] ",
+    "&a[VIP&r&5+&r&a] ",
+    "&a[VIP&r&d+&r&a] ",
+    "&a[VIP&r&f+&r&a] ",
+    "&a[VIP&r&7+&r&a] ",
+    "&a[VIP&r&8+&r&a] ",
+    "&a[VIP&r&0+&r&a] ",
+    "&6[MVP&1++&6] ",
+    "&6[MVP&9++&6] ",
+    "&6[MVP&3++&6] ",
+    "&6[MVP&b++&6] ",
+    "&6[MVP&4++&6] ",
+    "&6[MVP&c++&6] ",
+    "&6[MVP&e++&6] ",
+    "&6[MVP&6++&6] ",
+    "&6[MVP&2++&6] ",
+    "&6[MVP&a++&6] ",
+    "&6[MVP&5++&6] ",
+    "&6[MVP&d++&6] ",
+    "&6[MVP&f++&6] ",
+    "&6[MVP&7++&6] ",
+    "&6[MVP&8++&6] ",
+    "&6[MVP&0++&6] ",
+    "&b[MVP&1++&b] ",
+    "&b[MVP&9++&b] ",
+    "&b[MVP&3++&b] ",
+    "&b[MVP&b++&b] ",
+    "&b[MVP&4++&b] ",
+    "&b[MVP&c++&b] ",
+    "&b[MVP&e++&b] ",
+    "&b[MVP&6++&b] ",
+    "&b[MVP&2++&b] ",
+    "&b[MVP&a++&b] ",
+    "&b[MVP&5++&b] ",
+    "&b[MVP&d++&b] ",
+    "&b[MVP&f++&b] ",
+    "&b[MVP&7++&b] ",
+    "&b[MVP&8++&b] ",
+    "&b[MVP&0++&b] ",
+    "&b[MVP&1+&b] ",
+    "&b[MVP&9+&b] ",
+    "&b[MVP&3+&b] ",
+    "&b[MVP&b+&b] ",
+    "&b[MVP&4+&b] ",
+    "&b[MVP&c+&b] ",
+    "&b[MVP&e+&b] ",
+    "&b[MVP&6+&b] ",
+    "&b[MVP&2+&b] ",
+    "&b[MVP&a+&b] ",
+    "&b[MVP&5+&b] ",
+    "&b[MVP&d+&b] ",
+    "&b[MVP&f+&b] ",
+    "&b[MVP&7+&b] ",
+    "&b[MVP&8+&b] ",
+    "&b[MVP&0+&b] ",
+    "&a[VIP&1+&a] ",
+    "&a[VIP&9+&a] ",
+    "&a[VIP&3+&a] ",
+    "&a[VIP&b+&a] ",
+    "&a[VIP&4+&a] ",
+    "&a[VIP&c+&a] ",
+    "&a[VIP&6+&a] ",
+    "&a[VIP&e+&a] ",
+    "&a[VIP&2+&a] ",
+    "&a[VIP&a+&a] ",
+    "&a[VIP&5+&a] ",
+    "&a[VIP&d+&a] ",
+    "&a[VIP&f+&a] ",
+    "&a[VIP&7+&a] ",
+    "&a[VIP&8+&a] ",
+    "&a[VIP&0+&a] ",
+    "&a[VIP] ",
+    "&b[MVP] ",
+    "&7"
+]
+let onlyNameListUpper = {}
+function updateAllNameLists() {
+  new Thread(() => {
+      replacions = JSON.parse(FileLib.getUrlContent("https://raw.githubusercontent.com/scoliosiss/mushroomclient/main/customranks.json", "Mozilla/5.0"))
+      // console.log(Object.keys(replacions)[2])
+      Object.keys(replacions).forEach((key) => {
+          if (replacions[key].includes("] "))
+              onlyNameList[key] = replacions[key].split("] ")[replacions[key].split("] ").length - 1]
+          else
+              onlyNameList[key] = replacions[key]
+      })
+      Object.keys(onlyNameList).forEach((key) => {
+          if (key !== key.toUpperCase()) {
+              let tempNameArr = onlyNameList[key].split("&")
+              let tempStringName = ""
+              for (let i = 1; i < tempNameArr.length; i++) {
+                  tempStringName += "&" + tempNameArr[i].substring(0, 1)
+                  tempStringName += tempNameArr[i].substring(1).toUpperCase()
+              }
+              onlyNameListUpper[key] = tempStringName
+          }
+          else {
+              onlyNameListUpper[key] = onlyNameList[key]
+          }
+      })
+  }).start()
+}
+updateAllNameLists();
+  function doReplaceChatMessage(ret) {
+    ret = ret.replace(/§/gi, "&")
+    Object.keys(replacions).forEach((key) => {
+        if (ret.includes(key)) {
+            rankReplactions.forEach((key1) => {
+                let keyCheck = key1 + key
+                let keyReplace = replacions[key]
+                if (ret.includes(keyCheck)) {
+                    if (key1 !== "&7") {
+                        ret = ret.replaceAll(keyCheck, keyReplace)
+                    }
+                    else {
+                        if (!ret.includes("&r&7: &r&7" + key)) {
+                            ret = ret.replaceAll(keyCheck, keyReplace)
+                        }
+                    }
+                }
+            })
+        }
+    })
+  }
+  register("tick", function () {
+    tickCount++
+    if (tickCount % 100 == 0) {
+        new Thread(() => {
+            players = World.getAllPlayers()
+                players.forEach((player) => {
+                    Object.keys(onlyNameList).forEach((key) => {
+                        if (player.getName().includes(key) && !player.getDisplayName().getText().includes(onlyNameList[key].replace(/&/gi, "§"))) {
+                            // player.setNametagName(new TextComponent(doReplaceChatMessage(player.getDisplayName().getText())));
+                            // NetHandlerPlayClient.func_175104_a(player.getName()).func_178859_a(new IChatComponent(new ChatComponentText(doReplaceChatMessage(player.getDisplayName().getText()).replace(/&/gi, "§"))))
+                            // console.log(player.getDisplayName().getText())
+                            let playerDisplayNameAfterChange = new TextComponent(doReplaceChatMessage(player.getDisplayName().getText()))
+                            player.setTabDisplayName(playerDisplayNameAfterChange);
+                                player.setNametagName(playerDisplayNameAfterChange);
+                                if (NetHandlerPlayClient !== null) {
+                                    let playerInfo = NetHandlerPlayClient.func_175104_a(player.getName())
+                                    if (playerInfo !== null) {
+                                        let thePlayerInfoTeam = NetHandlerPlayClient.func_175104_a(player.getName()).func_178850_i()
+                                        if (thePlayerInfoTeam !== null) {
+                                            thePlayerInfoTeam.func_96666_b("")
+                                            thePlayerInfoTeam.func_96662_c("")
+                                        
+                                    }
+                                }
+                            }
+                        }
+                    })
+                })
+            
+        }).start()
+      }
+    })
 
 register("renderPlayerList", () => {
   if (!Config.nickhider) return;

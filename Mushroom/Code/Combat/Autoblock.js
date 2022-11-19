@@ -27,7 +27,7 @@ register("command", () => {
 const autoblockcode = () => {
                 new Thread(() => {
                     LeftClick.invoke(mc);
-                    Thread.sleep(Config.yourping / 5);
+                    Thread.sleep(50);
                     RightClick.invoke(mc);
                 }).start()
     };
@@ -44,3 +44,4 @@ register("step", () => {
     }
 }).setFps(8);
 
+export {autoblockcode}

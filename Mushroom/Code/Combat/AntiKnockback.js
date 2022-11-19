@@ -1,10 +1,16 @@
 import Config from "../../Config/Config"
 import {} from "../Utils";
+const kbpacket = Java.type("net.minecraft.network.play.server.S12PacketEntityVelocity");
+const kbpacket2 = Java.type("net.minecraft.network.play.server.S12PacketEntityVelocity");
 
-// dont even ask :skull:
-
-// ??????? what the fuck is this.
-
-register("step", () => {
-    Player.func_70543_e(0);
+register("step", (event) => {
+    if (!Config.antiknockback) return;
+   if (event instanceof kbpacket || event instanceof kbpacket2) {
+        let motionX = Player.func_149149_c()
+        let motionY = Player.func_149144_d()
+        let motionZ = Player.func_149147_e()
+        Client.sendPacket(Player.func_70016_h(motionX))
+        Client.sendPacket(Player.func_70016_h(motionY))
+        Client.sendPacket(Player.func_70016_h(motionZ))
+    }
 });

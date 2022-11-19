@@ -26,6 +26,20 @@ register("tick", () => {
     }
 })
 
+let score = "119"
+
+register("step", () => {
+    if (Config.funnyscorecalc) {
+        if (Dungeon.score == score) return;
+        if (Dungeon.score >= 120) {
+            ChatLib.chat(prefix + " > &5" + Dungeon.score + " &ascore reached")
+            ChatLib.say("/pc " + Dungeon.score + " score reached")
+            score = Dungeon.score
+        }
+    }
+}).setFps(1)
+
+/*
 // time for funny!
 // vsc replace tool carried
 let announced120 = false
@@ -1653,5 +1667,5 @@ register("tick", () => {
         }
     }
 })
-
+*/
 // most compact code ever!!

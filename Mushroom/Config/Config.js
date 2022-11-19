@@ -114,6 +114,14 @@ class Config {
     killaura = false;
 
     @SwitchProperty({
+        name: "&cAnti Knockback",
+        description: "&4Completly stops knockback",
+        category: "Combat",
+        subcategory: "  "
+    })
+    antiknockback = false;
+
+    @SwitchProperty({
         name: "&cAutoblock",
         description: "&4Automatically blocks and clicks your sword",
         category: "Combat",
@@ -447,6 +455,17 @@ scaffoldi = false;
     Zombiesgunmacrospeed = 500;
 
     @SliderProperty({
+        name: "&4hilarity speed",
+        description: "&cplease i want to see more",
+        category: "Sliders",
+        subcategory: "",
+        min: 1,
+        max: 5000
+    })
+    hilarityspeed = 1000;
+
+
+    @SliderProperty({
         name: "&cChest Aura reach",
         description: "&4Reach distance for chest aura",
         category: "Sliders",
@@ -547,7 +566,23 @@ scaffoldi = false;
         category: "Skyblock",
         subcategory: ""
         })
-        scorecalc = true;
+    scorecalc = true;
+    
+    @SwitchProperty({
+        name: "&3shitter warning",
+        description: "&9warns you if a shitter joins your group",
+        category: "Skyblock",
+        subcategory: ""
+        })
+    shitterwarning = true;
+
+    @SwitchProperty({
+        name: "&3auto kick shitters",
+        description: "&9automatically kicks shitters from dungeon groups",
+        category: "Skyblock",
+        subcategory: ""
+        })
+    kickshitter = false;
 
     @SwitchProperty({
         name: "&3Dungeon Score calc message",
