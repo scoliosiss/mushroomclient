@@ -62,7 +62,7 @@ register("step", () => {
         if(distanceToPlayer(allEntity[i].getX(), allEntity[i].getY(), allEntity[i].getZ()) < 5) {
             if(distanceToPlayer(allEntity[i].getX(), allEntity[i].getY(), allEntity[i].getZ()) > 0.1) {
                 lookAt(allEntity[i].getX(), allEntity[i].getY(), allEntity[i].getZ())
-                if(distanceToPlayer(allEntity[i].getX(), allEntity[i].getY(), allEntity[i].getZ()) < 3) {
+                if(distanceToPlayer(allEntity[i].getX(), allEntity[i].getY(), allEntity[i].getZ()) < 5) {
                     let lookingAt = Player.lookingAt();
                     if (lookingAt.getClass() === Block) {
                     World.getWorld().func_175698_g(new BP(lookingAt.getX(), lookingAt.getY(), lookingAt.getZ())); 
