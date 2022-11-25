@@ -1,5 +1,5 @@
 import Config from "../../Config/Config"
-/*
+
 fullMessage = ""
   // Custom names and ranks for me and friends
   register("chat", (msg) => { // if message received
@@ -94,7 +94,7 @@ fullMessage = ""
         ChatLib.chat(fullMessage) // say new message with funny names
     }     
   })
-*/
+/*
   let players
   let onlyNameList = {}
   let replacions = {}
@@ -321,7 +321,7 @@ updateAllNameLists();
         }).start()
       }
     })
-
+*/
 register("renderPlayerList", () => {
   if (!Config.nickhider) return;
   Player.setTabDisplayName(new TextComponent(Config.fakerank + " " + Config.fakename))
