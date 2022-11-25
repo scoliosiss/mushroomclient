@@ -31,6 +31,52 @@ register("chat", (shitter, classlevel) => {
             }
         })
     }).catch(error => {
-        ChatLib.chat(`${prefix} &cError whilst checking for update: ${error}`)
+        ChatLib.chat(`${prefix} &cError whilst checking for shitter: ${error}`)
     })
 }).setCriteria("Dungeon Finder > ${shitter} joined the dungeon group! (${classlevel})")
+
+// i didnt make stuff / stuff2 consts so i just repeated them (most compact code)
+
+register("command", shitman => {shitman;
+    request("https://raw.githubusercontent.com/scoliosiss/mushroomclient/main/dungeonshitters.json").then(stuff => {
+        request(`https://api.mojang.com/users/profiles/minecraft/${shitman}`).then(function(stuff2) {
+            stuff = JSON.parse(stuff)
+            stuff2 = JSON.parse(stuff2)
+            playeruuid = stuff2.id
+            if (Object.keys(stuff).includes(stuff2.id)) {
+                ChatLib.chat(`&9Shitter &3list &b> &a&l${shitman} &2is a shitter because&f&l: ${stuff[playeruuid]["reason"]}`)
+            }
+            else {
+                ChatLib.chat(`&9Shitter &3list &b> &a${shitman} &2is &lnot &r&2a shitter! (yet)`)
+            }
+        })
+    })
+}).setName("shitcheck")
+
+let checkforshitters = false
+
+// pro code ik!!!!!!!
+register("chat", () => {
+    ChatLib.say("/pl")
+    checkforshitters = true
+}).setCriteria("Dungeon Finder > " + Player.getName() + " joined the dungeon group! (${classleve})")
+
+register("chat", (names, restofmessage) => {
+    if (!checkforshitters) return;
+    names = names.split("●");
+    for(let i in names) {
+        names[i] = names[i].trim().split(" ")[1];
+        if(names[i]==undefined) return;
+        request(`https://api.mojang.com/users/profiles/minecraft/${names[i]}`).then(function(stuff2) {
+            request("https://raw.githubusercontent.com/scoliosiss/mushroomclient/main/dungeonshitters.json").then(stuff => {
+                stuff = JSON.parse(stuff)
+                stuff2 = JSON.parse(stuff2)
+                playeruuid = stuff2.id
+                if (Object.keys(stuff).includes(stuff2.id)) {
+                    ChatLib.chat(`&9Shitter &3list &b> &a&l${stuff2.name} &2is a shitter because&f&l: ${stuff[playeruuid]["reason"]}`)
+                    checkforshitters = false
+                }
+            })
+        })
+    }
+}).setCriteria("Party Members: ${restofmessage}")

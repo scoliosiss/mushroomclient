@@ -55,7 +55,7 @@
 	"&awelcome_guild_message_part_2" = "how are you doing?"
 
 	[chat_macro.__]
-		"&cauto_send_quickmaths_answer" = false
+		"&cauto_send_quickmaths_answer" = true
 		"&aquickmaths_solver!" = true
 
 	[chat_macro.______]
@@ -80,7 +80,7 @@
 
 [skyblock]
 	"&3autoharp" = false
-	"&3auto_kick_shitters" = true
+	"&3auto_kick_shitters" = false
 	"&3funny_score_calc" = false
 	"&3shitter_warning" = true
 	"&3dungeon_score_calc_message" = true
@@ -153,7 +153,7 @@
 	[sliders._]
 		"&cskull_aura_reach" = 5
 		"&clever_aura_reach" = 5
-		"&bquickmaths_solver_speed" = 50
+		"&bquickmaths_solver_speed" = 155
 		"&cchest_aura_reach" = 5
 
 [cosmetics]
