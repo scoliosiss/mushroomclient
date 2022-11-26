@@ -4,23 +4,22 @@
 ## its a very cool chattriggers module with a couple cheats
 ### yes I am aware all of this code is awful, I dont care about optimization I just want it working.
 ### also WIP basically just means not working
-### new gui soon because i just found out soopys gui thing is public and it looks cool
 
 ### Feature list: 
 
 #### Combat cheats:
-- autoclicker
-- Swordswap (auto swap to snowballs when you click with sword)
 - Killaura
+- autoclicker
+- Swordswap (auto swap to snowballs when you click with sword for more kb)
 - autoblock (kinda mid)
 - clickmultiplier (kinda mid)
 - vclip (WIP)
 - Reach (WIP)
-- antikb (VERY WIP)
+- antikb (WIP)
 #### Macros:
 - chest, skull and lever aura (work anywhere but mainly used for secret aura)
 skull aura is very good for halloween simualtor!
-
+- chest stealer too (takes every item in a chest)
 ![im very good at halloween simulator](https://cdn.discordapp.com/attachments/865636628318912522/1038930195962400848/halloween_simulator.png)
 - Zombies macro (swaps guns in zombies for maxium damage)
 - Scaffold (semi WIP)
@@ -31,7 +30,8 @@ skull aura is very good for halloween simualtor!
 - alot of chat macros
 #### Visual:
 - chest and skull esp 
-- ESP (semi WIP)
+- nick hider (fake name)
+- ESP (dropped item esp, all entity esp, player esp)
 #### Skyblock:
 - Ghostblocks
 - f7 p3 ghostblocks
