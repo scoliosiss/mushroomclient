@@ -13,14 +13,11 @@ register("tick", () => {
         );
     }
 });
-
+/*
 // lol this code is java
-const Reach = () => {	        	
-    Player.getEntityAttribute(Player.REACH_DISTANCE).applyModifier(new AttributeModifier(Player.func_110124_au(), 10, 1));
-}
-
 register("tick", () => {
     if (Config.reach) {
-    Reach()
+        Player.getEntityAttribute(Player.REACH_DISTANCE).applyModifier(new AttributeModifier(Player.func_110124_au(), 10, 1));
     }
 });
+*/

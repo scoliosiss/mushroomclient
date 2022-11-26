@@ -167,8 +167,24 @@ class Config {
     fakerank = `${prefix}`;
 
     @SwitchProperty({
-        name: "&cEntity ESP",
-        description: "&4shows a box around every entity\n&4toggle with /esp!",
+        name: "&cPlayer ESP",
+        description: "&4shows a box around every player\n&4toggle with /esp!",
+        category: "Visual",
+        subcategory: ""
+    })
+    PlayerESP = false;
+
+    @SwitchProperty({
+        name: "&cItem ESP",
+        description: "&4shows a box around every dropped item\n&4toggle with /iesp!",
+        category: "Visual",
+        subcategory: ""
+    })
+    ItemESP = false;
+
+    @SwitchProperty({
+        name: "&cESP armorstands",
+        description: "&4shows a box around EVERY entity\n&4toggle with /aesp!",
         category: "Visual",
         subcategory: ""
     })

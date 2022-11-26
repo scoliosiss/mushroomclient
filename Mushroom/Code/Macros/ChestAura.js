@@ -6,7 +6,8 @@ const cheststealerkey = new KeyBind("Chest stealer", Keyboard.KEY_NONE, "Mushroo
 
 let alreadyClicked = new ArrayLists;
 
-const chestaura = () => {
+register("tick", () => {
+    if (Config.chestaurabased) {
     new Thread(() => {
         if (Client.currentGui.get() == null) { // make sure not in gui
             for (let x = Player.getX() - 10; x < Player.getX() + 10; x++) { // get block x
@@ -26,69 +27,27 @@ const chestaura = () => {
         }
     }).start()
 }
+});
 
 // call me dumb theres prob better ways to make it loot the whole chest but this is easiest fr*ck optimization 
 const cheststealer = () => {
     new Thread(() => {
         let inv = Player.getOpenedInventory() // makes inv into variable
         if (inv.getName().includes("Chest")) { // checks if guis name includes "chest"
-        inv.click(0, true, "LEFT"); // litterally clicks every possible slot in a 1x1 chest
-        Thread.sleep((Config.yourping) / 10); // delay to stop you being kicked for "bad client inventory move"
-        inv.click(1, true, "LEFT");
-        Thread.sleep((Config.yourping) / 10);
-        inv.click(2, true, "LEFT");
-        Thread.sleep((Config.yourping) / 10);
-        inv.click(3, true, "LEFT");
-        Thread.sleep((Config.yourping) / 10);
-        inv.click(4, true, "LEFT");
-        Thread.sleep((Config.yourping) / 10);
-        inv.click(5, true, "LEFT");
-        Thread.sleep((Config.yourping) / 10);
-        inv.click(6, true, "LEFT");
-        Thread.sleep((Config.yourping) / 10);
-        inv.click(7, true, "LEFT");
-        Thread.sleep((Config.yourping) / 10);
-        inv.click(8, true, "LEFT");
-        Thread.sleep((Config.yourping) / 10);
-        inv.click(9, true, "LEFT");
-        Thread.sleep((Config.yourping) / 10);
-        inv.click(10, true, "LEFT");
-        Thread.sleep((Config.yourping) / 10);
-        inv.click(11, true, "LEFT");
-        Thread.sleep((Config.yourping) / 10);
-        inv.click(12, true, "LEFT");
-        Thread.sleep((Config.yourping) / 10);
-        inv.click(13, true, "LEFT");
-        Thread.sleep((Config.yourping) / 10);
-        inv.click(14, true, "LEFT");
-        Thread.sleep((Config.yourping) / 10);
-        inv.click(15, true, "LEFT");
-        Thread.sleep((Config.yourping) / 10);
-        inv.click(16, true, "LEFT");
-        Thread.sleep((Config.yourping) / 10);
-        inv.click(17, true, "LEFT");
-        Thread.sleep((Config.yourping) / 10);
-        inv.click(18, true, "LEFT");
-        Thread.sleep((Config.yourping) / 10);
-        inv.click(19, true, "LEFT");
-        Thread.sleep((Config.yourping) / 10);
-        inv.click(20, true, "LEFT");
-        Thread.sleep((Config.yourping) / 10);
-        inv.click(21, true, "LEFT");
-        Thread.sleep((Config.yourping) / 10);
-        inv.click(22, true, "LEFT");
-        Thread.sleep((Config.yourping) / 10);
-        inv.click(23, true, "LEFT");
-        Thread.sleep((Config.yourping) / 10);
-        inv.click(24, true, "LEFT");
-        Thread.sleep((Config.yourping) / 10);
-        inv.click(25, true, "LEFT");
-        Thread.sleep((Config.yourping) / 10);
-        inv.click(26, true, "LEFT");
-        Client.currentGui.close();
+            for (let i = 0; i < 27; i++) { // making "i" a variable
+                let item = inv.getStackInSlot(i); // makes item into variable
+                if (item !== null) { // checks if items an item
+                    Thread.sleep(20); // delay to stop you being kicked for "bad client inventory move"
+                    inv.click(i, true, "LEFT"); // litterally clicks every possible slot in a 1x1 chest
+                }
+                if (i == 26) {
+                    Client.currentGui.close(); // closes gui when inv is empty
+                }
+            }
         }
     }).start()
 }
+// Client.currentGui.close(); // closes gui when inv is empty
 
 register("tick", () => {
     if (cheststealerkey.isPressed()) { // keybind!!!

@@ -5,7 +5,8 @@ const skullauratoggle = new KeyBind("Skull aura", Keyboard.KEY_NONE, "Mushroom")
 
 let alreadyClicked = new ArrayLists;
 
-const skullaura = () => {
+register("tick", () => {
+    if (Config.skuller) {
     new Thread(() => {
         if (Client.currentGui.get() == null) {
             for (let x = Player.getX() - 10; x < Player.getX() + 10; x++) {
@@ -26,6 +27,7 @@ const skullaura = () => {
         }
     }).start()
 }
+});
 
 register("tick", () => {
     if (skullauratoggle.isPressed()) {
@@ -46,9 +48,3 @@ register("command", () => {
     }`
     );
 }).setName("sa")
-
-register("tick", () => {
-    if (Config.skuller) {
-        skullaura();
-    }
-});

@@ -3,6 +3,21 @@ import Config from "../../Config/Config"
 
 const autoblocktoggle = new KeyBind("Autoblock", Keyboard.KEY_NONE, "Mushroom");
 
+register("step", () => {
+    if (Config.autoblockpog) {
+        if (Player.getHeldItem() !== null) {
+            if (Player.getHeldItem().getName().includes("Sword")) {
+                if (Client.currentGui.get() == null) {
+                    new Thread(() => {
+                        LeftClick.invoke(mc);
+                        Thread.sleep(50);
+                        RightClick.invoke(mc);
+                    }).start()
+                }
+            }
+        }
+    }
+}).setFps(8);
 
 register("tick", () => {
     if (autoblocktoggle.isPressed()) {
@@ -23,25 +38,3 @@ register("command", () => {
     }`
     );
 }).setName("ab")
-
-const autoblockcode = () => {
-                new Thread(() => {
-                    LeftClick.invoke(mc);
-                    Thread.sleep(50);
-                    RightClick.invoke(mc);
-                }).start()
-    };
-
-register("step", () => {
-    if (Config.autoblockpog) {
-        if (Player.getHeldItem() !== null) {
-            if (Player.getHeldItem().getName().includes("Sword")) {
-                if (Client.currentGui.get() == null) {
-                    autoblockcode();
-                }
-            }
-        }
-    }
-}).setFps(8);
-
-export {autoblockcode}

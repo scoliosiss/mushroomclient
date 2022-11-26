@@ -6,29 +6,18 @@ let ac = false;
 let lc = false;
 
 // i enjoy easy code
-
-const autoclicker = (ac) => {
-            if (ac) {
-                RightClick.invoke(mc);
-                }
-            }
-
-const leftclickac = (lc) => {
-            if (lc) {
-                LeftClick.invoke(mc);
-                }
-            }
 register("step", () => {
     if (ac) {
-        autoclicker(ac);
+        RightClick.invoke(mc);
     }
 }).setFps(Config.autoclickerspeed);
 
 register("step", () => {
     if (lc) {
-        leftclickac(lc);
+        LeftClick.invoke(mc);
     }
 }).setFps(Config.leftclickacspeed);
+
 register("tick", () => {
     if (autoClicker.isPressed()) {
         ChatLib.chat(`${

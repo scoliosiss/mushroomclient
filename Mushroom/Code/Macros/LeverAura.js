@@ -5,7 +5,8 @@ const leverauratoggle = new KeyBind("Lever aura", Keyboard.KEY_NONE, "Mushroom")
 
 let alreadyClicked = new ArrayLists;
 
-const leverauraer = () => {
+register("tick", () => {
+    if (Config.leverer) {
     new Thread(() => {
         if (Client.currentGui.get() == null) {
             for (let x = Player.getX() - 10; x < Player.getX() + 10; x++) {
@@ -26,6 +27,7 @@ const leverauraer = () => {
         }
     }).start()
 }
+});
 
 register("tick", () => {
     if (leverauratoggle.isPressed()) {
@@ -46,9 +48,3 @@ register("command", () => {
     }`
     );
 }).setName("la")
-
-register("tick", () => {
-    if (Config.leverer) {
-        leverauraer();
-    }
-});

@@ -1,0 +1,170 @@
+
+[macro]
+	"&cchest_stealer" = true
+	"&cskull_aura" = false
+	"&clever_aura" = false
+	"&cchest_aura" = false
+
+	[macro.__]
+		"&csnowball_swap" = false
+		"&cfishing_rod_swap" = false
+
+	[macro.___]
+		"&cauction_sniper" = false
+		"&cauction_sniper_p2" = true
+
+	[macro._]
+		"&cscaffold" = false
+
+[other]
+
+	[other.__]
+		"&2mushroom_rainbow" = true
+		"&bmushroom_client_text" = true
+		"&cmushroom_client_on_top" = false
+		"&9mushroom_shadow" = false
+		"&amushroom_client_logo" = false
+
+	[other.____]
+		"&aclick_for_updates!" = true
+		"&3funny_score_calc" = true
+		"&c270_score_message" = "lunar client > 269 score"
+		"&3p3_ghostblocks" = true
+		"&3dungeon_score_calc" = true
+		"&c300_score_message" = "lunar client > 269 score"
+
+	[other.___]
+		"&cdiscord_rpc_bottom_text" = "mushroom client best"
+		"&cdiscord_rpc_text" = "i like kids"
+		"&ddiscord_rpc_picture" = 0
+		"&3discord_rpc" = true
+		"&3discord_rpc_location" = true
+
+	[other._]
+		"&cs&ep&ca&en&ci&es&ch" = false
+		"&comega_hilarity" = true
+		"&clarge_hilarity" = false
+		"&ahilarity" = true
+		"&4large_hilarity" = false
+
+[chat_macro]
+	"&bguild_bridge_bots_name" = "DefyBridge"
+	"&awelcome_guild!!!" = false
+	"&bwelcome_guild_message" = "Good morning player how are you"
+	"&aguild_bridge_bot" = false
+	"&awelcome_guild_message_part_2" = "how are you doing?"
+
+	[chat_macro.__]
+		"&cauto_send_quickmaths_answer" = true
+		"&aquickmaths_solver!" = true
+
+	[chat_macro.______]
+		"&5self_death_message" = "TANKS FAULT! OMFG WHY IS HE NOT NEAR ME WHERES THE HEALER MAN PLEASE MASTIFF WISH AND WHY IS NO ONE CLEARING MY ROOMS FOR ME YOUR ALL THROWING"
+		"&cl_guy_died!" = true
+		"&cdeath_message" = "OMG LOOK AT THIS NON! player has died! BAD"
+
+	[chat_macro.____]
+		"&dauto_party_transfer" = true
+
+	[chat_macro.___]
+		"&5\"wrong_chat\"" = false
+		"&b\"gg\"" = false
+		"&b\"gg\"_in_guild_chat" = false
+		"&5\"wrong_chat\"_in_guild_chat" = false
+		"&5\"wrong_chat\"_in_party_chat" = false
+		"&b\"gg\"_in_party_chat" = false
+
+	[chat_macro._]
+		"&18ball" = true
+		"&1guild_maths_bot" = true
+
+[skyblock]
+	"&3autoharp" = true
+	"&3auto_kick_shitters" = false
+	"&3funny_score_calc" = false
+	"&3shitter_warning" = true
+	"&3dungeon_score_calc_message" = true
+	"&3dungeon_score_calc" = true
+
+	[skyblock.__]
+		"&3autoharp" = true
+		"&3autoterms" = false
+		"&3p3_ghostblocks" = true
+
+	[skyblock.______]
+		"&5self_death_message" = "TANKS FAULT! OMFG WHY IS HE NOT NEAR ME WHERES THE HEALER MAN PLEASE MASTIFF WISH AND WHY IS NO ONE CLEARING MY ROOMS FOR ME YOUR ALL THROWING"
+		"&cl_guy_died!" = true
+		"&cdeath_message" = "OMG LOOK AT THIS NON! player has died! BAD"
+
+	[skyblock.___]
+		"&3autoharp" = true
+		"&cauction_sniper" = false
+		"&cm6_gyro_times_for_mage" = true
+		"&cauction_sniper_p2" = false
+		"&3titanium_esp" = true
+
+	[skyblock._]
+		"&c270_score_message" = "lunar client > 269 score"
+		"&c300_score_message" = "this could be us but you playin: https://imgur.com/X4ekG2U"
+
+[visual]
+	"&aesp_color" = "255,0,255,0"
+	"&cplayer_esp" = false
+	"&citem_esp" = false
+	"&cesp_armorstands" = false
+	"&cskull_esp" = false
+	"&cchest_esp" = false
+	"&centity_esp" = true
+
+	[visual.__]
+		"&afakeban_time" = 1
+		"&5custom_fakeban_reason" = "Cheating through the use of unfair game advantages."
+		"&4custom_fakeban_perm" = false
+		"&dfakeban_type" = 5
+		"&ecustom_fakeban_time" = "29d 23h 55m 29s"
+
+	[visual._]
+		"&bfake_rank_you_want_to_show" = "§c§lM§f§lu§c§ls§f§lh§c§lr§f§lo§c§lo§f§lo§c§lm §lClient§f§l"
+		"&3fakename" = false
+		"&bfake_name_you_want_to_show" = "§c§lM§f§lu§c§ls§f§lh§c§lr§f§lo§c§lo§f§lo§c§lm §lClient§f§l"
+
+[combat]
+	"&cleft_click_cps_multiplier" = false
+	"&cright_click_cps_multiplier" = false
+	"&ccps_multiplier" = false
+
+	[combat.__]
+		"&creach" = false
+		"&ckillaura" = false
+		"&canti_knockback" = false
+
+	[combat._]
+		"&cautoblock" = false
+
+[sliders]
+	"&cping" = 200
+	"&4hilarity_speed" = 885
+
+	[sliders.____]
+		"&4autoterm_speed" = 200
+		"&4left_click_auto_clicker_speed" = 20
+
+	[sliders.___]
+		"&4right_click_auto_clicker_speed" = 12
+		"&4zombies_gun_macro_speed" = 500
+
+	[sliders._]
+		"&cskull_aura_reach" = 5
+		"&clever_aura_reach" = 5
+		"&bquickmaths_solver_speed" = 155
+		"&cchest_aura_reach" = 5
+
+[cosmetics]
+
+	[cosmetics.__]
+		"&duwu_mommy_cape" = false
+		"&lrgb_names" = false
+
+	[cosmetics._]
+		"&lput_rgb_name_here" = "&d&lIfallAddons§f§l"
+

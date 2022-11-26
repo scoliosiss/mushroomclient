@@ -1,3 +1,5 @@
+let hoekYaw
+let hoekPitch
 const prefix = "§c§lM§f§lu§c§ls§f§lh§c§lr§f§lo§c§lo§f§lo§c§lm §lClient§f§l"
 const colors = ["&a","&b","&c","&d","&e","&f","&0","&1","&2","&3","&4","&5","&6","&7","&8","&9"]
 const BP = Java.type("net.minecraft.util.BlockPos");
@@ -30,5 +32,41 @@ const getPlayerHead = (playername) => {
     if (!player) return
     return new Image(javax.imageio.ImageIO.read(new java.net.URL(`https://crafatar.com/avatars/${player.getUUID()}`)))
 }
+//field_73088_d
+function radians_to_degrees(radians) {
+    var pi = Math.PI;
+    return radians * (180/pi);
+  }
+  function lookAt(x, y, z) {
+    let PlayerAngleYaw = Player.getPlayer().field_70177_z
+    let AngleYaw
+    PlayerAngleYaw %= 360
+    let dX = Player.getX() - x + 0.00001
+    let dZ = Player.getZ() - z + 0.00001
+    let dY = Player.getY() - y + 0.00001
+    let dis = Math.sqrt((dX * dX) + (dZ * dZ))
+    if(dX < 0.0 && dZ < 0.0) {
+        AngleYaw = radians_to_degrees(Math.atan(dZ/dX)) + 180
+    } else if(dZ < 0.0 && dX > 0.0) {
+        AngleYaw = radians_to_degrees(Math.atan(dZ/dX)) + 360
+    } else if(dZ > 0.0 && dX < 0.0) {
+        AngleYaw = radians_to_degrees(Math.atan(dZ/dX)) + 180
+    } else if(dZ > 0.0 && dX > 0.0){
+        AngleYaw = radians_to_degrees(Math.atan(dZ/dX))
+    }
+    hoekYaw = AngleYaw - PlayerAngleYaw + 90
+    Player.getPlayer().field_70177_z += hoekYaw 
+    hoekPitch = radians_to_degrees(Math.atan(dY/dis)) - Player.getPlayer().field_70125_A
+    Player.getPlayer().field_70125_A += hoekPitch 
+}
+function distanceToPlayer(x,y,z) {
+    let dX = Player.getX() - x
+    let dZ = Player.getZ() - z
+    let dY = Player.getY() - y
+    let dis = Math.sqrt((dX * dX) + (dZ * dZ))
+    let dis2 = Math.sqrt((dis * dis) + (dY * dY))
+    return dis2
+}
 
-export {prefix, colors, BP, swaptoslot, C08PacketPlayerBlockPlacement, cancelrightclick, positionset, setPosition, mc, LeftClick, RightClick, blockbreak, pa, EnumFacing, BlockPoss, BlockAir, Vec3, BlockChest, BlockLever, BlockSkull, ArrayLists, noghostblock, noscaffoldblock, scaffoldblocks, getVersion, getPlayerHead}
+
+export {prefix, colors, BP, swaptoslot, C08PacketPlayerBlockPlacement, cancelrightclick, positionset, setPosition, mc, LeftClick, RightClick, blockbreak, pa, EnumFacing, BlockPoss, BlockAir, Vec3, BlockChest, BlockLever, BlockSkull, ArrayLists, noghostblock, noscaffoldblock, scaffoldblocks, getVersion, getPlayerHead, radians_to_degrees, lookAt, distanceToPlayer}
