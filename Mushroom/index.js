@@ -72,7 +72,7 @@ ChatLib.chat(ChatLib.getCenteredText(`&b&l&nMushroom Client v${getVersion()}`));
 ChatLib.chat(ChatLib.getCenteredText(""));
 ChatLib.chat(ChatLib.getCenteredText("&a&lThank for for installing §c§lM§f§lu§c§ls§f§lh§c§lr§f§lo§c§lo§f§lo§c§lm §lClient!")); // mushroom client couldve been typed with ${prefix}
 ChatLib.chat(ChatLib.getCenteredText("&2&lTo Access the gui run &c&l/mc!"));
-ChatLib.chat(ChatLib.getCenteredText("&6&lTo check commands do /mhelp")); // this feature is barely used.
+ChatLib.chat(ChatLib.getCenteredText("&6&lTo check commands do /mhelp"));
 ChatLib.chat(ChatLib.getCenteredText("")); // awesome text man
 ChatLib.chat(ChatLib.getChatBreak("&9-"));
 

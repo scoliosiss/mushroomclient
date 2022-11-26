@@ -517,7 +517,7 @@ scaffoldi = false;
         category: "Sliders",
         subcategory: "   ",
         min: 1,
-        max: 1000
+        max: 30
     })
     autoclickerspeed = 20;
     
@@ -526,13 +526,12 @@ scaffoldi = false;
         name: "&4left click auto Clicker Speed",
         description: "&cSpeed of autoclicker\n&aRun /ct load to change speed",
         category: "Sliders",
-        subcategory: "    ",
+        subcategory: "   ",
         min: 1,
-        max: 1000
+        max: 30
     })
     leftclickacspeed = 20;
 
-    
     @SliderProperty({
         name: "&bQuickmaths solver speed",
         description: "&9Speed of auto send in milliseconds",

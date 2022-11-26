@@ -3,7 +3,8 @@ import {prefix, mc, swaptoslot, EnumFacing, BlockPoss, Vec3, noscaffoldblock, sc
 
 const scaffoldtoggle = new KeyBind("Scaffold", Keyboard.KEY_NONE, "Mushroom");
 
-const scaffolding = () => {
+register("step", () => {
+    if (Config.scaffoldi) {
     new Thread(() => {
         if (Client.currentGui.get() == null) {
                         let position = new BlockPoss(Player.getX(), Player.getY()-1, Player.getZ());
@@ -20,6 +21,7 @@ const scaffolding = () => {
         }
     }).start()
 }
+}).setFps(12)
 
 register("tick", () => {
     if (scaffoldtoggle.isPressed()) {
@@ -31,9 +33,3 @@ register("tick", () => {
         );
     }
 });
-
-register("step", () => {
-    if (Config.scaffoldi) {
-        scaffolding();
-    }
-}).setFps(12)

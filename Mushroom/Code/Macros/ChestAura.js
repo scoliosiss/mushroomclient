@@ -30,7 +30,8 @@ register("tick", () => {
 });
 
 // call me dumb theres prob better ways to make it loot the whole chest but this is easiest fr*ck optimization 
-const cheststealer = () => {
+register("tick", () => {
+    if (Config.cheststealer) {
     new Thread(() => {
         let inv = Player.getOpenedInventory() // makes inv into variable
         if (inv.getName().includes("Chest")) { // checks if guis name includes "chest"
@@ -47,6 +48,7 @@ const cheststealer = () => {
         }
     }).start()
 }
+});
 // Client.currentGui.close(); // closes gui when inv is empty
 
 register("tick", () => {
@@ -61,12 +63,6 @@ register("tick", () => {
 });
 
 register("tick", () => {
-    if (Config.cheststealer) {
-        cheststealer();
-    }
-});
-
-register("tick", () => {
     if (chestauratoggle.isPressed()) {
         ChatLib.chat(`${
             (Config.chestaurabased = !Config.chestaurabased) 
@@ -74,13 +70,5 @@ register("tick", () => {
             : prefix + " >" + "&r&c Chest aura"
         }`
         );
-    }
-});
-
-
-
-register("tick", () => {
-    if (Config.chestaurabased) {
-        chestaura();
     }
 });

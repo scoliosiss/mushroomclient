@@ -1,5 +1,6 @@
 import Config from "../../Config/Config"
 import {} from "../Utils";
+/*
 const kbpacket = Java.type("net.minecraft.network.play.server.S12PacketEntityVelocity");
 
 register("step", (event) => {
@@ -13,3 +14,4 @@ register("step", (event) => {
         Client.sendPacket(Player.func_70016_h(motionZ))
     }
 });
+*/

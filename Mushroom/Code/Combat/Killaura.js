@@ -15,7 +15,6 @@ register("step", () => {
                     let lookingAt = Player.lookingAt();
                     if (lookingAt.getClass() === Block) {
                         World.getWorld().func_175698_g(new BP(lookingAt.getX(), lookingAt.getY(), lookingAt.getZ())); 
-                        LeftClick.invoke(mc)
                     }  
                     LeftClick.invoke(mc)
                 }

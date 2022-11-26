@@ -1,6 +1,6 @@
 import {prefix} from "../Utils"
 import Config from "../../Config/Config"
-
+/*
 const reach = new KeyBind("Reach", Keyboard.KEY_NONE, "Mushroom");
 
 register("tick", () => {
@@ -13,7 +13,7 @@ register("tick", () => {
         );
     }
 });
-/*
+
 // lol this code is java
 register("tick", () => {
     if (Config.reach) {

@@ -1,8 +1,7 @@
 import Config from "../../Config/Config"
 import {prefix, mc, RightClick, LeftClick} from "../Utils";
 
-// doesnt work?
-
+// awesome
 let delay = Date.now();
 
 register("playerInteract", (action) => {

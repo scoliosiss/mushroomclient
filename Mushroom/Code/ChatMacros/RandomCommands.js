@@ -3,7 +3,6 @@ import {prefix} from "../Utils"
 const randomnumber = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
 const randomcolors = ["1⬛ Blue", "2⬛ Dark Green", "3⬛ Cyan", "4⬛ Dark Red", "5⬛ Purple", "6⬛ Gold", "7⬛ Grey", "8⬛ Dark Grey", "9⬛ Blue", "0⬛ Black", "a⬛ Green","b⬛ Light Blue","c⬛ Light Red","d⬛ Pink","e⬛ Yellow","f⬛ White"]
 const Coinflip = ["Heads", "Tails"]
-// const funnything = (Client.getMinecraft().func_110432_I().func_111286_b())
 var messagehider=false
 var renderSquareX = 0;
 var renderSquareY = 0;
@@ -34,7 +33,6 @@ register("command", () => {ChatLib.chat (prefix + "\n\n&d&n&lRandom Color List:\
 register("command", () => {gui.open();}).setName("keycode")
 register("command", () => {ChatLib.say("/g online")}).setName("gon")
 register("command", () => {ChatLib.copy("⃟  ࣾࣾࣾ#9979")}).setName("mydiscord")
-// register("command", () => {ChatLib.chat(Client.getMinecraft().func_110432_I().func_111286_b())}).setName("session")
 register("command", () => {for (let i = 0; i < lines.length; i++) {ChatLib.chat(`${lines[i]}`)}}).setName("tab")
 
 register("command", () => {
