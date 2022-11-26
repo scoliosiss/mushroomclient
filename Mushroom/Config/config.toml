@@ -124,9 +124,9 @@
 		"&ecustom_fakeban_time" = "29d 23h 55m 29s"
 
 	[visual._]
-		"&bfake_rank_you_want_to_show" = "§c§lM§f§lu§c§ls§f§lh§c§lr§f§lo§c§lo§f§lo§c§lm §lClient§f§l"
+		"&bfake_rank_you_want_to_show" = "&c[pisser]"
 		"&3fakename" = false
-		"&bfake_name_you_want_to_show" = "§c§lM§f§lu§c§ls§f§lh§c§lr§f§lo§c§lo§f§lo§c§lm §lClient§f§l"
+		"&bfake_name_you_want_to_show" = "&dpee"
 
 [combat]
 	"&cleft_click_cps_multiplier" = false
@@ -146,11 +146,12 @@
 	"&4hilarity_speed" = 885
 
 	[sliders.____]
-		"&4autoterm_speed" = 200
+		"&4autoterm_speed" = 1
 		"&4left_click_auto_clicker_speed" = 20
 
 	[sliders.___]
 		"&4right_click_auto_clicker_speed" = 12
+		"&4left_click_auto_clicker_speed" = 20
 		"&4zombies_gun_macro_speed" = 500
 
 	[sliders._]
