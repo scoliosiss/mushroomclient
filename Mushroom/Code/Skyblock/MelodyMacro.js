@@ -33,6 +33,4 @@ register('tick', () => {
     })
 })
 
-register('command', () => {
-    ChatLib.chat(`${prefix} > ` + ((Config.autoharp = !Config.autoharp) ? '&aAutoharp' : '&cAutoharp'))
-}).setName('autoharp')
+

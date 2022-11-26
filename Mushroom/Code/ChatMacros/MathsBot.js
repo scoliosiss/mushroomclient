@@ -7,9 +7,8 @@ const mathReg = /^[0-9()*^+-/]*$/
   register("chat", (chat, person, question) => {
     question = question.replace(/x/gi, "*");
     if (mathReg.test(question)) {
-      if (!Config.quickmathssolver) return;
+      if (!Config.guildmathsbot) return;
       ChatLib.chat(prefix + " &a&lThe answer is: &c" + eval(question));
-      if (!Config.quickmathsautosend) return;
       setTimeout() ; 1
       var delayInMilliseconds = Config.quickmathsautosendcooldown;
       setTimeout(function() {

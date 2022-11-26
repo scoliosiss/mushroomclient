@@ -9,7 +9,7 @@ const ahsnipe = () => {
         let inv = Player.getOpenedInventory()
         if (inv.getName().includes("BIN")) {
         inv.click(31, false, "LEFT");
-        Thread.sleep(Config.yourping)
+        Thread.sleep(200)
         let newinv = Player.getOpenedInventory()
         if (newinv.getName().includes("Confirm")) {
         newinv.click(11, false, "LEFT");

@@ -1,8 +1,9 @@
 import Config from "../../Config/Config"
-import {C08PacketPlayerBlockPlacement, BP, prefix} from "../Utils"
+import {prefix} from "../Utils"
 const randomnumber = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
 const randomcolors = ["1⬛ Blue", "2⬛ Dark Green", "3⬛ Cyan", "4⬛ Dark Red", "5⬛ Purple", "6⬛ Gold", "7⬛ Grey", "8⬛ Dark Grey", "9⬛ Blue", "0⬛ Black", "a⬛ Green","b⬛ Light Blue","c⬛ Light Red","d⬛ Pink","e⬛ Yellow","f⬛ White"]
 const Coinflip = ["Heads", "Tails"]
+// const funnything = (Client.getMinecraft().func_110432_I().func_111286_b())
 var messagehider=false
 var renderSquareX = 0;
 var renderSquareY = 0;
@@ -33,52 +34,8 @@ register("command", () => {ChatLib.chat (prefix + "\n\n&d&n&lRandom Color List:\
 register("command", () => {gui.open();}).setName("keycode")
 register("command", () => {ChatLib.say("/g online")}).setName("gon")
 register("command", () => {ChatLib.copy("⃟  ࣾࣾࣾ#9979")}).setName("mydiscord")
+// register("command", () => {ChatLib.chat(Client.getMinecraft().func_110432_I().func_111286_b())}).setName("session")
 register("command", () => {for (let i = 0; i < lines.length; i++) {ChatLib.chat(`${lines[i]}`)}}).setName("tab")
-register("command", ping => {ping;
-  ChatLib.chat(prefix + "&a ping set to &c" + ping);
-  (Config.yourping = ping)
-}).setName("ping");
-
-register("command", nickname => {nickname;
-  ChatLib.chat(prefix + "&a fakename set to &f" + nickname);
-  (Config.fakename = nickname)
-}).setName("fn");
-
-register("command", fakeran => {fakeran;
-  ChatLib.chat(prefix + "&a fakerank set to &f" + fakeran);
-  (Config.fakerank = fakeran)
-}).setName("fr");
-
-register("command", acr => {acr;
-  ChatLib.chat(prefix + " >" + "&a Autoclicker right speed set to &c" + acr);
-  (Config.autoclickerspeed = acr)
-}).setName("acr");
-
-register("command", acl => {acl;
-  ChatLib.chat(prefix + " >" + "&a Autoclicker left speed set to &c" + acl);
-  (Config.leftclickacspeed = acl)
-}).setName("acl");
-
-register("command", zms => {zms;
-  ChatLib.chat(prefix + " >" + "&a Swapmacro speed set to &c" + zms);
-  (Config.Zombiesgunmacrospeed = zms)
-}).setName("zms");
-
-register("command", car => {car;
-  ChatLib.chat(prefix + " >" + "&a Chestaura reach set to &c" + car);
-  (Config.auraReach = car)
-}).setName("car");
-
-register("command", sar => {sar;
-  ChatLib.chat(prefix + " >" + "&a Skullaura reach set to &c" + sar);
-  (Config.skullreach = sar)
-}).setName("sar");
-
-register("command", lar => {lar;
-  ChatLib.chat(prefix + " >" + "&a Leveraura reach set to &c" + lar);
-  (Config.skullreach = lar)
-}).setName("lar");
-
 
 register("command", () => {
   messagehider=true
@@ -122,27 +79,259 @@ register("command", () => {
   register("command", () => {
   ChatLib.chat(
     `&9-----------------------------------------------------
-    §f§l[§c§lM§f§lu§c§ls§f§lh§c§lr§f§lo§c§lo§f§lo§c§lm §lClient§f§l]
-    &4Commands:
-    &1/sl to get to limbo
-    &2/empty to say an empty message
-    &3/scalesy to see my face
-    &4/lf to see your friends
-    &5/updates to check for updates
-    &6/tab to see tab in chat
-    &9/gon to run /g online
-    &a/yeet to get rid of friends
-    &b/keycode to see keycodes of keys
-    &c/imgay to be Banned.
-    &d/randomnumber and /coinflip
-    &e/memotes to see emotes
-    &9/acr to set right click ac speed
-    &9/acl to set left click ac speed
-    &6/ping set the ping for some modules
-    &5/esp self explanatory
-    &3/fn to set a fake name
-    &1/zms to set a swapmacro speed
-  &9-----------------------------------------------------`
+    ${prefix}
+    &4&lCommands:
+    &1/mtoggles to see all toggle commands
+    &2/msliders to change sliders
+    &3/mfunnys for random commands
+&9-----------------------------------------------------`
   )
 }).setName("mhelp")
 
+register("command", () => {
+  ChatLib.chat(
+    `&9-----------------------------------------------------
+    ${prefix}
+    &4&lCommands:
+    &9/zapreset to reset block zapper cooldown
+    &6/shitcheck to check if a player is a shitter
+    &5/tab to see tab in chat (doesnt work in sb)
+    &a/yeet to get rid of ALL your friends
+    &b/keycode to see keycodes of keys
+    &2/empty to say an empty message
+    &d/randomnumber and /coinflip
+    &3/scalesy to see my face
+    &4/lf to see your friends
+    &e/memotes to see emotes
+    &7/fn to set a fake name
+    &6/gon to run /g online
+    &c/imgay to be Banned.
+    &1/sl to get to limbo
+&9-----------------------------------------------------`
+  )
+}).setName("mfunnys")
+
+register("command", () => {
+  ChatLib.chat(
+    `&9-----------------------------------------------------
+    ${prefix}
+    &4&lCommands:
+    &1/ams to set auto quickmaths speed
+    &2/acr to set right click ac speed
+    &3/acl to set left click ac speed
+    &4/zms to set a swapmacro speed
+    &5/ats to set auto term speed
+    &6/hls to set hillarity speed
+    &a/car to set chest aura reach
+    &b/sar to set skull aura reach
+    &c/lar to set skull aura reach
+&9-----------------------------------------------------`
+  )
+}).setName("msliders")
+
+register("command", () => {
+  ChatLib.chat(
+    `&9-----------------------------------------------------
+    ${prefix}
+    &4&lCommands:
+    &1/arc to toggle right click autoclicker
+    &2/alc to toggle left click autoclicker
+    &3/as to toggle auto snowball swap
+    &4/ar to toggle auto rod swap
+    &5/aesp to toggle entity esp
+    &6/esp to toggle player esp
+    &7/cesp to toggle chest esp
+    &8/sesp to toggle skull esp
+    &a/iesp to toggle item esp
+    &9/ahm to toggle autoharp
+    &6/ab to toggle autoblock
+    &b/ca to toggle chest aura
+    &c/la to toggle lever aura
+    &d/sa to toggle skull aura
+    &e/ka to toggle kill aura
+&9-----------------------------------------------------`
+  )
+}).setName("mtoggles")
+
+// --------------------------------------------------------
+// toggles
+
+register("command", () => {
+  ChatLib.chat(`${
+      (Config.autoblockpog = !Config.autoblockpog) 
+      ? prefix + " >" + "&r&a Autoblock" 
+      : prefix + " >" + "&r&c Autoblock"
+  }`
+  );
+}).setName("ab")
+
+
+register("command", () => {
+  ChatLib.chat(`${
+      (Config.killaura = !Config.killaura) 
+      ? prefix + " >" + "&r&a Killaura" 
+      : prefix + " >" + "&r&c Killaura"
+  }`
+  );
+}).setName("ka")
+
+register("command", () => {
+  ChatLib.chat(`${
+      (Config.chestaurabased = !Config.chestaurabased) 
+      ? prefix + " >" + "&r&a Chest aura" 
+      : prefix + " >" + "&r&c Chest aura"
+  }`
+  );
+}).setName("ca")
+
+register("command", () => {
+  ChatLib.chat(`${
+      (Config.leverer = !Config.leverer) 
+      ? prefix + " >" + "&r&a Lever aura" 
+      : prefix + " >" + "&r&c Lever aura"
+  }`
+  );
+}).setName("la")
+
+
+register("command", () => {
+  ChatLib.chat(`${
+      (Config.skuller = !Config.skuller) 
+      ? prefix + " >" + "&r&a Skull aura" 
+      : prefix + " >" + "&r&c Skull aura"
+  }`
+  );
+}).setName("sa")
+
+
+register("command", () => {
+  ChatLib.chat(`${
+      (Config.fishingrodswap = !Config.fishingrodswap) 
+      ? prefix + " >" + "&r&a Auto rod" 
+      : prefix + " >" + "&r&c Auto rod"
+  }`
+  );
+}).setName("ar")
+
+register("command", () => {
+  ChatLib.chat(`${
+      (Config.snowballswap = !Config.snowballswap) 
+      ? prefix + " >" + "&r&a Auto snowball" 
+      : prefix + " >" + "&r&c Auto snowball"
+  }`
+  );
+}).setName("as")
+
+register('command', () => {
+  ChatLib.chat(`${
+    (Config.autoharp = !Config.autoharp)
+    ? prefix + " >" + "&aAutoharp"
+    : prefix + " >" + "&cAutoharp"
+  }`
+  );
+}).setName('ahm')
+
+
+register("command", () => {
+  ChatLib.chat(`${
+      (Config.chestesppog = !Config.chestesppog) 
+      ? prefix + " >" + "&r&a Chest ESP" 
+      : prefix + " >" + "&r&c Chest ESP"
+  }`
+  );
+}).setName("cesp")
+
+
+register("command", () => {
+  ChatLib.chat(`${
+      (Config.PlayerESP = !Config.PlayerESP) 
+      ? prefix + " >" + "&r&a ESP" 
+      : prefix + " >" + "&r&c ESP"
+  }`
+  );
+}).setName("esp")
+
+register("command", () => {
+  ChatLib.chat(`${
+      (Config.ItemESP = !Config.ItemESP) 
+      ? prefix + " >" + "&r&a Item ESP" 
+      : prefix + " >" + "&r&c Item ESP"
+  }`
+  );
+}).setName("iesp")
+
+register("command", () => {
+  ChatLib.chat(`${
+      (Config.Armorstandesp = !Config.Armorstandesp) 
+      ? prefix + " >" + "&r&a ALL entity ESP" 
+      : prefix + " >" + "&r&c ALL entity ESP"
+  }`
+  );
+}).setName("aesp")
+
+register("command", () => {
+  ChatLib.chat(`${
+      (Config.skullesppogger = !Config.skullesppogger) 
+      ? prefix + " >" + "&r&a Skull ESP" 
+      : prefix + " >" + "&r&c Skull ESP"
+  }`
+  );
+}).setName("sesp")
+
+// --------------------------------------------------------
+// sliders
+
+register("command", ams => {ams;
+  ChatLib.chat(prefix + "&a quickmaths speed set to &f" + ams);
+  (Config.quickmathsautosendcooldown = ams)
+}).setName("ams");
+
+register("command", acr => {acr;
+  ChatLib.chat(prefix + " >" + "&a Autoclicker right speed set to &c" + acr);
+  (Config.autoclickerspeed = acr)
+}).setName("acr");
+
+register("command", acl => {acl;
+  ChatLib.chat(prefix + " >" + "&a Autoclicker left speed set to &c" + acl);
+  (Config.leftclickacspeed = acl)
+}).setName("acl");
+
+register("command", zms => {zms;
+  ChatLib.chat(prefix + " >" + "&a Swapmacro speed set to &c" + zms);
+  (Config.Zombiesgunmacrospeed = zms)
+}).setName("zms");
+
+register("command", ats => {ats;
+  ChatLib.chat(prefix + " >" + "&a Autoterm speed set to &c" + ats);
+  (Config.autotermspeed = ats)
+}).setName("ats");
+
+register("command", hls => {hls;
+  ChatLib.chat(prefix + " >" + "&a Hilarity speed set to &c" + hls);
+  (Config.autotermspeed = hls)
+}).setName("hls");
+
+register("command", car => {car;
+  ChatLib.chat(prefix + " >" + "&a Chestaura reach set to &c" + car);
+  (Config.auraReach = car)
+}).setName("car");
+
+register("command", sar => {sar;
+  ChatLib.chat(prefix + " >" + "&a Skullaura reach set to &c" + sar);
+  (Config.skullreach = sar)
+}).setName("sar");
+
+register("command", lar => {lar;
+  ChatLib.chat(prefix + " >" + "&a Leveraura reach set to &c" + lar);
+  (Config.skullreach = lar)
+}).setName("lar");
+
+register("command", nickname => {nickname;
+  ChatLib.chat(prefix + "&a fakename set to &f" + nickname);
+  (Config.fakename = nickname)
+}).setName("fn");
+
+register("command", fakeran => {fakeran;
+  ChatLib.chat(prefix + "&a fakerank set to &f" + fakeran);
+  (Config.fakerank = fakeran)
+}).setName("fr");

@@ -69,21 +69,3 @@ register("tick", () => {
         );
     }
 });
-
-register("command", () => {
-    ChatLib.chat(`${
-        (Config.fishingrodswap = !Config.fishingrodswap) 
-        ? prefix + " >" + "&r&a Auto rod" 
-        : prefix + " >" + "&r&c Auto rod"
-    }`
-    );
-}).setName("ar")
-
-register("command", () => {
-    ChatLib.chat(`${
-        (Config.snowballswap = !Config.snowballswap) 
-        ? prefix + " >" + "&r&a Auto snowball" 
-        : prefix + " >" + "&r&c Auto snowball"
-    }`
-    );
-}).setName("as")

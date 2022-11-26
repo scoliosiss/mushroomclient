@@ -23,18 +23,9 @@ function seeskulls () {
 
 register("step", () => {
     if (Config.skullesppogger) {
-    seeskulls()
+        seeskulls()
     }
 }).setDelay(1)
-
-register("command", () => {
-    ChatLib.chat(`${
-        (Config.skullesppogger = !Config.skullesppogger) 
-        ? prefix + " >" + "&r&a Skull ESP" 
-        : prefix + " >" + "&r&c Skull ESP"
-    }`
-    );
-}).setName("sesp")
 
 register("tick", () => {
     if (skullespkey.isPressed()) {

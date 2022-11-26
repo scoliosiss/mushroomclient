@@ -1,11 +1,10 @@
 import Config from "../../Config/Config"
 import {} from "../Utils";
 const kbpacket = Java.type("net.minecraft.network.play.server.S12PacketEntityVelocity");
-const kbpacket2 = Java.type("net.minecraft.network.play.server.S12PacketEntityVelocity");
 
 register("step", (event) => {
     if (!Config.antiknockback) return;
-   if (event instanceof kbpacket || event instanceof kbpacket2) {
+    if (event instanceof kbpacket) {
         let motionX = Player.func_149149_c()
         let motionY = Player.func_149144_d()
         let motionZ = Player.func_149147_e()

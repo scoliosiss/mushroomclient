@@ -39,12 +39,3 @@ register("tick", () => {
         );
     }
 });
-
-register("command", () => {
-    ChatLib.chat(`${
-        (Config.skuller = !Config.skuller) 
-        ? prefix + " >" + "&r&a Skull aura" 
-        : prefix + " >" + "&r&c Skull aura"
-    }`
-    );
-}).setName("sa")

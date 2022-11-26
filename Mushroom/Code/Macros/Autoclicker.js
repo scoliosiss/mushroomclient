@@ -47,13 +47,13 @@ register("command", () => {
         : prefix + " >" + "&r&c Autoclicker right"
     }`
     );
-}).setName("arc")
-
-register("command", () => {
+  }).setName("arc")
+  
+  register("command", () => {
     ChatLib.chat(`${
         (lc = !lc) 
         ? prefix + " >" + "&r&a Autoclicker left" 
         : prefix + " >" + "&r&c Autoclicker left"
     }`
     );
-}).setName("alc")
+  }).setName("alc")

@@ -29,12 +29,3 @@ register("tick", () => {
         );
     }
 });
-
-register("command", () => {
-    ChatLib.chat(`${
-        (Config.autoblockpog = !Config.autoblockpog) 
-        ? prefix + " >" + "&r&a Autoblock" 
-        : prefix + " >" + "&r&c Autoblock"
-    }`
-    );
-}).setName("ab")

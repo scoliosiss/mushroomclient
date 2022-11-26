@@ -77,14 +77,7 @@ register("tick", () => {
     }
 });
 
-register("command", () => {
-    ChatLib.chat(`${
-        (Config.chestaurabased = !Config.chestaurabased) 
-        ? prefix + " >" + "&r&a Chest aura" 
-        : prefix + " >" + "&r&c Chest aura"
-    }`
-    );
-}).setName("ca")
+
 
 register("tick", () => {
     if (Config.chestaurabased) {

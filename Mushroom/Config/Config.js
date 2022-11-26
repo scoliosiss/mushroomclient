@@ -533,17 +533,6 @@ scaffoldi = false;
     leftclickacspeed = 20;
 
     
-  @SliderProperty({
-    name: "&cPing",
-    description: "&4Set your ping\n&4used for some features to not get u banned",
-    category: "Sliders",
-    subcategory: "",
-    min: 1,
-    max: 1000
-    })
-    yourping = 100;
-
-    
     @SliderProperty({
         name: "&bQuickmaths solver speed",
         description: "&9Speed of auto send in milliseconds",

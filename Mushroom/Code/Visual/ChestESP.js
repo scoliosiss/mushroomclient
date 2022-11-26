@@ -26,14 +26,6 @@ register("step", () => { // draws the box
     }
 }).setDelay(1) // once every second 
 
-register("command", () => {
-    ChatLib.chat(`${
-        (Config.chestesppog = !Config.chestesppog) 
-        ? prefix + " >" + "&r&a Chest ESP" 
-        : prefix + " >" + "&r&c Chest ESP"
-    }`
-    );
-}).setName("cesp")
 
 register("tick", () => {
     if (chestespkey.isPressed()) {

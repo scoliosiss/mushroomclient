@@ -22,33 +22,6 @@ register("renderEntity", (entity) => {
     }
 })
 
-register("command", () => {
-    ChatLib.chat(`${
-        (Config.PlayerESP = !Config.PlayerESP) 
-        ? prefix + " >" + "&r&a ESP" 
-        : prefix + " >" + "&r&c ESP"
-    }`
-    );
-}).setName("esp")
-
-register("command", () => {
-    ChatLib.chat(`${
-        (Config.ItemESP = !Config.ItemESP) 
-        ? prefix + " >" + "&r&a Item ESP" 
-        : prefix + " >" + "&r&c Item ESP"
-    }`
-    );
-}).setName("iesp")
-
-register("command", () => {
-    ChatLib.chat(`${
-        (Config.Armorstandesp = !Config.Armorstandesp) 
-        ? prefix + " >" + "&r&a ALL entity ESP" 
-        : prefix + " >" + "&r&c ALL entity ESP"
-    }`
-    );
-}).setName("aesp")
-
 register("tick", () => {
     if (espkey.isPressed()) {
         ChatLib.chat(`${

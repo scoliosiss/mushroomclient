@@ -39,12 +39,3 @@ register("tick", () => {
         );
     }
 });
-
-register("command", () => {
-    ChatLib.chat(`${
-        (Config.leverer = !Config.leverer) 
-        ? prefix + " >" + "&r&a Lever aura" 
-        : prefix + " >" + "&r&c Lever aura"
-    }`
-    );
-}).setName("la")

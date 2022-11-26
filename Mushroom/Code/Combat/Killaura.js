@@ -14,7 +14,8 @@ register("step", () => {
                 if(distanceToPlayer(allEntity[i].getX(), allEntity[i].getY(), allEntity[i].getZ()) < 5) {
                     let lookingAt = Player.lookingAt();
                     if (lookingAt.getClass() === Block) {
-                    World.getWorld().func_175698_g(new BP(lookingAt.getX(), lookingAt.getY(), lookingAt.getZ())); 
+                        World.getWorld().func_175698_g(new BP(lookingAt.getX(), lookingAt.getY(), lookingAt.getZ())); 
+                        LeftClick.invoke(mc)
                     }  
                     LeftClick.invoke(mc)
                 }
@@ -33,12 +34,3 @@ register("tick", () => {
         );
     }
 });
-
-register("command", () => {
-    ChatLib.chat(`${
-        (Config.killaura = !Config.killaura) 
-        ? prefix + " >" + "&r&a Killaura" 
-        : prefix + " >" + "&r&c Killaura"
-    }`
-    );
-}).setName("ka")
