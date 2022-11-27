@@ -5,9 +5,10 @@ import Discord from "./Code/Other//Discord"
 
 import "./Code/Combat/AntiKnockback"
 import "./Code/Combat/Autoblock"
-import "./Code/Combat/Killaura"
-import "./Code/Combat/Reach"
 import "./Code/Combat/Clickmultiplier"
+import "./Code/Combat/Killaura"
+import "./Code/Combat/NoWalls"
+import "./Code/Combat/Reach"
 
 import "./Code/Visual/Esp"
 import "./Code/Visual/Ranks"

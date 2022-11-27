@@ -79,9 +79,9 @@ register("command", () => {
     `&9-----------------------------------------------------
     ${prefix}
     &4&lCommands:
-    &1/mtoggles to see all toggle commands
-    &2/msliders to change sliders
-    &3/mfunnys for random commands
+    &b/mtoggles to see all toggle commands
+    &3/msliders to change sliders
+    &9/mfunnys for random commands
 &9-----------------------------------------------------`
   )
 }).setName("mhelp")

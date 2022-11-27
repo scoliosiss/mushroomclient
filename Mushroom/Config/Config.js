@@ -106,6 +106,14 @@ class Config {
     reach = false;
 
     @SwitchProperty({
+        name: "&cNo walls",
+        description: "&4Lets you hit through walls",
+        category: "Combat",
+        subcategory: "  "
+    })
+    nowalls = false;
+
+    @SwitchProperty({
         name: "&cKillaura",
         description: "&4i am become death\n&4destroyer of worlds",
         category: "Combat",
