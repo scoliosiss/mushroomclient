@@ -29,8 +29,8 @@ skull aura is very good for halloween simualtor!
 #### Chat Macros:
 - Images in chat (uploads image to imgur to copy paste images)
 - Autoquickmaths 
-- Guild maths bot (when someone types !maths [question] 
-- auto p transfer (for when you dont want p leader
+- Guild maths bot (when someone types !maths [question])
+- auto p transfer (for when you dont want p leader)
 - alot of commands
 #### Visual:
 - chest and skull esp 
