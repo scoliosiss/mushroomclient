@@ -4,6 +4,7 @@
 ## its a very cool chattriggers module with a couple cheats
 ### yes I am aware all of this code is awful, I dont care about optimization I just want it working.
 ### also WIP basically just means not working
+### NEW GUI COMING SOON™!
 ![newguisoon tm](https://i.imgur.com/6sI8w0Q.png)
 ### Feature list: 
 
