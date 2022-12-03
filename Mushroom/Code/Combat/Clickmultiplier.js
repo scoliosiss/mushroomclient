@@ -6,7 +6,7 @@ let delay = Date.now();
 
 register("playerInteract", (action) => {
     if (Date.now() - delay > 50) {
-        if (Config.cpsmultiplier) {
+        if (Config.cpsmultiplierer) {
             if (action.toString() === "RIGHT_CLICK_BLOCK" || action.toString() === "RIGHT_CLICK_EMPTY") {
                 new Thread(() => {
                     Thread.sleep(1);

@@ -122,6 +122,30 @@ class Config {
     killaura = false;
 
     @SwitchProperty({
+        name: "&cKillaura through walls",
+        description: "",
+        category: "Combat",
+        subcategory: "  "
+    })
+    killaurathroughwalls = false;
+
+    @SwitchProperty({
+        name: "&cKillaura autoblock",
+        description: "",
+        category: "Combat",
+        subcategory: "  "
+    })
+    killauraautoblock = false;
+
+    @SwitchProperty({
+        name: "&cKillaura mobs",
+        description: "",
+        category: "Combat",
+        subcategory: "  "
+    })
+    killauramobs = false;
+
+    @SwitchProperty({
         name: "&cAnti Knockback",
         description: "&4Completly stops knockback",
         category: "Combat",
@@ -143,7 +167,15 @@ class Config {
         category: "Combat",
         subcategory: ""
     })
-    cpsmultiplier = false;
+    cpsmultiplierer = false;
+
+    @SwitchProperty({
+        name: "FREEZE",
+        description: "freeze",
+        category: "Combat",
+        subcategory: ""
+    })
+    freezeme = false;
 
 // --------------------------------------------------------------------------------
 // Visual
@@ -214,6 +246,22 @@ class Config {
     })
     chestesppog = false;
 
+    @SwitchProperty({
+        name: "&cClick gui",
+        description: "",
+        category: "Visual",
+        subcategory: ""
+    })
+    clickguipogg = false;
+
+    @SwitchProperty({
+        name: "&cBlock esp",
+        description: "",
+        category: "Visual",
+        subcategory: ""
+    })
+    blockesptoggle = false;
+
     // ESP color
     @ColorProperty({
         name: "&aEsp Color",
@@ -265,6 +313,14 @@ cheststealer = false;
     subcategory: "  "
 })
 snowballswap = false;
+
+@SwitchProperty({
+    name: "&csword swap",
+    description: "",
+    category: "Macro",
+    subcategory: ""
+})
+swrodswap = false;
 
 @SwitchProperty({
     name: "&cFishing rod swap",
@@ -322,12 +378,37 @@ scaffoldi = false;
     guildbotsname = "";
 
     @SwitchProperty({
+        name: "&cgeneral quickmaths",
+        description: "",
+        category: "Chat Macro",
+        subcategory: "  "
+    })
+    generalquickmaths = true;
+
+    @SwitchProperty({
+        name: "quotes pog",
+        description: "",
+        category: "Chat Macro",
+        subcategory: "  "
+    })
+    quotespog = true;
+
+    @SwitchProperty({
         name: "&cAuto send quickmaths answer",
         description: "&4Auto send answer to quickmaths",
         category: "Chat Macro",
         subcategory: "  "
     })
     quickmathsautosend = true;
+
+    @SwitchProperty({
+        name: "&aguild bot",
+        description: "",
+        category: "Chat Macro",
+        subcategory: ""
+    })
+    guildbottoggle = true;
+
 
     @SwitchProperty({
         name: "&18ball",
@@ -411,6 +492,14 @@ scaffoldi = false;
 
 // --------------------------------------------------------------------------------
 //Fake Ban
+
+@SwitchProperty({
+    name: "beamed",
+    description: "",
+    category: "Visual",
+    subcategory: "  "
+})
+showfakeban = false;
 
     @SelectorProperty({
         name: '&dFakeban type',
@@ -571,6 +660,14 @@ scaffoldi = false;
         subcategory: "  "
         })
         p3termghostblocks = true;
+
+    @SwitchProperty({
+            name: "ghostblocks",
+            description: "",
+            category: "Skyblock",
+            subcategory: "  "
+        })
+    ghostblockstoggle = true;
 
     @SwitchProperty({
         name: "&3Dungeon Score calc",

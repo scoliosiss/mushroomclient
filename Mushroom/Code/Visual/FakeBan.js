@@ -13,7 +13,13 @@ register("tick",()=>{
 })
 register("tick",()=>{
   if (DisconnectKey.isPressed()) {
-  DisconnectScreen()
+    Config.showfakeban = true
+}
+})
+register("tick",()=>{
+  if (Config.showfakeban) {
+    DisplayScreen()
+  Config.showfakeban = false
 }
 })
 function DisplayScreen(){

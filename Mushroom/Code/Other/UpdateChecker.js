@@ -30,3 +30,10 @@ register("step", () => {
         ChatLib.chat(`${prefix} &cError whilst checking for update: ${error}`)
     })
 })
+
+register("command", translatepls => { translatepls;
+    request("https://translate.google.co.uk/?sl=en&tl=es&text=" + translatepls).then(stuff => {
+        stuff = JSON.parse(stuff.replace(new RegExp("    ", "g"), ""))
+        ChatLib.chat(translatepls)
+    })
+}).setName("translatecheck");

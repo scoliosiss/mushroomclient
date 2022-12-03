@@ -10,7 +10,15 @@ const banpacket = () => {
 
 register("tick", () => {
     if (bankey.isPressed()) {
-        banpacket();
-        ChatLib.chat("&4you will be banned in about 10 seconds! :)")
+        (banmepog = !banmepog)
     }
 });
+banmepog = false
+
+register("packetReceived", (packet, event) => {
+    if (banmepog) {
+       // if (!packet.toString().includes("net.minecraft.network.play.server.S32PacketConfirmTransaction")) return;
+        ChatLib.chat(packet)
+        cancel(event)
+    }
+})

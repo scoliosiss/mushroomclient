@@ -2,7 +2,6 @@ import {BP, noghostblock} from "../Utils";
 import Config from "../../Config/Config"
 const ghostBlockBind = new KeyBind("Ghost Block", Keyboard.KEY_NONE, "Mushroom");
 const belowbind = new KeyBind("Ghost Block Below", Keyboard.KEY_NONE, "Mushroom");
-let inF7 = false;
 
 register("step", () => {
     if (ghostBlockBind.isKeyDown()) {

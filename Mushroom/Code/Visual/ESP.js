@@ -8,7 +8,7 @@ const espBox = (x, y, z, height) => {RenderLib.drawEspBox(x, y-height, z, 1, hei
 // fun
 register("renderEntity", (entity) => {
     if (Config.PlayerESP) {
-        if (entity.getClassName() === "EntityESP") {
+        if (entity.getClassName() === "EntityPlayer") {
             espBox(entity.getX(), entity.getY() + 0.3, entity.getZ(), -0.5)
         }
     }
@@ -32,4 +32,3 @@ register("tick", () => {
         );
     }
 });
-
