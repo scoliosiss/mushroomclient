@@ -1242,6 +1242,7 @@ register("guiMouseClick", function(x, y, button, state) {
         (Config.scorecalc = !Config.scorecalc)
       }
     }
+    
     if (shitterwarningbutton.isMouseOver()) {
       if (button == 0) {
         (Config.shitterwarning = !Config.shitterwarning)
