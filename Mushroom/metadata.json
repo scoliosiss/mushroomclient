@@ -3,6 +3,6 @@
   "description": "Shroom",
   "author": "Scalesy",
   "entry": "index.js",
-  "requires":["RenderLib", "requestV2", "request"],
+  "requires":["RenderLib", "requestV2"],
   "version":"&c&l&n2&9&l&n.&d&l&n0&5&l&n!"
 }
