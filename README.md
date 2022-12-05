@@ -42,7 +42,8 @@ skull aura is very good for halloween simualtor!
 - auto auction snipe
 - score calc!
 - auto harp
-- auto terms 
+- auto terms
+- toxic death message
 - mage m6 gyro timer
 #### Other:
 - discord rpc (very cool)
@@ -52,3 +53,4 @@ skull aura is very good for halloween simualtor!
 - image paste (lets you paste images in chat)
 - Fakeban keybind (very cool)
 - bankey (bans you from hypixel)
+- FREEZE (disables recieving packets) flags watchdog
