@@ -1,7 +1,7 @@
 # Mushroom Client
 
-## Mushroom client is a qol hypixel mod made by Scale and iLoveRat (Scale#6623 and i love rat#9200)
-## its a very cool chattriggers module with a couple cheats
+## Mushroom client is a qol hypixel mod made by Scale#6623, i love rat#9200 and Swig#3676
+## its a very cool chattriggers cheating module
 ### yes I am aware all of this code is awful, I dont care about optimization I just want it working.
 ### also WIP basically just means not working
 ### NEW GUI COMING SOON™!
@@ -9,14 +9,14 @@
 ### Feature list: 
 
 #### Combat cheats:
-- Killaura
+- Killaura (toggles: through walls, mobs, autoblock)
+- antikb
 - autoclicker
 - Swordswap (auto swap to snowballs when you click with sword for more kb)
-- autoblock (kinda mid)
+- autoblock (not working...)
 - clickmultiplier (kinda mid)
 - vclip (WIP)
 - Reach (WIP)
-- antikb (WIP)
 #### Macros:
 - chest, skull and lever aura (work anywhere but mainly used for secret aura)
 skull aura is very good for halloween simualtor!
