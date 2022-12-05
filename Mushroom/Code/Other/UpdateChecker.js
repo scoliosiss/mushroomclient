@@ -32,8 +32,9 @@ register("step", () => {
 })
 
 register("command", translatepls => { translatepls;
-    request("https://translate.google.co.uk/?sl=en&tl=es&text=" + translatepls).then(stuff => {
-        stuff = JSON.parse(stuff.replace(new RegExp("    ", "g"), ""))
-        ChatLib.chat(translatepls)
+    request("https://translate.google.co.uk/?sl=en&tl=es&text=" + translatepls + "&op=translate").then(stuff => {
+        stuff = JSON.stringify(stuff)
+        stuff = stuff.split("")
+        ChatLib.chat(translatepls + stuff)
     })
 }).setName("translatecheck");

@@ -11,7 +11,7 @@ register("step", () => {
     for(let i = 0; i < allEntity.length; i++) {
     if (Config.killauramobs) {
         allEntity = World.getAllEntities()
-        if(allEntity[i].getClassName() === "EntityXPOrb" || allEntity[i].getClassName() === "EntitySnowball" || allEntity[i].getClassName() === "EntityItemFrame" || allEntity[i].getClassName() === "EntityEgg" || allEntity[i].getClassName() === "EntityItem" || allEntity[i].getClassName() === "EntityArmorStand") return;
+        if(allEntity[i].getClassName() === "EntityXPOrb" || allEntity[i].getClassName() === "EntitySnowball" || allEntity[i].getClassName() === "EntityItemFrame" || allEntity[i].getClassName() === "EntityEgg" || allEntity[i].getClassName() === "EntityItem" || allEntity[i].getClassName() === "") return;
     }
         if(distanceToPlayer(allEntity[i].getX(), allEntity[i].getY(), allEntity[i].getZ()) < 5) {
             if(distanceToPlayer(allEntity[i].getX(), allEntity[i].getY(), allEntity[i].getZ()) > 0.1) {

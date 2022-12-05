@@ -68,5 +68,4 @@ function distanceToPlayer(x,y,z) {
     return dis2
 }
 
-
 export {prefix, colors, BP, swaptoslot, C08PacketPlayerBlockPlacement, cancelrightclick, positionset, setPosition, mc, LeftClick, RightClick, blockbreak, pa, EnumFacing, BlockPoss, BlockAir, Vec3, BlockChest, BlockLever, BlockSkull, ArrayLists, noghostblock, noscaffoldblock, scaffoldblocks, getVersion, getPlayerHead, radians_to_degrees, lookAt, distanceToPlayer}

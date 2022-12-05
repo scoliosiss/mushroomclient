@@ -15,7 +15,7 @@ import {getVersion, prefix} from "../Code/Utils";
 
 @Vigilant("Mushroom", "Mushroom", {
     getCategoryComparator: () => () => {
-        const categories = [ "Combat", "Visual", "Macro", "Chat Macro", "Sliders", "Skyblock", "Other"];
+        const categories = [ "Combat", "Visual", "Macro", "Chat Macro", "Sliders", "Skyblock", "Other", "Keybind", "CLICK GUI"];
         return 0;
     }
 })
@@ -955,6 +955,185 @@ Join() {
             })
         discordrpcpic = 0;
 
+        @TextProperty({
+            name: "killaura keybind",
+            description: '',
+            category: "Keybind",
+            subcategory: "   ",
+            placeholder: "put text here"
+        })
+        killaurakeybindconfig = "";
+
+        @TextProperty({
+            name: "nowall keybind",
+            description: '',
+            category: "Keybind",
+            subcategory: "   ",
+            placeholder: "put text here"
+        })
+        nowallkeybindconfig = "";
+
+        @TextProperty({
+            name: "autoblock keybind",
+            description: '',
+            category: "Keybind",
+            subcategory: "   ",
+            placeholder: "put text here"
+        })
+        autoblockkeybindconfig = "";
+
+        @TextProperty({
+            name: "cpsmultiplier keybind",
+            description: '',
+            category: "Keybind",
+            subcategory: "   ",
+            placeholder: "put text here"
+        })
+        cpsmultikeybindconfig = "";
+
+        @TextProperty({
+            name: "antikb keybind",
+            description: '',
+            category: "Keybind",
+            subcategory: "   ",
+            placeholder: "put text here"
+        })
+        antikbkeybindconfig = "";
+
+        @TextProperty({
+            name: "freeze keybind",
+            description: '',
+            category: "Keybind",
+            subcategory: "   ",
+            placeholder: "put text here"
+        })
+        freezekeybindconfig = "";
+
+        @TextProperty({
+            name: "combatx",
+            description: '',
+            category: "CLICK GUI",
+            subcategory: "   ",
+            placeholder: "put text here"
+        })
+        combatxpog = 52;
+
+        @TextProperty({
+            name: "combaty",
+            description: '',
+            category: "CLICK GUI",
+            subcategory: "   ",
+            placeholder: "put text here"
+        })
+        combatypog = 2;
+
+        @TextProperty({
+            name: "visualx",
+            description: '',
+            category: "CLICK GUI",
+            subcategory: "   ",
+            placeholder: "put text here"
+        })
+        visualxpog = 202;
+
+        @TextProperty({
+            name: "visualy",
+            description: '',
+            category: "CLICK GUI",
+            subcategory: "   ",
+            placeholder: "put text here"
+        })
+        visualypog = 2;
+
+        @TextProperty({
+            name: "macrox",
+            description: '',
+            category: "CLICK GUI",
+            subcategory: "   ",
+            placeholder: "put text here"
+        })
+        macroxpog = 352;
+
+        @TextProperty({
+            name: "macroy",
+            description: '',
+            category: "CLICK GUI",
+            subcategory: "   ",
+            placeholder: "put text here"
+        })
+        macroypog = 2;
+
+        @TextProperty({
+            name: "cmacrox",
+            description: '',
+            category: "CLICK GUI",
+            subcategory: "   ",
+            placeholder: "put text here"
+        })
+        cmacroxpog = 502;
+
+        @TextProperty({
+            name: "cmacroy",
+            description: '',
+            category: "CLICK GUI",
+            subcategory: "   ",
+            placeholder: "put text here"
+        })
+        cmacroypog = 2;
+        
+        @TextProperty({
+            name: "skyblockx",
+            description: '',
+            category: "CLICK GUI",
+            subcategory: "   ",
+            placeholder: "put text here"
+        })
+        skyblockxpog = 652;
+
+        @TextProperty({
+            name: "skyblocky",
+            description: '',
+            category: "CLICK GUI",
+            subcategory: "   ",
+            placeholder: "put text here"
+        })
+        skyblockypog = 2;
+
+        @TextProperty({
+            name: "skyblocky",
+            description: '',
+            category: "CLICK GUI",
+            subcategory: "   ",
+            placeholder: "put text here"
+        })
+        otherxpog = 802;
+
+        @TextProperty({
+            name: "skyblocky",
+            description: '',
+            category: "CLICK GUI",
+            subcategory: "   ",
+            placeholder: "put text here"
+        })
+        otherypog = 2;
+
+        @TextProperty({
+            name: "button width",
+            description: '',
+            category: "CLICK GUI",
+            subcategory: "   ",
+            placeholder: "put text here"
+        })
+        buttonwidthcon = 100;
+
+        @TextProperty({
+            name: "button width",
+            description: '',
+            category: "CLICK GUI",
+            subcategory: "   ",
+            placeholder: "put text here"
+        })
+        buttonheightcon = 20;
 }
 
 // mushroom client was originally a chat macro mod for my friends!
