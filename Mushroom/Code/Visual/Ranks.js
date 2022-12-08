@@ -1,6 +1,5 @@
 import Config from "../../Config/Config"
 
-fullMessage = ""
   // Custom names and ranks for me and friends
   register("chat", (msg) => { // if message received
     if (!Config.nickhider) return; // if custom ranks config is false end

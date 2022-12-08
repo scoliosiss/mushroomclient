@@ -162,12 +162,28 @@ class Config {
     autoblockpog = false;
 
     @SwitchProperty({
-        name: "&cCPS multiplier",
-        description: "&4Doubles every right click you do",
+        name: "&cCPS multiplier toggle",
+        description: "grand toggle",
         category: "Combat",
         subcategory: ""
     })
     cpsmultiplierer = false;
+
+    @SwitchProperty({
+        name: "&cCPS multiplier right",
+        description: "&4Doubles every right click you do",
+        category: "Combat",
+        subcategory: ""
+    })
+    cpsmultiplierr = false;
+
+    @SwitchProperty({
+        name: "&cCPS multiplier left",
+        description: "&4Doubles every left click you do",
+        category: "Combat",
+        subcategory: ""
+    })
+    cpsmultiplierl = false;
 
     @SwitchProperty({
         name: "FREEZE",
@@ -489,6 +505,52 @@ scaffoldi = false;
         subcategory: "    ",
     })
     autoTransfer = true;
+
+    @TextProperty({
+        name: "chatspammer island",
+        description: 'eg: dhub, hub',
+        category: "Chat Macro",
+        subcategory: "Chat Spammer",
+        placeholder: "island to warp to"
+    })
+    islandto = "dhub";
+
+    @TextProperty({
+        name: "chatspammer message",
+        description: 'iLoveRat: party me for 674m',
+        category: "Chat Macro",
+        subcategory: "Chat Spammer",
+        placeholder: "message"
+    })
+    publicspam = "";
+
+    @TextProperty({
+        name: "party chatspammer message",
+        description: 'Party > [VIP] Mushroom: join my discord!',
+        category: "Chat Macro",
+        subcategory: "Chat Spammer",
+        placeholder: "message"
+    })
+    cspammessage = "";
+
+    @SliderProperty({
+        name: "chatspam failsafe time",
+        description: "time since last lobby switch before warping out",
+        category: "Chat Macro",
+        subcategory: "Chat Spammer",
+        min: 1,
+        max: 10
+    })
+    failsafetim = 5;
+
+    @SelectorProperty({
+        name: 'chatspam type',
+        description: 'party me and joins partys or partys randoms then spams discord',
+        category: 'Chat Macro',
+        subcategory: "  ",
+        options: ['party people', 'party me'],
+    })
+    chatspamtype = 0;
 
 // --------------------------------------------------------------------------------
 //Fake Ban
@@ -1124,7 +1186,7 @@ Join() {
             subcategory: "   ",
             placeholder: "put text here"
         })
-        buttonwidthcon = 100;
+        buttonwidthcon = 120;
 
         @TextProperty({
             name: "button width",

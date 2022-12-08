@@ -15,9 +15,11 @@ const hitthroughwalls = () => {
         }).start()
 };
 
-register("clicked", () => {
+register("clicked", (event, event2, event3) => {
     if (Config.nowalls) {
-        hitthroughwalls()
+        if (event3 == 0) {
+            hitthroughwalls()
+        }
     }
 });
 

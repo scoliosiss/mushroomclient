@@ -11,6 +11,8 @@ const setPosition = Java.type("net.minecraft.entity.player.EntityPlayer.setPosit
 const mc = Client.getMinecraft();
 const LeftClick = mc.class.getDeclaredMethod("func_147116_af");
 const RightClick = mc.class.getDeclaredMethod("func_147121_ag");
+const WalkForward = new KeyBind(mc.field_71474_y.field_74351_w);
+const holdright = new KeyBind(mc.field_71474_y.field_74313_G);
 LeftClick.setAccessible(true);
 RightClick.setAccessible(true);
 const blockbreak = Java.type("net.minecraft.network.play.client.C0APacketAnimation");
@@ -27,12 +29,12 @@ const noghostblock = ["minecraft:stone_button","minecraft:chest","minecraft:bed"
 const noscaffoldblock = ["minecraft:air","minecraft:stone_button","minecraft:chest","minecraft:trapped_chest","minecraft:skull"];
 const scaffoldblocks = ["Wool", "Stone", "Planks", "Sand", "Sponge"];
 const getVersion = () => JSON.parse(FileLib.read("Mushroom", "metadata.json")).version
+const stripRank = (rankedPlayer) => rankedPlayer.replace(/\[[\w+\+-]+] /, "").trim()
 const getPlayerHead = (playername) => {
     let player = World.getPlayerByName(playername)
     if (!player) return
     return new Image(javax.imageio.ImageIO.read(new java.net.URL(`https://crafatar.com/avatars/${player.getUUID()}`)))
 }
-//field_73088_d
 function radians_to_degrees(radians) {
     var pi = Math.PI;
     return radians * (180/pi);
@@ -68,4 +70,4 @@ function distanceToPlayer(x,y,z) {
     return dis2
 }
 
-export {prefix, colors, BP, swaptoslot, C08PacketPlayerBlockPlacement, cancelrightclick, positionset, setPosition, mc, LeftClick, RightClick, blockbreak, pa, EnumFacing, BlockPoss, BlockAir, Vec3, BlockChest, BlockLever, BlockSkull, ArrayLists, noghostblock, noscaffoldblock, scaffoldblocks, getVersion, getPlayerHead, radians_to_degrees, lookAt, distanceToPlayer}
+export {prefix, colors, BP, swaptoslot, holdright, stripRank, C08PacketPlayerBlockPlacement, cancelrightclick, positionset, setPosition, mc, LeftClick, RightClick, WalkForward, blockbreak, pa, EnumFacing, BlockPoss, BlockAir, Vec3, BlockChest, BlockLever, BlockSkull, ArrayLists, noghostblock, noscaffoldblock, scaffoldblocks, getVersion, getPlayerHead, radians_to_degrees, lookAt, distanceToPlayer}

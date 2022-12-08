@@ -5,9 +5,9 @@
 		cmacrox = 496.0
 		skyblockx = 633.5
 		button_width = 40.0
-		skyblocky = 84.23440551757812
-		combatx = 75.5
-		combaty = 68.58941650390625
+		skyblocky = 270.668212890625
+		combatx = 18.75
+		combaty = 18.164459228515625
 		macroy = 2.0
 		macrox = 217.10726928710938
 		visualy = 75.96640014648438
@@ -45,7 +45,7 @@
 		"&cdiscord_rpc_text" = "[insert text here]"
 		"&ddiscord_rpc_picture" = 0
 		"&3discord_rpc" = true
-		"&3discord_rpc_location" = true
+		"&3discord_rpc_location" = false
 
 	[other._]
 		"&cs&ep&ca&en&ci&es&ch" = false
@@ -65,9 +65,16 @@
 		quotes_pog = true
 		"&cauto_send_quickmaths_answer" = true
 		"&aquickmaths_solver!" = true
+		chatspam_type = 1
 
 	[chat_macro.____]
 		"&dauto_party_transfer" = true
+
+	[chat_macro.chat_spammer]
+		party_chatspammer_message = "hi"
+		chatspammer_island = "dhub"
+		chatspammer_message = "pog"
+		chatspam_failsafe_time = 5
 
 	[chat_macro.___]
 		"&5\"wrong_chat\"" = true
@@ -82,6 +89,9 @@
 		"&1guild_maths_bot" = true
 
 [keybind]
+
+	[keybind.chat_spammer]
+		chatspammer_island = "dhub"
 
 	[keybind.___]
 		antikb_keybind = "dont"
@@ -138,12 +148,15 @@
 
 	[visual._]
 		"&bfake_rank_you_want_to_show" = "§c§lM§f§lu§c§ls§f§lh§c§lr§f§lo§c§lo§f§lo§c§lm §lClient§f§l"
-		"&3fakename" = true
+		"&3fakename" = false
 		"&bfake_name_you_want_to_show" = "§c§lM§f§lu§c§ls§f§lh§c§lr§f§lo§c§lo§f§lo§c§lm §lClient§f§l"
 
 [combat]
 	freeze = false
-	"&ccps_multiplier" = false
+	"&ccps_multiplier_toggle" = false
+	"&ccps_multiplier_right" = false
+	"&ccps_multiplier_left" = false
+	"&ccps_multiplier" = true
 
 	[combat.__]
 		"&cno_walls" = false
@@ -158,7 +171,7 @@
 		"&cautoblock" = false
 
 [sliders]
-	"&4hilarity_speed" = 1000
+	"&4hilarity_speed" = 674
 
 	[sliders.____]
 		"&4autoterm_speed" = 200
@@ -167,6 +180,7 @@
 		"&4right_click_auto_clicker_speed" = 20
 		"&4left_click_auto_clicker_speed" = 20
 		"&4zombies_gun_macro_speed" = 500
+		chatspam_failsafe_time = 5
 
 	[sliders._]
 		"&cskull_aura_reach" = 5

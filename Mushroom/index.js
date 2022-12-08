@@ -30,6 +30,7 @@ import "./Code/ChatMacros/ChatMacros"
 import "./Code/ChatMacros/Emotes"
 import "./Code/ChatMacros/GuildBridge"
 import "./Code/ChatMacros/MathsBot"
+import "./Code/ChatMacros/PartyAdvertise"
 import "./Code/ChatMacros/RandomCommands"
 
 import "./Code/Skyblock/AuctionSnipe"
@@ -288,9 +289,9 @@ class buttondraw {
       let mx = Client.getMouseX(); 
       let my = Client.getMouseY();
       Renderer.drawRect(Renderer.color(25, 25, 25, 250), this.x, this.y, this.width, this.height);
-      Renderer.drawRect(Renderer.color(250, 250, 250, 250), this.x + (Config.buttonwidthcon * 0.851), this.y + (Config.buttonheightcon / 2.009), this.width / (Config.buttonwidthcon / 8.5), this.height / (Config.buttonheightcon / 8));
+      Renderer.drawRect(Renderer.color(250, 250, 250, 250), this.x + (Config.buttonwidthcon * 0.849), this.y + (Config.buttonheightcon / 2), this.width / (Config.buttonwidthcon / 8.5), this.height / (Config.buttonheightcon / 8));
       if (mx >= this.x && mx <= this.x + this.width && my >= this.y && my <= this.y + this.height) {
-        Renderer.drawRect(Renderer.color(0, 0, 250, 150), this.x + (Config.buttonwidthcon * 0.855), this.y + (Config.buttonheightcon / 2), this.width / (Config.buttonwidthcon / 7.407), this.height / (Config.buttonheightcon / 7.4074));
+        Renderer.drawRect(Renderer.color(0, 0, 250, 150), this.x + (Config.buttonwidthcon * 0.849), this.y + (Config.buttonheightcon / 2), this.width / (Config.buttonwidthcon / 7.39), this.height / (Config.buttonheightcon / 7.4));
       }
       Renderer.drawString(buttontext, buttonx, buttony);
   }
@@ -298,7 +299,7 @@ class buttondraw {
     let buttontext = this.text;
     let buttonx = this.x + (this.width / 2 - Renderer.getStringWidth(this.text) / 1.5);
     let buttony = this.y + (this.height / 2 - 4);
-    Renderer.drawRect(Renderer.color(0, 0, 250, 250), this.x + (Config.buttonwidthcon * 0.855), this.y + (Config.buttonheightcon / 2), this.width / (Config.buttonwidthcon / 7.407), this.height / (Config.buttonheightcon / 7.4074));
+    Renderer.drawRect(Renderer.color(0, 0, 250, 250), this.x + (Config.buttonwidthcon * 0.85), this.y + (Config.buttonheightcon / 2), this.width / (Config.buttonwidthcon / 7.4), this.height / (Config.buttonheightcon / 7.4));
     Renderer.drawString(buttontext, buttonx, buttony);
 }
 sliderdraw() {
@@ -487,7 +488,9 @@ let skyblockynew = 2
 let otherxnew = 802
 let otherynew = 2
 
+let changegui = false
 register("step", () => {
+  if (changegui) {
 if (clickguimode == 1) {
 combatxnew = 52
 combatynew = 2
@@ -501,6 +504,7 @@ skyblockxnew = 652
 skyblockynew = 2
 otherxnew = 802
 otherynew = 2
+changegui = false
 }
 if (clickguimode == 2) {
 combatxnew = 2
@@ -515,6 +519,8 @@ combatxnew = 2
  skyblockynew = 2
  otherxnew = 802
  otherynew = 2
+ changegui = false
+}
 }
 })
 register("step", () => {
@@ -912,10 +918,10 @@ register("renderOverlay", function() {
         cpsmultiplierextra2.extrabutton();
         cpsmultiplierkeybinddraw.keybindbutton();
         cpsmultiplierkeybindtext.draw();
-        if (cpsmultiplierextra1toggle) {
+        if (Config.cpsmultiplierr) {
           cpsmultiplierextra1.extrabuttontoggled();
         }
-        if (cpsmultiplierextra2toggle) {
+        if (Config.cpsmultiplierl) {
           cpsmultiplierextra2.extrabuttontoggled();
         }
       }
@@ -1269,13 +1275,13 @@ register("guiMouseClick", function(x, y, button, state) {
     }
     if (cpsmultiplierextra1.isMouseOver()) {
       if (button == 0) {
-        (cpsmultiplierextra1toggle = !cpsmultiplierextra1toggle)
+        (Config.cpsmultiplierr = !Config.cpsmultiplierr)
         return;
       }
     }
     if (cpsmultiplierextra2.isMouseOver()) {
       if (button == 0) {
-        (cpsmultiplierextra2toggle = !cpsmultiplierextra2toggle)
+        (Config.cpsmultiplierl = !Config.cpsmultiplierl)
         return;
       }
     }
@@ -1323,34 +1329,7 @@ register("guiMouseClick", function(x, y, button, state) {
     if (clickguiselectbox.isMouseOver()) {
       if (button == 0) {
         clickguimode = clickguimode + 1
-        if (clickguimode == 1) {
-          combatxnew = 52
-          combatynew = 2
-          visualxnew = 202
-          visualynew = 2
-          macroxnew = 352
-          macroynew = 2
-          cmacroxnew = 502
-          cmacroynew = 2
-          skyblockxnew = 652
-          skyblockynew = 2
-          otherxnew = 802
-          otherynew = 2
-        }
-        if (clickguimode == 2) {
-          combatxnew = 2
-          combatynew = 2
-          visualxnew = 202
-          visualynew = 2
-          macroxnew = 352
-          macroynew = 2
-          cmacroxnew = 502
-          cmacroynew = 2
-          skyblockxnew = 652
-          skyblockynew = 2
-          otherxnew = 802
-          otherynew = 2
-        }
+        changegui = true
       }
     }
     if (playerespbutton.isMouseOver()) {

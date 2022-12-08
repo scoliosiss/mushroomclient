@@ -1,7 +1,5 @@
 import Config from "../../Config/Config"
-
-// This code is taken from unclaimedbloom without permission because im lazy
-const stripRank = (rankedPlayer) => rankedPlayer.replace(/\[[\w+\+-]+] /, "").trim()
+import { stripRank } from "../Utils"
 
 register("chat", (p1, p2) => {
     if (stripRank(p1) == Player.getName() && Config.autoTransfer) ChatLib.command(`p transfer ${stripRank(p2)}`)

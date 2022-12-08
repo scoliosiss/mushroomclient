@@ -1,8 +1,7 @@
 import Config from "../../Config/Config"
-import {prefix, mc, Vec3, EnumFacing, LeftClick, BP, radians_to_degrees, distanceToPlayer, lookAt} from "../Utils";
+import {prefix, mc, Vec3, EnumFacing, LeftClick, BP, radians_to_degrees, distanceToPlayer, lookAt, holdright} from "../Utils";
 import { hitthroughwalls } from "./NoWalls";
 const killaurakey = new KeyBind("Chest aura", Keyboard.KEY_NONE, "Mushroom");
-const holdright = new KeyBind(mc.field_71474_y.field_74313_G);
 
 // gaming
 register("step", () => {
