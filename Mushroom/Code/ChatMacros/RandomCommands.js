@@ -132,6 +132,7 @@ register("command", () => {
     `&9-----------------------------------------------------
     ${prefix}
     &4&lCommands:
+    &0/iwalk to toggle inventory walk
     &1/arc to toggle right click autoclicker
     &2/alc to toggle left click autoclicker
     &3/as to toggle auto snowball swap
@@ -275,6 +276,15 @@ register("command", () => {
   }`
   );
 }).setName("sesp")
+
+register("command", () => {
+  ChatLib.chat(`${
+      (Config.invwalk = !Config.invwalk) 
+      ? prefix + " >" + "&r&a Inventory walk" 
+      : prefix + " >" + "&r&c Inventory walk"
+  }`
+  );
+}).setName("iwalk")
 
 // --------------------------------------------------------
 // sliders

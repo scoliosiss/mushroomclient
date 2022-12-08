@@ -162,6 +162,14 @@ class Config {
     autoblockpog = false;
 
     @SwitchProperty({
+        name: "blockhit",
+        description: "allows you to hit while blocking",
+        category: "Combat",
+        subcategory: " "
+    })
+    blockhit = false;
+
+    @SwitchProperty({
         name: "&cCPS multiplier toggle",
         description: "grand toggle",
         category: "Combat",
@@ -353,6 +361,14 @@ fishingrodswap = false;
     subcategory: " "
 })
 scaffoldi = false;
+
+@SwitchProperty({
+    name: "invwalk",
+    description: "lets you move while in inventory",
+    category: "Macro",
+    subcategory: " "
+})
+invwalk = false;
 
 // --------------------------------------------------------------------------------
 // Chat Macro
@@ -1071,131 +1087,145 @@ Join() {
         })
         freezekeybindconfig = "";
 
-        @TextProperty({
+        @SliderProperty({
             name: "combatx",
             description: '',
             category: "CLICK GUI",
             subcategory: "   ",
-            placeholder: "put text here"
+            min: 1,
+            max: 10000
         })
         combatxpog = 52;
 
-        @TextProperty({
+        @SliderProperty({
             name: "combaty",
             description: '',
             category: "CLICK GUI",
             subcategory: "   ",
-            placeholder: "put text here"
+            min: 1,
+            max: 10000
         })
         combatypog = 2;
 
-        @TextProperty({
+        @SliderProperty({
             name: "visualx",
             description: '',
             category: "CLICK GUI",
             subcategory: "   ",
-            placeholder: "put text here"
+            min: 1,
+            max: 10000
         })
         visualxpog = 202;
 
-        @TextProperty({
+        @SliderProperty({
             name: "visualy",
             description: '',
             category: "CLICK GUI",
             subcategory: "   ",
-            placeholder: "put text here"
+            min: 1,
+            max: 10000
         })
         visualypog = 2;
 
-        @TextProperty({
+        @SliderProperty({
             name: "macrox",
             description: '',
             category: "CLICK GUI",
             subcategory: "   ",
-            placeholder: "put text here"
+            min: 1,
+            max: 10000
         })
         macroxpog = 352;
 
-        @TextProperty({
+        @SliderProperty({
             name: "macroy",
             description: '',
             category: "CLICK GUI",
             subcategory: "   ",
-            placeholder: "put text here"
+            min: 1,
+            max: 10000
         })
         macroypog = 2;
 
-        @TextProperty({
+        @SliderProperty({
             name: "cmacrox",
             description: '',
             category: "CLICK GUI",
             subcategory: "   ",
-            placeholder: "put text here"
+            min: 1,
+            max: 10000
         })
         cmacroxpog = 502;
 
-        @TextProperty({
+        @SliderProperty({
             name: "cmacroy",
             description: '',
             category: "CLICK GUI",
             subcategory: "   ",
-            placeholder: "put text here"
+            min: 1,
+            max: 10000
         })
         cmacroypog = 2;
         
-        @TextProperty({
+        @SliderProperty({
             name: "skyblockx",
             description: '',
             category: "CLICK GUI",
             subcategory: "   ",
-            placeholder: "put text here"
+            min: 1,
+            max: 10000
         })
         skyblockxpog = 652;
 
-        @TextProperty({
+        @SliderProperty({
             name: "skyblocky",
             description: '',
             category: "CLICK GUI",
             subcategory: "   ",
-            placeholder: "put text here"
+            min: 1,
+            max: 10000
         })
         skyblockypog = 2;
 
-        @TextProperty({
+        @SliderProperty({
             name: "skyblocky",
             description: '',
             category: "CLICK GUI",
             subcategory: "   ",
-            placeholder: "put text here"
+            min: 1,
+            max: 10000
         })
         otherxpog = 802;
 
-        @TextProperty({
+        @SliderProperty({
             name: "skyblocky",
             description: '',
             category: "CLICK GUI",
             subcategory: "   ",
-            placeholder: "put text here"
+            min: 1,
+            max: 10000
         })
         otherypog = 2;
 
-        @TextProperty({
+        @SliderProperty({
             name: "button width",
             description: '',
             category: "CLICK GUI",
             subcategory: "   ",
-            placeholder: "put text here"
+            min: 1,
+            max: 10000
         })
         buttonwidthcon = 120;
 
-        @TextProperty({
+        @SliderProperty({
             name: "button width",
             description: '',
             category: "CLICK GUI",
             subcategory: "   ",
-            placeholder: "put text here"
+            min: 1,
+            max: 10000
         })
-        buttonheightcon = 20;
+        buttonheightcon = 40;
 }
 
 // mushroom client was originally a chat macro mod for my friends!

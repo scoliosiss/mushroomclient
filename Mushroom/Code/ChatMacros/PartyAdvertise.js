@@ -39,7 +39,7 @@ register("step", (mesa) => {
                             }
                             if (!scoreboardInfo.includes("Village")) {
                                 Thread.sleep(500);   
-                                lookAt(allEntity[l].getX(), allEntity[l].getY(), allEntity[l].getZ());
+                                lookAt(-39, 119, 11);
                                 WalkForward.setState(true)
                                 ChatLib.say(Config.publicspam)
                             }
@@ -55,7 +55,7 @@ register("step", (mesa) => {
                         ChatLib.chat(prefix + " > &cFailsafe activating")
                         RightClick.invoke(mc)
                         timercountdown = Date.now()
-                        Thread.sleep(1000)
+                        Thread.sleep(2000)
                         ChatLib.say("/warp " + Config.islandto)
                     }
                 }

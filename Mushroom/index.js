@@ -6,6 +6,7 @@ import Discord from "./Code/Other//Discord"
 
 import "./Code/Combat/AntiKnockback"
 import "./Code/Combat/Autoblock"
+import "./Code/Combat/BlockHit"
 import "./Code/Combat/Clickmultiplier"
 import "./Code/Combat/Killaura"
 import "./Code/Combat/NoWalls"
@@ -19,6 +20,7 @@ import "./Code/Visual/SkullESP"
 
 import "./Code/Macros/Autoclicker"
 import "./Code/Macros/ChestAura"
+import "./Code/Macros/InvWalk"
 import "./Code/Macros/LeverAura"
 import "./Code/Macros/Scaffold"
 import "./Code/Macros/SkullAura"
@@ -46,6 +48,7 @@ import "./Code/Skyblock/MelodyMacro"
 import "./Code/Other/BANKEY"
 import "./Code/Other/ChatCopy"
 import "./Code/Other/Clip"
+import "./Code/Other/DUPEAHHHHH"
 import "./Code/Other/FREEZE"
 import "./Code/Other/Hilarity"
 import "./Code/Other/ImagePaste"
@@ -289,9 +292,9 @@ class buttondraw {
       let mx = Client.getMouseX(); 
       let my = Client.getMouseY();
       Renderer.drawRect(Renderer.color(25, 25, 25, 250), this.x, this.y, this.width, this.height);
-      Renderer.drawRect(Renderer.color(250, 250, 250, 250), this.x + (Config.buttonwidthcon * 0.849), this.y + (Config.buttonheightcon / 2), this.width / (Config.buttonwidthcon / 8.5), this.height / (Config.buttonheightcon / 8));
+      Renderer.drawRect(Renderer.color(250, 250, 250, 250), this.x + (Config.buttonwidthcon * 0.85), this.y + (Config.buttonheightcon / 2), this.width / (Config.buttonwidthcon / 8.5), this.height / (Config.buttonheightcon / 8));
       if (mx >= this.x && mx <= this.x + this.width && my >= this.y && my <= this.y + this.height) {
-        Renderer.drawRect(Renderer.color(0, 0, 250, 150), this.x + (Config.buttonwidthcon * 0.849), this.y + (Config.buttonheightcon / 2), this.width / (Config.buttonwidthcon / 7.39), this.height / (Config.buttonheightcon / 7.4));
+        Renderer.drawRect(Renderer.color(0, 0, 250, 150), this.x + (Config.buttonwidthcon * 0.85) + 1, this.y + (Config.buttonheightcon / 2) + 1, this.width / (Config.buttonwidthcon / 8.5) - 2, this.height / (Config.buttonheightcon / 8) - 2);
       }
       Renderer.drawString(buttontext, buttonx, buttony);
   }
@@ -299,7 +302,7 @@ class buttondraw {
     let buttontext = this.text;
     let buttonx = this.x + (this.width / 2 - Renderer.getStringWidth(this.text) / 1.5);
     let buttony = this.y + (this.height / 2 - 4);
-    Renderer.drawRect(Renderer.color(0, 0, 250, 250), this.x + (Config.buttonwidthcon * 0.85), this.y + (Config.buttonheightcon / 2), this.width / (Config.buttonwidthcon / 7.4), this.height / (Config.buttonheightcon / 7.4));
+    Renderer.drawRect(Renderer.color(0, 0, 250, 250), this.x + (Config.buttonwidthcon * 0.85) + 1, this.y + (Config.buttonheightcon / 2) + 1, this.width / (Config.buttonwidthcon / 8) - 2, this.height / (Config.buttonheightcon / 8) - 2);
     Renderer.drawString(buttontext, buttonx, buttony);
 }
 sliderdraw() {
@@ -573,6 +576,7 @@ let cpsmultiplierbinded = ""
 let cpsmultiplierkeybind = ""
 let freezebinded = ""
 let freezekeybind = ""
+
 register("step", () => {
 combatx = (combatxnew)
 combattitley = (combatynew)
@@ -616,7 +620,9 @@ autoblockextray = autoblocky
 autoblockkeybindy = autoblocky
 }
 //
-cpsmultipliery = (autoblockkeybindy + Config.buttonheightcon)
+blockhity = autoblockkeybindy + Config.buttonheightcon
+//
+cpsmultipliery = (blockhity + Config.buttonheightcon)
 if (cpsmultiplierextra) {
   cpsmultiplierextra1y = (cpsmultipliery + Config.buttonheightcon)
   cpsmultiplierextra2y = (cpsmultipliery + (Config.buttonheightcon * 2))
@@ -666,7 +672,8 @@ fakebany = (nickhidery + Config.buttonheightcon)
 macrox = (macroxnew)
 macroy = (macroynew)
 scaffoldy = (macroy + Config.buttonheightcon)
-chestauray = (scaffoldy + Config.buttonheightcon)
+invwalky = (scaffoldy + Config.buttonheightcon)
+chestauray = (invwalky + Config.buttonheightcon)
 skullauray = (chestauray + Config.buttonheightcon)
 leverauray = (skullauray + Config.buttonheightcon)
 swordswapy = (leverauray + Config.buttonheightcon)
@@ -751,13 +758,14 @@ autoblock2 = new buttondraw(combatx,autoblocky, Config.buttonwidthcon, Config.bu
 autoblockextras = new buttondraw(combatx,autoblockextray, Config.buttonwidthcon, Config.buttonheightcon, "always");
 autoblockkeybinddraw = new buttondraw(combatx,autoblockkeybindy,Config.buttonwidthcon,Config.buttonheightcon, "");
 autoblockkeybindtext = new Text(autoblockbinded, combatx + (Config.buttonwidthcon * 0.89), autoblockkeybindy + 1);
+blockhitbox = new buttondraw(combatx,blockhity,Config.buttonwidthcon,Config.buttonheightcon, "Block Hit");
 cpsmultiplier = new buttondraw(combatx,cpsmultipliery,Config.buttonwidthcon,Config.buttonheightcon, "CPS multiplier");
 cpsmultiplierextra1 = new buttondraw(combatx,cpsmultiplierextra1y,Config.buttonwidthcon,Config.buttonheightcon, "right clicks");
 cpsmultiplierextra2 = new buttondraw(combatx,cpsmultiplierextra2y,Config.buttonwidthcon,Config.buttonheightcon, "left clicks");
 cpsmultiplierkeybinddraw = new buttondraw(combatx,cpsmultiplierkeybindy,Config.buttonwidthcon,Config.buttonheightcon, "");
 cpsmultiplierkeybindtext = new Text(cpsmultiplierbinded, combatx + Config.buttonheightcon, cpsmultiplierkeybindy + 1);
-reach = new buttondraw(combatx,reachy, Config.buttonwidthcon, Config.buttonheightcon, "Reach");
 antiknockbackbox = new buttondraw(combatx,antikby, Config.buttonwidthcon, Config.buttonheightcon, "Anti Knockback");
+reach = new buttondraw(combatx,reachy, Config.buttonwidthcon, Config.buttonheightcon, "Reach");
 
 // VISUAL
 visualtitle = new buttondraw(visualx,visualy,Config.buttonwidthcon,Config.buttonheightcon, "Visual");
@@ -777,6 +785,7 @@ fakebanbutton = new buttondraw(visualx,fakebany, Config.buttonwidthcon, Config.b
 // MACRO
 macrotitle = new buttondraw(macrox,macroy,Config.buttonwidthcon,Config.buttonheightcon, "Macro");
 scaffoldbutton = new buttondraw(macrox,scaffoldy, Config.buttonwidthcon, Config.buttonheightcon, "Scaffold");
+invwalkbutton = new buttondraw(macrox,invwalky, Config.buttonwidthcon, Config.buttonheightcon, "Inventory Walk");
 chestaurabutton = new buttondraw(macrox,chestauray, Config.buttonwidthcon, Config.buttonheightcon, "Chest Aura");
 skullaurabutton = new buttondraw(macrox,skullauray, Config.buttonwidthcon, Config.buttonheightcon, "Skull Aura"); 
 leveraurabutton = new buttondraw(macrox,leverauray, Config.buttonwidthcon, Config.buttonheightcon, "Lever Aura"); 
@@ -825,17 +834,21 @@ register("renderOverlay", function() {
       killaura2.drawButton();
       nowall.drawButton();
       autoblock2.drawButton();
+      blockhitbox.drawButton();
       cpsmultiplier.drawButton();
       reach.commingsoontm();
       antiknockbackbox.drawButton();
       if (killaura2.isMouseOver()) {
-        configGui.drawCreativeTabHoveringString("Aims at and hits players within 5 blocks", Client.getMouseX(), Client.getMouseY());
+        configGui.drawCreativeTabHoveringString("I AM BECOME DEATH, DESTROYER OF WORLDS", Client.getMouseX(), Client.getMouseY());
       }
       if (nowall.isMouseOver()) {
         configGui.drawCreativeTabHoveringString("Lets you hit through walls", Client.getMouseX(), Client.getMouseY());
       }
       if (autoblock2.isMouseOver()) {
         configGui.drawCreativeTabHoveringString("Automaticaly blocks while hitting", Client.getMouseX(), Client.getMouseY());
+      }
+      if (blockhitbox.isMouseOver()) {
+        configGui.drawCreativeTabHoveringString("Allows you to hit while blocking", Client.getMouseX(), Client.getMouseY());
       }
       if (cpsmultiplier.isMouseOver()) {
         configGui.drawCreativeTabHoveringString("Doubles every click you do", Client.getMouseX(), Client.getMouseY());
@@ -860,6 +873,9 @@ register("renderOverlay", function() {
       }
       if (Config.antiknockback) {
         antiknockbackbox.clickedbutton();
+      }
+      if (Config.blockhit) {
+        blockhitbox.clickedbutton();
       }
       if (killauraextra) {
         killauraextras.extrabutton();
@@ -983,12 +999,16 @@ register("renderOverlay", function() {
           macrotitle.titlebutton();
           if (showmacro) {
           scaffoldbutton.drawButton();
+          invwalkbutton.drawButton();
           chestaurabutton.drawButton();
           skullaurabutton.drawButton();
           leveraurabutton.drawButton();
           swordswapbutton.drawButton();
           if (scaffoldbutton.isMouseOver()) {
             configGui.drawCreativeTabHoveringString("Bridges for you when you face in a direction", Client.getMouseX(), Client.getMouseY());
+          }
+          if (invwalkbutton.isMouseOver()) {
+            configGui.drawCreativeTabHoveringString("Allows you to move while in inventorys", Client.getMouseX(), Client.getMouseY());
           }
           if (chestaurabutton.isMouseOver()) {
             configGui.drawCreativeTabHoveringString("Opens chests nearby without you looking at them", Client.getMouseX(), Client.getMouseY());
@@ -1004,6 +1024,9 @@ register("renderOverlay", function() {
           }
           if (Config.scaffoldi) {
             scaffoldbutton.clickedbutton();
+          }
+          if (Config.invwalk) {
+            invwalkbutton.clickedbutton();
           }
           if (Config.chestaurabased) {
             chestaurabutton.clickedbutton();
@@ -1263,6 +1286,12 @@ register("guiMouseClick", function(x, y, button, state) {
         return;
       }
     }
+    if (blockhitbox.isMouseOver()) {
+      if (button == 0) {
+        (Config.blockhit = !Config.blockhit)
+        return;
+      }
+    }
     if (cpsmultiplier.isMouseOver()) {
       if (button == 0) {
         (Config.cpsmultiplierer = !Config.cpsmultiplierer)
@@ -1365,6 +1394,11 @@ register("guiMouseClick", function(x, y, button, state) {
     if (scaffoldbutton.isMouseOver()) {
       if (button == 0) {
         (Config.scaffoldi = !Config.scaffoldi)
+      }
+    }
+    if (invwalkbutton.isMouseOver()) {
+      if (button == 0) {
+        (Config.invwalk = !Config.invwalk)
       }
     }
     if (chestaurabutton.isMouseOver()) {

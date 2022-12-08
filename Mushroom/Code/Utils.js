@@ -12,6 +12,12 @@ const mc = Client.getMinecraft();
 const LeftClick = mc.class.getDeclaredMethod("func_147116_af");
 const RightClick = mc.class.getDeclaredMethod("func_147121_ag");
 const WalkForward = new KeyBind(mc.field_71474_y.field_74351_w);
+const WalkRight = new KeyBind(mc.field_71474_y.field_74366_z);
+const WalkLeft = new KeyBind(mc.field_71474_y.field_74370_x);
+const WalkBackward = new KeyBind(mc.field_71474_y.field_74368_y);
+const Jump = new KeyBind(mc.field_71474_y.field_74314_A);
+const Shift = new KeyBind(mc.field_71474_y.field_74311_E);
+const Sprint = new KeyBind(mc.field_71474_y.field_151444_V);
 const holdright = new KeyBind(mc.field_71474_y.field_74313_G);
 LeftClick.setAccessible(true);
 RightClick.setAccessible(true);
@@ -70,4 +76,4 @@ function distanceToPlayer(x,y,z) {
     return dis2
 }
 
-export {prefix, colors, BP, swaptoslot, holdright, stripRank, C08PacketPlayerBlockPlacement, cancelrightclick, positionset, setPosition, mc, LeftClick, RightClick, WalkForward, blockbreak, pa, EnumFacing, BlockPoss, BlockAir, Vec3, BlockChest, BlockLever, BlockSkull, ArrayLists, noghostblock, noscaffoldblock, scaffoldblocks, getVersion, getPlayerHead, radians_to_degrees, lookAt, distanceToPlayer}
+export {prefix, colors, BP, swaptoslot, holdright, stripRank, C08PacketPlayerBlockPlacement, cancelrightclick, positionset, setPosition, mc, LeftClick, RightClick, WalkForward, WalkRight, WalkLeft, WalkBackward, Jump, Shift, Sprint, blockbreak, pa, EnumFacing, BlockPoss, BlockAir, Vec3, BlockChest, BlockLever, BlockSkull, ArrayLists, noghostblock, noscaffoldblock, scaffoldblocks, getVersion, getPlayerHead, radians_to_degrees, lookAt, distanceToPlayer}
