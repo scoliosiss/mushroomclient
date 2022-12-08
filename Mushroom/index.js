@@ -410,7 +410,7 @@ register("command", function() {
 
 register("renderOverlay", function() {
     if (configGui.isOpen()) {
-        let mushroomer = new Text("Mushroom Client", Renderer.screen.getWidth() / 2 - 90 - Renderer.getStringWidth(mushroomer) * 1.1, Renderer.screen.getHeight() / 1.2).setColor(Renderer.getRainbow(exampleImportStep)).setScale(7).setShadow(true);
+        let mushroomer = new Text("Mushroom Client", 350, 350).setColor(Renderer.getRainbow(exampleImportStep)).setScale(7).setShadow(true);
         mushroomer.draw();
     }
 })  
@@ -478,90 +478,64 @@ function cancel() {
 return;
 }
 
-let combatxnew = 52
-let combatynew = 2
-let visualxnew = 202
-let visualynew = 2
-let macroxnew = 352
-let macroynew = 2
-let cmacroxnew = 502
-let cmacroynew = 2
-let skyblockxnew = 652
-let skyblockynew = 2
-let otherxnew = 802
-let otherynew = 2
-
 let changegui = false
 register("step", () => {
   if (changegui) {
 if (clickguimode == 1) {
-combatxnew = 52
-combatynew = 2
-visualxnew = 202
-visualynew = 2
-macroxnew = 352
-macroynew = 2
-cmacroxnew = 502
-cmacroynew = 2
-skyblockxnew = 652
-skyblockynew = 2
-otherxnew = 802
-otherynew = 2
+Config.combatxpog = 52
+Config.combatypog = 2
+Config.visualxpog = 202
+Config.visualypog = 2
+Config.macroxpog = 352
+Config.macroypog = 2
+Config.cmacroxpog = 502
+Config.cmacroypog = 2
+Config.skyblockxpog = 652
+Config.skyblockypog = 2
+Config.otherxpog = 802
+Config.otherypog = 2
 changegui = false
 }
 if (clickguimode == 2) {
-combatxnew = 2
- combatynew = 2
- visualxnew = 202
- visualynew = 2
- macroxnew = 352
- macroynew = 2
- cmacroxnew = 502
- cmacroynew = 2
- skyblockxnew = 652
- skyblockynew = 2
- otherxnew = 802
- otherynew = 2
- changegui = false
+  Config.combatxpog = 2
+  Config.combatypog = 2
+  Config.visualxpog = 202
+  Config.visualypog = 2
+  Config.macroxpog = 352
+  Config.macroypog = 2
+  Config.cmacroxpog = 502
+  Config.cmacroypog = 2
+  Config.skyblockxpog = 652
+  Config.skyblockypog = 2
+  Config.otherxpog = 802
+  Config.otherypog = 2
 }
 }
 })
 register("step", () => {
   if (letmovecombatgui) {
-    combatxnew = Config.combatxpog = Client.getMouseX() - Config.buttonwidthcon / 2
-    combatynew = Config.combatypog = Client.getMouseY() - Config.buttonheightcon / 2
-    combatxnew.toFixed(1)
-    combatynew.toFixed(1)
+    Config.combatxpog = Client.getMouseX() - Config.buttonwidthcon / 2
+    Config.combatypog = Client.getMouseY() - Config.buttonheightcon / 2
   }
   if (letmovevisualgui) {
-    visualxnew = Config.visualxpog = Client.getMouseX() - Config.buttonwidthcon / 2
-    visualynew = Config.visualypog = Client.getMouseY() - Config.buttonheightcon / 2
-    visualxnew.toFixed(1)
-    visualynew.toFixed(1)
+    Config.visualxpog = Client.getMouseX() - Config.buttonwidthcon / 2
+    Config.visualypog = Client.getMouseY() - Config.buttonheightcon / 2
   }
   if (letmovemacrogui) {
-    macroxnew = Config.macroxpog = Client.getMouseX() - Config.buttonwidthcon / 2
-    macroynew = Config.macroxpog = Client.getMouseY() - Config.buttonheightcon / 2
-    macroxnew.toFixed(1)
-    macroynew.toFixed(1)
+    Config.macroxpog = Client.getMouseX() - Config.buttonwidthcon / 2
+    Config.macroypog = Client.getMouseY() - Config.buttonheightcon / 2
   }
   if (letmovecmacrogui) {
-    cmacroxnew = Config.cmacroxpog = Client.getMouseX() - Config.buttonwidthcon / 2
-    cmacroynew = Config.cmacroypog = Client.getMouseY() - Config.buttonheightcon / 2
-    cmacroxnew.toFixed(1)
-    cmacroynew.toFixed(1)
+    Config.cmacroxpog = Client.getMouseX() - Config.buttonwidthcon / 2
+    Config.cmacroypog = Client.getMouseY() - Config.buttonheightcon / 2
   }
   if (letmoveskyblockgui) {
-    skyblockxnew = Config.skyblockxpog = Client.getMouseX() - Config.buttonwidthcon / 2
-    skyblockynew = Config.skyblockypog = Client.getMouseY() - Config.buttonheightcon / 2
-    skyblockxnew.toFixed(1)
-    skyblockynew.toFixed(1)
+    Config.skyblockxpog = Client.getMouseX() - Config.buttonwidthcon / 2
+    Config.skyblockypog = Client.getMouseY() - Config.buttonheightcon / 2
   }
   if (letmoveothergui) {
-    otherxnew = Config.otherxpog = Client.getMouseX() - Config.buttonwidthcon / 2
-    otherynew = Config.otherypog = Client.getMouseY() - Config.buttonheightcon / 2
-    otherxnew.toFixed(1)
-    otherynew.toFixed(1)
+    Config.otherxpog = Client.getMouseX() - Config.buttonwidthcon / 2
+    Config.otherypog = Client.getMouseY() - Config.buttonheightcon / 2
   }
 });
 
@@ -578,8 +552,8 @@ let freezebinded = ""
 let freezekeybind = ""
 
 register("step", () => {
-combatx = (combatxnew)
-combattitley = (combatynew)
+combatx = (Config.combatxpog)
+combattitley = (Config.combatypog)
 killauray = (combattitley + Config.buttonheightcon)
 //
 killaurarangenumy = (killauray + Config.buttonheightcon + (Config.buttonheightcon /10))
@@ -646,8 +620,8 @@ if (selectboxnum >= 4) {
 */
 
 // VISUAL
-visualx = (visualxnew)
-visualy = (visualynew)
+visualx = (Config.visualxpog)
+visualy = (Config.visualypog)
 clickguiy = (visualy + Config.buttonheightcon)
 if (extraclickgui) {
 clickguiheighty = (clickguiy + Config.buttonheightcon)
@@ -669,8 +643,8 @@ nickhidery = (blockespy + Config.buttonheightcon)
 fakebany = (nickhidery + Config.buttonheightcon)
 
 // MACRO
-macrox = (macroxnew)
-macroy = (macroynew)
+macrox = (Config.macroxpog)
+macroy = (Config.macroypog)
 scaffoldy = (macroy + Config.buttonheightcon)
 invwalky = (scaffoldy + Config.buttonheightcon)
 chestauray = (invwalky + Config.buttonheightcon)
@@ -679,8 +653,8 @@ leverauray = (skullauray + Config.buttonheightcon)
 swordswapy = (leverauray + Config.buttonheightcon)
 
 // CHAT MACRO
-cmacrox = (cmacroxnew)
-cmacroy = (cmacroynew)
+cmacrox = (Config.cmacroxpog)
+cmacroy = (Config.cmacroypog)
 guildwelcy = (cmacroy + Config.buttonheightcon)
 guildboty = (guildwelcy + Config.buttonheightcon)
 quickmathsolvery = (guildboty + Config.buttonheightcon)
@@ -688,8 +662,8 @@ quotesy = (quickmathsolvery + Config.buttonheightcon)
 autoptransfery = (quotesy + Config.buttonheightcon)
 
 // SKYBLOCK
-skyblockx = (skyblockxnew)
-skyblocky = (skyblockynew)
+skyblockx = (Config.skyblockxpog)
+skyblocky = (Config.skyblockypog)
 autotermy = (skyblocky + Config.buttonheightcon)
 dungeonscorecalcy = (autotermy + Config.buttonheightcon)
 shitterwarningy = (dungeonscorecalcy + Config.buttonheightcon)
@@ -699,8 +673,8 @@ gyrotimery = (ghostblocky + Config.buttonheightcon)
 lguydiedy = (gyrotimery + Config.buttonheightcon)
 
 // OTHER
-otherx = (otherxnew)
-othery = (otherynew)
+otherx = (Config.otherxpog)
+othery = (Config.otherypog)
 hilarityy = (othery + Config.buttonheightcon)
 spanishy = (hilarityy + Config.buttonheightcon)
 discordrpcy = (spanishy + Config.buttonheightcon)

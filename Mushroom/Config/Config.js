@@ -1188,7 +1188,7 @@ Join() {
         skyblockypog = 2;
 
         @SliderProperty({
-            name: "skyblocky",
+            name: "otherx",
             description: '',
             category: "CLICK GUI",
             subcategory: "   ",
@@ -1198,7 +1198,7 @@ Join() {
         otherxpog = 802;
 
         @SliderProperty({
-            name: "skyblocky",
+            name: "othery",
             description: '',
             category: "CLICK GUI",
             subcategory: "   ",
@@ -1218,7 +1218,7 @@ Join() {
         buttonwidthcon = 120;
 
         @SliderProperty({
-            name: "button width",
+            name: "button height",
             description: '',
             category: "CLICK GUI",
             subcategory: "   ",
