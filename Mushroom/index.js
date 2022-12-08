@@ -375,7 +375,7 @@ selectbutton() {
   let buttontext = this.text;
   let buttonx = this.x + (this.width / 2 - Renderer.getStringWidth(this.text) * 2);
   let buttony = this.y + (this.height / 2 - 4);
-  Renderer.drawRect(Renderer.color(25,25,25, 250), this.x, this.y, this.width, this.height / 2);
+  Renderer.drawRect(Renderer.color(25,25,25, 250), this.x, this.y, this.width, this.height);
   Renderer.drawString("Mode", this.x + 5, this.y + (Config.buttonheightcon * 0.2))
   Renderer.drawString(buttontext, buttonx, buttony);
 }
@@ -474,6 +474,16 @@ function freezekeybindpog(typedChar, keyCode) {
   freezebindnow = false
   return;
 }
+function clickguikeybindpog(typedChar, keyCode) {
+  if (keyCode == 14) return;
+  clickguibinded = typedChar
+  Config.clickguieybind = keyCode
+  if (keyCode == 42) {
+    Config.clickguieybind = ""
+  }
+  clickbindnow = false
+  return;
+}
 function cancel() {
 return;
 }
@@ -550,6 +560,7 @@ let cpsmultiplierbinded = ""
 let cpsmultiplierkeybind = ""
 let freezebinded = ""
 let freezekeybind = ""
+let clickguibinded = ""
 
 register("step", () => {
 combatx = (Config.combatxpog)
@@ -627,9 +638,11 @@ if (extraclickgui) {
 clickguiheighty = (clickguiy + Config.buttonheightcon)
 clickguiwidthy = (clickguiy + (Config.buttonheightcon * 2))
 clickguiselecty = (clickguiy + (Config.buttonheightcon * 3))
+clickguikeybindy = (clickguiy + (Config.buttonheightcon * 4))
 }
 if (!extraclickgui) {
   clickguiselecty = clickguiy
+  clickguikeybindy = clickguiy
 }
 if (clickguimode <= 0) {
   clickguimode = 2
@@ -637,7 +650,7 @@ if (clickguimode <= 0) {
 if (clickguimode >= 3) {
   clickguimode = 1
 }
-playerespy = (clickguiselecty + Config.buttonheightcon)
+playerespy = (clickguikeybindy + Config.buttonheightcon)
 blockespy = (playerespy + Config.buttonheightcon)
 nickhidery = (blockespy + Config.buttonheightcon)
 fakebany = (nickhidery + Config.buttonheightcon)
@@ -701,8 +714,11 @@ if (cpsmultiplierbindnow) {
 if (freezebindnow) {
   configGui.registerKeyTyped(freezekeybindpog);
 }
+if (clickbindnow) {
+  configGui.registerKeyTyped(clickguikeybindpog);
+}
 //
-if (!killaurakeybindnow && !killauratypeallow && !nowallbindnow && !autoblockbindnow && !cpsmultiplierbindnow && !freezebindnow) {
+if (!killaurakeybindnow && !killauratypeallow && !nowallbindnow && !autoblockbindnow && !cpsmultiplierbindnow && !freezebindnow && !clickbindnow) {
 configGui.registerKeyTyped(cancel)
 }
 
@@ -748,7 +764,9 @@ clickguiheightbutton = new buttondraw(visualx,clickguiy + Config.buttonheightcon
 clickguiwidthbutton = new buttondraw(visualx,clickguiy + (Config.buttonheightcon * 2),Config.buttonwidthcon,Config.buttonheightcon, "width");
 clickguiheightnum = new Text(Config.buttonheightcon, visualx + (Config.buttonwidthcon * 0.8), clickguiy + Config.buttonheightcon + (Config.buttonheightcon / 2));
 clickguiwidthnum = new Text(Config.buttonwidthcon, visualx + (Config.buttonwidthcon * 0.8), clickguiy + (Config.buttonheightcon * 2) + (Config.buttonheightcon / 2));
-clickguiselectbox = new buttondraw(visualx,clickguiselecty,Config.buttonwidthcon,Config.buttonheightcon + Config.buttonheightcon, "");
+clickguiselectbox = new buttondraw(visualx,clickguiselecty,Config.buttonwidthcon,Config.buttonheightcon, "");
+clickguikeybindbox = new buttondraw(visualx,clickguikeybindy,Config.buttonwidthcon,Config.buttonheightcon, "");
+clickguikeybindtext = new Text(clickguibinded, visualx + (Config.buttonwidthcon * 0.89), clickguikeybindy + 1);
 guimode1 = new Text("Oringo", visualx + (Config.buttonwidthcon * 0.6), clickguiselecty + (Config.buttonheightcon * 0.2));
 guimode2 = new Text("Raven", visualx + (Config.buttonwidthcon * 0.6), clickguiselecty + (Config.buttonheightcon * 0.2));
 playerespbutton = new buttondraw(visualx,playerespy, Config.buttonwidthcon, Config.buttonheightcon, "Player ESP");
@@ -810,7 +828,7 @@ register("renderOverlay", function() {
       autoblock2.drawButton();
       blockhitbox.drawButton();
       cpsmultiplier.drawButton();
-      reach.commingsoontm();
+      reach.drawButton();
       antiknockbackbox.drawButton();
       if (killaura2.isMouseOver()) {
         configGui.drawCreativeTabHoveringString("I AM BECOME DEATH, DESTROYER OF WORLDS", Client.getMouseX(), Client.getMouseY());
@@ -954,6 +972,8 @@ register("renderOverlay", function() {
             clickguiwidthbutton.sliderdrawwidth();
             clickguiwidthnum.draw();
             clickguiheightnum.draw();
+            clickguikeybindbox.keybindbutton();
+            clickguikeybindtext.draw();
             if (drawheightslide) {
               clickguiheightbutton.slidertoggleddraw();
             }
@@ -1129,6 +1149,9 @@ register("renderOverlay", function() {
           }
           if (updatesbutton.isMouseOver()) {
             configGui.drawCreativeTabHoveringString("Notifies you when there is a significant update", Client.getMouseX(), Client.getMouseY());
+          }
+          if (freezebutton.isMouseOver()) {
+            configGui.drawCreativeTabHoveringString("Stops you from recieving packets", Client.getMouseX(), Client.getMouseY());
           }
           if (Config.hilarity) {
             hilaritybutton.clickedbutton();
@@ -1333,6 +1356,11 @@ register("guiMouseClick", function(x, y, button, state) {
       if (button == 0) {
         clickguimode = clickguimode + 1
         changegui = true
+      }
+    }
+    if (clickguikeybindbox.isMouseOver()) {
+      if (button == 0) {
+        clickbindnow = !clickbindnow
       }
     }
     if (playerespbutton.isMouseOver()) {
@@ -1546,6 +1574,7 @@ let autoblockextras
 // VISUAL
 let showvisual = true
 let letmovevisualgui = false
+let clickbindnow = false
 let extraclickgui = false
 let drawheightslide = false
 let drawwidthslide = false
@@ -1630,6 +1659,15 @@ register("step", () => {
   }
 }).setFps(10)
 
+register("step", () => {
+  if (Client.currentGui.get() == null) {
+    if (Keyboard.isKeyDown(Config.clickguieybind)) {
+      ChatLib.chat(prefix)
+      configGui.open();
+    }
+  }
+}).setFps(10)
+
 register("tick", () => {
   if(Config.killaurakeybindconfig == "") {
     (Config.killaurakeybindconfig = "dont")
@@ -1648,6 +1686,9 @@ register("tick", () => {
   }
   if(Config.freezekeybindconfig == "") {
     (Config.freezekeybindconfig = "dont")
+  }
+  if(Config.clickguieybind == "") {
+    (Config.clickguieybind = "dont")
   }
 });
 

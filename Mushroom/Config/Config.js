@@ -1087,6 +1087,15 @@ Join() {
         })
         freezekeybindconfig = "";
 
+        @TextProperty({
+            name: "clickgui keybind",
+            description: '',
+            category: "Keybind",
+            subcategory: "   ",
+            placeholder: "put text here"
+        })
+        clickguieybind = "";
+
         @SliderProperty({
             name: "combatx",
             description: '',
