@@ -2,8 +2,8 @@
 [click_gui]
 	showcombat = false
 	showvisual = false
-	showmacro = true
-	showchatmacro = false
+	showmacro = false
+	showchatmacro = true
 	showskyblock = false
 	showother = false
 
@@ -40,7 +40,7 @@
 
 	[macro._]
 		"&cscaffold" = false
-		invwalk = true
+		invwalk = false
 
 [other]
 
@@ -174,7 +174,7 @@
 		"&cno_walls" = false
 		"&creach" = false
 		"&ckillaura_through_walls" = true
-		"&ckillaura_mobs" = true
+		"&ckillaura_mobs" = false
 		"&ckillaura_autoblock" = true
 		"&ckillaura" = false
 		"&canti_knockback" = false
@@ -184,7 +184,7 @@
 		blockhit = false
 
 [sliders]
-	"&4hilarity_speed" = 1000
+	"&4hilarity_speed" = 885
 
 	[sliders.____]
 		"&4autoterm_speed" = 200
