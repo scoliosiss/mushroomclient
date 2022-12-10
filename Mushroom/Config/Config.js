@@ -270,6 +270,15 @@ class Config {
     })
     chestesppog = false;
 
+    @SelectorProperty({
+        name: "esp box type",
+        description: "type of player esp box",
+        category: "Visual",
+        subcategory: "  ",
+        options: ['outline', 'square'],
+    })
+    espboxtype = 0;
+
     @SwitchProperty({
         name: "&cClick gui",
         description: "",
@@ -587,6 +596,7 @@ showfakeban = false;
         options: ['Perm Cheating ban', 'Username ban',"Security ban", 'Boosting ban','Inappropriate build ban','Temp Cheating ban','Custom'],
     })
     banMethod = 0;
+
     @SelectorProperty({
         name: '&aFakeban time',
         description: '&bBan time',
@@ -1033,68 +1043,75 @@ Join() {
             })
         discordrpcpic = 0;
 
-        @TextProperty({
+        @SliderProperty({
             name: "killaura keybind",
             description: '',
             category: "Keybind",
             subcategory: "   ",
-            placeholder: "put text here"
+            min: 1,
+            max: 10000
         })
-        killaurakeybindconfig = "";
+        killaurakeybindconfig = 1000;
 
-        @TextProperty({
+        @SliderProperty({
             name: "nowall keybind",
             description: '',
             category: "Keybind",
             subcategory: "   ",
-            placeholder: "put text here"
+            min: 1,
+            max: 10000
         })
-        nowallkeybindconfig = "";
+        nowallkeybindconfig = 1000;
 
-        @TextProperty({
+        @SliderProperty({
             name: "autoblock keybind",
             description: '',
             category: "Keybind",
             subcategory: "   ",
-            placeholder: "put text here"
+            min: 1,
+            max: 10000
         })
-        autoblockkeybindconfig = "";
+        autoblockkeybindconfig = 1000;
 
-        @TextProperty({
+        @SliderProperty({
             name: "cpsmultiplier keybind",
             description: '',
             category: "Keybind",
             subcategory: "   ",
-            placeholder: "put text here"
+            min: 1,
+            max: 10000
         })
-        cpsmultikeybindconfig = "";
+        cpsmultikeybindconfig = 1000;
 
-        @TextProperty({
+        @SliderProperty({
             name: "antikb keybind",
             description: '',
             category: "Keybind",
             subcategory: "   ",
-            placeholder: "put text here"
+            min: 1,
+            max: 10000
         })
-        antikbkeybindconfig = "";
+        antikbkeybindconfig = 1000;
 
-        @TextProperty({
+        @SliderProperty({
             name: "freeze keybind",
             description: '',
             category: "Keybind",
             subcategory: "   ",
-            placeholder: "put text here"
+            min: 1,
+            max: 10000
         })
-        freezekeybindconfig = "";
+        freezekeybindconfig = 1000;
 
-        @TextProperty({
+        @SliderProperty({
             name: "clickgui keybind",
             description: '',
             category: "Keybind",
             subcategory: "   ",
-            placeholder: "put text here"
+            min: 1,
+            max: 10000
         })
-        clickguieybind = "";
+        clickguieybind = 157;
 
         @SliderProperty({
             name: "combatx",
@@ -1235,6 +1252,71 @@ Join() {
             max: 10000
         })
         buttonheightcon = 40;
+
+        @SelectorProperty({
+            name: 'Click gui mode',
+            description: 'pog gui',
+            category: 'CLICK GUI',
+            subcategory: "  ",
+            options: ['Oringo', 'Raven'],
+        })
+        clickguimode = 2;
+
+        @SwitchProperty({
+            name: "showcombat",
+            description: "shows tab in clickgui",
+            category: "CLICK GUI",
+            subcategory: ""
+        })
+        showcombat = true;
+
+        @SwitchProperty({
+            name: "showcombat",
+            description: "shows tab in clickgui",
+            category: "CLICK GUI",
+            subcategory: ""
+        })
+        showcombat = true;
+
+        @SwitchProperty({
+            name: "showvisual",
+            description: "shows tab in clickgui",
+            category: "CLICK GUI",
+            subcategory: ""
+        })
+        showvisual = true;
+        
+        @SwitchProperty({
+            name: "showmacro",
+            description: "shows tab in clickgui",
+            category: "CLICK GUI",
+            subcategory: ""
+        })
+        showmacro = true;
+        
+        @SwitchProperty({
+            name: "showchatmacro",
+            description: "shows tab in clickgui",
+            category: "CLICK GUI",
+            subcategory: ""
+        })
+        showchatmacro = true;
+        
+        @SwitchProperty({
+            name: "showskyblock",
+            description: "shows tab in clickgui",
+            category: "CLICK GUI",
+            subcategory: ""
+        })
+        showskyblock = true;
+
+        @SwitchProperty({
+            name: "showother",
+            description: "shows tab in clickgui",
+            category: "CLICK GUI",
+            subcategory: ""
+        })
+        showother = true;
 }
 
 // mushroom client was originally a chat macro mod for my friends!

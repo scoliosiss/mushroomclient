@@ -7,11 +7,11 @@ const killaurakey = new KeyBind("Chest aura", Keyboard.KEY_NONE, "Mushroom");
 register("step", () => {
     if (!Config.killaura) return;
     allEntity = World.getAllPlayers()
-    for(let i = 0; i < allEntity.length; i++) {
     if (Config.killauramobs) {
         allEntity = World.getAllEntities()
-        if(allEntity[i].getClassName() === "EntityXPOrb" || allEntity[i].getClassName() === "EntitySnowball" || allEntity[i].getClassName() === "EntityItemFrame" || allEntity[i].getClassName() === "EntityEgg" || allEntity[i].getClassName() === "EntityItem" || allEntity[i].getClassName() === "") return;
     }
+    for(let i = 0; i < allEntity.length; i++) {
+    if(allEntity[i].getClassName() !== "EntityXPOrb" && allEntity[i].getClassName() !== "EntitySnowball" && allEntity[i].getClassName() !== "EntityItemFrame" && allEntity[i].getClassName() !== "EntityArmorStand" && allEntity[i].getClassName() !== "EntityEgg" && allEntity[i].getClassName() !== "EntityItem" && !allEntity[i].toString() !== "") {
         if(distanceToPlayer(allEntity[i].getX(), allEntity[i].getY(), allEntity[i].getZ()) < 5) {
             if(distanceToPlayer(allEntity[i].getX(), allEntity[i].getY(), allEntity[i].getZ()) > 0.1) {
                 if (!Config.killauramobs) {
@@ -35,4 +35,5 @@ register("step", () => {
             }
         }
     }
+}
 }).setFps(12)

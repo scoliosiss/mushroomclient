@@ -6,6 +6,7 @@ const chestespkey = new KeyBind("ESP", Keyboard.KEY_NONE, "Mushroom");
 let queueRenderGreen = []
 register('renderWorld', () => { // yay rendering i love watching my fps die due to bad coding!
     if (Config.chestesppog) { // if esp on
+        if (!Config.blockesptoggle) return;
     queueRenderGreen.forEach( (i) => { // draws box
         RenderLib.drawInnerEspBox(i.x + 0.5, i.y, i.z + 0.5, 0.8, 0.8, 0, 1, 0.3, 0.4, true) // green box
     })
@@ -22,6 +23,7 @@ function seechests () {
 
 register("step", () => { // draws the box
     if (Config.chestesppog) {
+        if (!Config.blockesptoggle) return;
     seechests() // pog
     }
 }).setDelay(1) // once every second 

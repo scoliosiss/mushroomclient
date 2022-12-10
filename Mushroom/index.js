@@ -54,7 +54,7 @@ import "./Code/Other/Hilarity"
 import "./Code/Other/ImagePaste"
 import "./Code/Other/UpdateChecker"
 
-import {prefix, getVersion, RightClick} from "./Code/Utils"
+import {prefix, getVersion, getPlayerSkin} from "./Code/Utils"
 var text = new Text(prefix, 55, 17.5);
 var text2 = new Text(prefix, 5, 17.5);
 
@@ -256,19 +256,47 @@ class buttondraw {
         this.height = height;
         this.text = text;
     }
-    clickedbutton() {
-      let buttontext = this.text;
-      let buttonx = this.x + (this.width / 2 - Renderer.getStringWidth(this.text) / 2);
-      let buttony = this.y + (this.height / 2 - 4);
-      Renderer.drawRect(Renderer.color(20, 150, 100, 250), this.x, this.y, this.width, this.height);
-      Renderer.drawString(buttontext, buttonx, buttony);
+  
+okbutton() {
+  let buttontext = this.text;
+  let buttonx = this.x + (this.width / 2 - Renderer.getStringWidth(this.text) / 2);
+  let buttony = this.y + (this.height / 2 - 4);
+  let mx = Client.getMouseX();
+  let my = Client.getMouseY();
+  if (mx >= this.x && mx <= this.x + this.width && my >= this.y && my <= this.y + this.height) {
+      Renderer.drawRect(Renderer.color(0,0,50,200), this.x, this.y, this.width, this.height);
+  } else {
+    Renderer.drawRect(Renderer.color(0,0,0,250), this.x, this.y, this.width, this.height);
   }
+  Renderer.drawString("&a" + buttontext, buttonx, buttony);
+}
+
   titlebutton() {
     let buttontext = this.text;
     let buttonx = this.x + (this.width / 2 - Renderer.getStringWidth(this.text) / 2);
     let buttony = this.y + (this.height / 2 - 4);
-      Renderer.drawRect(Renderer.color(0, 0, 250, 250), this.x, this.y, this.width, this.height);
-    Renderer.drawString(buttontext, buttonx, buttony);
+    let mx = Client.getMouseX();
+    let my = Client.getMouseY();
+    if (mx >= this.x && mx <= this.x + this.width && my >= this.y && my <= this.y + this.height) {
+        Renderer.drawRect(Renderer.color(0,0,100,200), this.x, this.y, this.width, this.height);
+    } else {
+      Renderer.drawRect(Renderer.color(50,50,50,200), this.x, this.y, this.width, this.height);
+    }
+    Renderer.drawString("&c" + buttontext, buttonx, buttony);
+}
+
+titlebuttonon() {
+  let buttontext = this.text;
+  let buttonx = this.x + (this.width / 2 - Renderer.getStringWidth(this.text) / 2);
+  let buttony = this.y + (this.height / 2 - 4);
+  let mx = Client.getMouseX();
+  let my = Client.getMouseY();
+  if (mx >= this.x && mx <= this.x + this.width && my >= this.y && my <= this.y + this.height) {
+      Renderer.drawRect(Renderer.color(0, 0, 200, 200), this.x, this.y, this.width, this.height);
+  } else {
+    Renderer.drawRect(Renderer.color(0, 0, 250, 200), this.x, this.y, this.width, this.height);
+  }
+  Renderer.drawString("&a" + buttontext, buttonx, buttony); // yes i made a whole new function to change one letter, i am a coding god
 }
 
     drawButton() {
@@ -278,12 +306,20 @@ class buttondraw {
         let mx = Client.getMouseX();
         let my = Client.getMouseY();
         if (mx >= this.x && mx <= this.x + this.width && my >= this.y && my <= this.y + this.height) {
-            Renderer.drawRect(Renderer.color(20, 150, 100, 150), this.x, this.y, this.width, this.height);
+            Renderer.drawRect(Renderer.color(10, 10, 150, 150), this.x, this.y, this.width, this.height);
         } else {
-            Renderer.drawRect(Renderer.color(50, 50, 50, 250), this.x, this.y, this.width, this.height);
+            Renderer.drawRect(Renderer.color(10, 10, 10, 150), this.x, this.y, this.width, this.height);
         }
-        Renderer.drawString(buttontext, buttonx, buttony);
+        Renderer.drawString("&c" + buttontext, buttonx, buttony);
     }
+
+    clickedbutton() {
+      let buttontext = this.text;
+      let buttonx = this.x + (this.width / 2 - Renderer.getStringWidth(this.text) / 2);
+      let buttony = this.y + (this.height / 2 - 4);
+      Renderer.drawRect(Renderer.color(20, 0, 150, 250), this.x, this.y, this.width, this.height);
+      Renderer.drawString("&a" + buttontext, buttonx, buttony);
+  }
 
     extrabutton() {
       let buttontext = this.text;
@@ -302,7 +338,7 @@ class buttondraw {
     let buttontext = this.text;
     let buttonx = this.x + (this.width / 2 - Renderer.getStringWidth(this.text) / 1.5);
     let buttony = this.y + (this.height / 2 - 4);
-    Renderer.drawRect(Renderer.color(0, 0, 250, 250), this.x + (Config.buttonwidthcon * 0.85) + 1, this.y + (Config.buttonheightcon / 2) + 1, this.width / (Config.buttonwidthcon / 8) - 2, this.height / (Config.buttonheightcon / 8) - 2);
+    Renderer.drawRect(Renderer.color(0, 0, 250, 250), this.x + (Config.buttonwidthcon * 0.85) + 1, this.y + (Config.buttonheightcon / 2) + 1, this.width / (Config.buttonwidthcon / 8.5) - 2, this.height / (Config.buttonheightcon / 8) - 2);
     Renderer.drawString(buttontext, buttonx, buttony);
 }
 sliderdraw() {
@@ -410,8 +446,13 @@ register("command", function() {
 
 register("renderOverlay", function() {
     if (configGui.isOpen()) {
-        let mushroomer = new Text("Mushroom Client", 350, 350).setColor(Renderer.getRainbow(exampleImportStep)).setScale(7).setShadow(true);
-        mushroomer.draw();
+      if (Config.clickguimode == 1) {
+        mushroomer = new Text("Mushroom Client", 350, 350).setColor(Renderer.getRainbow(exampleImportStep)).setScale(7).setShadow(true);
+      }
+      if (Config.clickguimode == 2) {
+        mushroomer = new Text("Mushroom Client", 2, 2).setColor(Renderer.getRainbow(exampleImportStep)).setScale(7).setShadow(true);
+      }
+      mushroomer.draw();
     }
 })  
 
@@ -491,7 +532,13 @@ return;
 let changegui = false
 register("step", () => {
   if (changegui) {
-if (clickguimode == 1) {
+if (Config.clickguimode == 1) {
+  Config.showcombat = true
+  Config.showvisual = true
+  Config.showmacro = true
+  Config.showchatmacro = true
+  Config.showskyblock = true
+  Config.showother = true
 Config.combatxpog = 52
 Config.combatypog = 2
 Config.visualxpog = 202
@@ -506,22 +553,30 @@ Config.otherxpog = 802
 Config.otherypog = 2
 changegui = false
 }
-if (clickguimode == 2) {
-  Config.combatxpog = 2
-  Config.combatypog = 2
-  Config.visualxpog = 202
-  Config.visualypog = 2
-  Config.macroxpog = 352
-  Config.macroypog = 2
-  Config.cmacroxpog = 502
-  Config.cmacroypog = 2
-  Config.skyblockxpog = 652
-  Config.skyblockypog = 2
-  Config.otherxpog = 802
-  Config.otherypog = 2
+if (Config.clickguimode == 2) {
+  Config.showcombat = false
+  Config.showvisual = true
+  Config.showmacro = false
+  Config.showchatmacro = false
+  Config.showskyblock = false
+  Config.showother = false
+  Config.combatxpog = 52
+  Config.combatypog = 100
+  Config.visualxpog = 52
+  Config.visualypog = Config.combatypog + Config.buttonheightcon
+  Config.macroxpog = 52
+  Config.macroypog = Config.visualypog + Config.buttonheightcon
+  Config.cmacroxpog = 52
+  Config.cmacroypog = Config.macroypog + Config.buttonheightcon
+  Config.skyblockxpog = 52
+  Config.skyblockypog = Config.cmacroypog + Config.buttonheightcon
+  Config.otherxpog = 52
+  Config.otherypog = Config.skyblockypog + Config.buttonheightcon
+  changegui = false
 }
 }
 })
+
 register("step", () => {
   if (letmovecombatgui) {
     Config.combatxpog = Client.getMouseX() - Config.buttonwidthcon / 2
@@ -563,9 +618,14 @@ let freezekeybind = ""
 let clickguibinded = ""
 
 register("step", () => {
+combatxtit = (Config.combatxpog)
 combatx = (Config.combatxpog)
 combattitley = (Config.combatypog)
 killauray = (combattitley + Config.buttonheightcon)
+if (Config.clickguimode == 2) {
+  combatx = combatx + 200
+  killauray = combattitley
+}
 //
 killaurarangenumy = (killauray + Config.buttonheightcon + (Config.buttonheightcon /10))
 killaurarangenumx = (combatx + (Config.buttonwidthcon * 0.8))
@@ -630,10 +690,16 @@ if (selectboxnum >= 4) {
 }
 */
 
+
 // VISUAL
+visualxtit = (Config.visualxpog)
 visualx = (Config.visualxpog)
 visualy = (Config.visualypog)
 clickguiy = (visualy + Config.buttonheightcon)
+if (Config.clickguimode == 2) {
+  visualx = visualx + 200
+  clickguiy = combattitley
+}
 if (extraclickgui) {
 clickguiheighty = (clickguiy + Config.buttonheightcon)
 clickguiwidthy = (clickguiy + (Config.buttonheightcon * 2))
@@ -644,11 +710,11 @@ if (!extraclickgui) {
   clickguiselecty = clickguiy
   clickguikeybindy = clickguiy
 }
-if (clickguimode <= 0) {
-  clickguimode = 2
+if (Config.clickguimode <= 0) {
+  Config.clickguimode = 2
 }
-if (clickguimode >= 3) {
-  clickguimode = 1
+if (Config.clickguimode >= 3) {
+  Config.clickguimode = 1
 }
 playerespy = (clickguikeybindy + Config.buttonheightcon)
 blockespy = (playerespy + Config.buttonheightcon)
@@ -656,9 +722,14 @@ nickhidery = (blockespy + Config.buttonheightcon)
 fakebany = (nickhidery + Config.buttonheightcon)
 
 // MACRO
+macroxtit = (Config.macroxpog)
 macrox = (Config.macroxpog)
 macroy = (Config.macroypog)
 scaffoldy = (macroy + Config.buttonheightcon)
+if (Config.clickguimode == 2) {
+  macrox = macrox + 200
+  scaffoldy = combattitley
+}
 invwalky = (scaffoldy + Config.buttonheightcon)
 chestauray = (invwalky + Config.buttonheightcon)
 skullauray = (chestauray + Config.buttonheightcon)
@@ -666,18 +737,28 @@ leverauray = (skullauray + Config.buttonheightcon)
 swordswapy = (leverauray + Config.buttonheightcon)
 
 // CHAT MACRO
+cmacroxtit = (Config.cmacroxpog)
 cmacrox = (Config.cmacroxpog)
 cmacroy = (Config.cmacroypog)
 guildwelcy = (cmacroy + Config.buttonheightcon)
+if (Config.clickguimode == 2) {
+  cmacrox = cmacrox + 200
+  guildwelcy = combattitley
+}
 guildboty = (guildwelcy + Config.buttonheightcon)
 quickmathsolvery = (guildboty + Config.buttonheightcon)
 quotesy = (quickmathsolvery + Config.buttonheightcon)
 autoptransfery = (quotesy + Config.buttonheightcon)
 
 // SKYBLOCK
+skyblockxtit = (Config.skyblockxpog)
 skyblockx = (Config.skyblockxpog)
 skyblocky = (Config.skyblockypog)
 autotermy = (skyblocky + Config.buttonheightcon)
+if (Config.clickguimode == 2) {
+  skyblockx = skyblockx + 200
+  autotermy = combattitley
+}
 dungeonscorecalcy = (autotermy + Config.buttonheightcon)
 shitterwarningy = (dungeonscorecalcy + Config.buttonheightcon)
 autoharpy = (shitterwarningy + Config.buttonheightcon)
@@ -686,9 +767,14 @@ gyrotimery = (ghostblocky + Config.buttonheightcon)
 lguydiedy = (gyrotimery + Config.buttonheightcon)
 
 // OTHER
+otherxtit = (Config.otherxpog)
 otherx = (Config.otherxpog)
 othery = (Config.otherypog)
 hilarityy = (othery + Config.buttonheightcon)
+if (Config.clickguimode == 2) {
+  otherx = otherx + 200
+  hilarityy = combattitley
+}
 spanishy = (hilarityy + Config.buttonheightcon)
 discordrpcy = (spanishy + Config.buttonheightcon)
 showupdatesy = (discordrpcy + Config.buttonheightcon)
@@ -723,9 +809,37 @@ configGui.registerKeyTyped(cancel)
 }
 
 //
-titlepog = new buttondraw(combatx,combattitley - 10,100,10, "&cMUSHROOM CLIENT");
+if (showeverything) {
+  categorytext = "&a"
+}
+if (!showeverything) {
+  categorytext = "&c"
+}
+
+if (!Config.showcombat) {
+  combatx = 10000
+}
+if (!Config.showvisual) {
+  visualx = 10000
+}
+if (!Config.showmacro) {
+  macrox = 10000
+}
+if (!Config.showchatmacro) {
+  cmacrox = 10000
+}
+if (!Config.showskyblock) {
+  skyblockx = 10000
+}
+if (!Config.showother) {
+  otherx = 10000
+}
+
+
+titlepog = new buttondraw(combatxtit,combattitley - Config.buttonheightcon,Config.buttonwidthcon,Config.buttonheightcon, categorytext + "Category");
 // COMBAT
-combattitle = new buttondraw(combatx,combattitley,Config.buttonwidthcon,Config.buttonheightcon, "Combat");
+combattitle = new buttondraw(combatxtit,combattitley,Config.buttonwidthcon,Config.buttonheightcon, "Combat");
+combattitler = new buttondraw(combatx,killauray - Config.buttonheightcon,Config.buttonwidthcon,Config.buttonheightcon, "Combat");
 killaura2 = new buttondraw(combatx,killauray, Config.buttonwidthcon, Config.buttonheightcon, "Kill Aura");
 killauraextras = new buttondraw(combatx,killauraextray,Config.buttonwidthcon,Config.buttonheightcon, "through walls");
 killauramobsbutton = new buttondraw(combatx,killauramobsy,Config.buttonwidthcon,Config.buttonheightcon, "mobs");
@@ -758,7 +872,8 @@ antiknockbackbox = new buttondraw(combatx,antikby, Config.buttonwidthcon, Config
 reach = new buttondraw(combatx,reachy, Config.buttonwidthcon, Config.buttonheightcon, "Reach");
 
 // VISUAL
-visualtitle = new buttondraw(visualx,visualy,Config.buttonwidthcon,Config.buttonheightcon, "Visual");
+visualtitle = new buttondraw(visualxtit,visualy,Config.buttonwidthcon,Config.buttonheightcon, "Visual");
+visualtitler = new buttondraw(visualx,clickguiy - Config.buttonheightcon,Config.buttonwidthcon,Config.buttonheightcon, "Visual");
 clickguibutton = new buttondraw(visualx,clickguiy, Config.buttonwidthcon, Config.buttonheightcon, "Click GUI");
 clickguiheightbutton = new buttondraw(visualx,clickguiy + Config.buttonheightcon,Config.buttonwidthcon,Config.buttonheightcon, "height");
 clickguiwidthbutton = new buttondraw(visualx,clickguiy + (Config.buttonheightcon * 2),Config.buttonwidthcon,Config.buttonheightcon, "width");
@@ -775,7 +890,8 @@ nickhiderbutton = new buttondraw(visualx,nickhidery, Config.buttonwidthcon, Conf
 fakebanbutton = new buttondraw(visualx,fakebany, Config.buttonwidthcon, Config.buttonheightcon, "Fakeban");
 
 // MACRO
-macrotitle = new buttondraw(macrox,macroy,Config.buttonwidthcon,Config.buttonheightcon, "Macro");
+macrotitle = new buttondraw(macroxtit,macroy,Config.buttonwidthcon,Config.buttonheightcon, "Macro");
+macrotitler = new buttondraw(macrox,scaffoldy - Config.buttonheightcon,Config.buttonwidthcon,Config.buttonheightcon, "Macro");
 scaffoldbutton = new buttondraw(macrox,scaffoldy, Config.buttonwidthcon, Config.buttonheightcon, "Scaffold");
 invwalkbutton = new buttondraw(macrox,invwalky, Config.buttonwidthcon, Config.buttonheightcon, "Inventory Walk");
 chestaurabutton = new buttondraw(macrox,chestauray, Config.buttonwidthcon, Config.buttonheightcon, "Chest Aura");
@@ -784,7 +900,8 @@ leveraurabutton = new buttondraw(macrox,leverauray, Config.buttonwidthcon, Confi
 swordswapbutton = new buttondraw(macrox,swordswapy, Config.buttonwidthcon, Config.buttonheightcon, "Sword Swap");
 
 // CHAT MACRO
-chatmacrotitle = new buttondraw(cmacrox,cmacroy,Config.buttonwidthcon,Config.buttonheightcon, "Chat Macro");
+chatmacrotitle = new buttondraw(cmacroxtit,cmacroy,Config.buttonwidthcon,Config.buttonheightcon, "Chat Macro");
+chatmacrotitler = new buttondraw(cmacrox,guildwelcy - Config.buttonheightcon,Config.buttonwidthcon,Config.buttonheightcon, "Chat Macro");
 guildwelcbutton = new buttondraw(cmacrox,guildwelcy,Config.buttonwidthcon,Config.buttonheightcon, "Guild welcomer");
 guildbotbutton = new buttondraw(cmacrox,guildboty,Config.buttonwidthcon,Config.buttonheightcon, "Guild Bot");
 quickmathsbutton = new buttondraw(cmacrox,quickmathsolvery,Config.buttonwidthcon,Config.buttonheightcon, "Quickmaths");
@@ -792,7 +909,8 @@ quotesbutton = new buttondraw(cmacrox,quotesy,Config.buttonwidthcon,Config.butto
 autoptransferbutton = new buttondraw(cmacrox,autoptransfery,Config.buttonwidthcon,Config.buttonheightcon, "Party Transfer");
 
 // SKYBLOCK
-skyblocktitle = new buttondraw(skyblockx,skyblocky,Config.buttonwidthcon,Config.buttonheightcon, "Skyblock");
+skyblocktitle = new buttondraw(skyblockxtit,skyblocky,Config.buttonwidthcon,Config.buttonheightcon, "Skyblock");
+skyblocktitler = new buttondraw(skyblockx,autotermy - Config.buttonheightcon,Config.buttonwidthcon,Config.buttonheightcon, "Skyblock");
 autotermsbutton = new buttondraw(skyblockx,autotermy,Config.buttonwidthcon,Config.buttonheightcon, "Autoterms");
 dungeonscorecalcbutton = new buttondraw(skyblockx,dungeonscorecalcy,Config.buttonwidthcon,Config.buttonheightcon, "Dungeon Score");
 shitterwarningbutton = new buttondraw(skyblockx,shitterwarningy,Config.buttonwidthcon,Config.buttonheightcon, "Shit Warning");
@@ -802,7 +920,8 @@ gyrotimerbutton = new buttondraw(skyblockx,gyrotimery,Config.buttonwidthcon,Conf
 lguydiedbutton = new buttondraw(skyblockx,lguydiedy,Config.buttonwidthcon,Config.buttonheightcon, "Toxic Death");
 
 // OTHER
-othertitle = new buttondraw(otherx,othery,Config.buttonwidthcon,Config.buttonheightcon, "Other");
+othertitle = new buttondraw(otherxtit,othery,Config.buttonwidthcon,Config.buttonheightcon, "Other");
+othertitler = new buttondraw(otherx,hilarityy - Config.buttonheightcon,Config.buttonwidthcon,Config.buttonheightcon, "Other");
 hilaritybutton = new buttondraw(otherx,hilarityy,Config.buttonwidthcon,Config.buttonheightcon, "Hilarity");
 spanishbutton = new buttondraw(otherx,spanishy,Config.buttonwidthcon,Config.buttonheightcon, "NOT ENOUGH SPANISH");
 discordrpcbutton = new buttondraw(otherx,discordrpcy,Config.buttonwidthcon,Config.buttonheightcon, "Discord RPC");
@@ -814,15 +933,25 @@ freezekeybindtext = new Text(freezebinded, otherx + (Config.buttonwidthcon * 0.8
 
 register("renderOverlay", function() {
     if (configGui.isOpen()) {
-      if (clickguimode == 2) {
-        titlepog.titlebutton();
+      if (Config.clickguimode == 2) {
+        Renderer.drawRect(Renderer.color(25, 25,25, 120), 0, 0, Renderer.screen.getWidth(), Renderer.screen.getHeight());
+        Renderer.drawRect(Renderer.color(0, 0,0, 150), 700 - (Player.getName().length * 11), 40, (Player.getName().length * 30), 60)
+        playernamestring = new Text(Player.getName(), 700 - (Player.getName().length * 10), 50).setScale(5).setShadow(true);
+        playernamestring.draw();
+        getPlayerSkin.draw(630, 100);
+      }
+      if (Config.clickguimode == 2) {
+        titlepog.okbutton();
       }
       if (funnybackground) {
         backgroundfunny.draw(0,0)
       }
+      if(!showeverything) return;
       // COMBAT
       combattitle.titlebutton();
-      if (showcombat) {
+      if (Config.showcombat) {
+      combattitle.titlebuttonon();
+      combattitler.okbutton();
       killaura2.drawButton();
       nowall.drawButton();
       autoblock2.drawButton();
@@ -936,7 +1065,9 @@ register("renderOverlay", function() {
     }
           // VISUAL
           visualtitle.titlebutton();
-          if (showvisual) {
+          if (Config.showvisual) {
+          visualtitle.titlebuttonon();
+          visualtitler.okbutton();  
           clickguibutton.clickedbutton();
           playerespbutton.drawButton();
           blockespbutton.drawButton();
@@ -980,10 +1111,10 @@ register("renderOverlay", function() {
             if (drawwidthslide) {
               clickguiwidthbutton.slidertoggleddrawwidth();
             }
-            if (clickguimode == 1) {
+            if (Config.clickguimode == 1) {
               guimode1.draw();
             }
-            if (clickguimode == 2) {
+            if (Config.clickguimode == 2) {
               guimode2.draw();
             }
           }
@@ -991,7 +1122,9 @@ register("renderOverlay", function() {
     
           // MACRO
           macrotitle.titlebutton();
-          if (showmacro) {
+          if (Config.showmacro) {
+          macrotitle.titlebuttonon();
+          macrotitler.okbutton();  
           scaffoldbutton.drawButton();
           invwalkbutton.drawButton();
           chestaurabutton.drawButton();
@@ -1038,7 +1171,9 @@ register("renderOverlay", function() {
     
           // CHAT MACRO
           chatmacrotitle.titlebutton();
-          if (showchatmacro) {
+          if (Config.showchatmacro) {
+          chatmacrotitle.titlebuttonon();
+          chatmacrotitler.okbutton();
           guildwelcbutton.drawButton();
           guildbotbutton.drawButton();
           quickmathsbutton.drawButton();
@@ -1078,7 +1213,9 @@ register("renderOverlay", function() {
     
           // SKYBLOCK
           skyblocktitle.titlebutton();
-          if (showskyblock) {
+          if (Config.showskyblock) {
+          skyblocktitle.titlebuttonon();
+          skyblocktitler.okbutton();
           dungeonscorecalcbutton.drawButton();
           shitterwarningbutton.drawButton();
           autotermsbutton.drawButton();
@@ -1132,7 +1269,9 @@ register("renderOverlay", function() {
           
           // OTHER
           othertitle.titlebutton();
-          if (showother) {
+          if (Config.showother) {
+          othertitle.titlebuttonon();
+          othertitler.okbutton();
           hilaritybutton.drawButton();
           spanishbutton.drawButton();
           discordrpcbutton.drawButton();
@@ -1179,12 +1318,22 @@ register("renderOverlay", function() {
 register("guiMouseClick", function(x, y, button, state) {
   if (button >= 2) return;
   if (configGui.isOpen()) {
+    if (titlepog.isMouseOver()) {
+      showeverything = !showeverything
+    }
     if (combattitle.isMouseOver()) {
-      if (button == 0) {
+      if (button == 1) {
         (letmovecombatgui = !letmovecombatgui)
       }
-      if (button == 1) {
-        (showcombat = !showcombat)
+      if (button == 0) {
+        (Config.showcombat = !Config.showcombat)
+        if (Config.clickguimode == 2) {
+          Config.showvisual = false
+          Config.showmacro = false
+          Config.showchatmacro = false
+          Config.showskyblock = false
+          Config.showother = false
+        }
         return;
       }
     }
@@ -1326,11 +1475,18 @@ register("guiMouseClick", function(x, y, button, state) {
 
     // VISUAL
     if (visualtitle.isMouseOver()) {
-      if (button == 0) {
+      if (button == 1) {
         (letmovevisualgui = !letmovevisualgui)
       }
-      if (button == 1) {
-        (showvisual = !showvisual)
+      if (button == 0) {
+        (Config.showvisual = !Config.showvisual)
+        if (Config.clickguimode == 2) {
+          Config.showcombat = false
+          Config.showmacro = false
+          Config.showchatmacro = false
+          Config.showskyblock = false
+          Config.showother = false
+        }
       }
     }
     if (clickguibutton.isMouseOver()) {
@@ -1354,7 +1510,7 @@ register("guiMouseClick", function(x, y, button, state) {
     }
     if (clickguiselectbox.isMouseOver()) {
       if (button == 0) {
-        clickguimode = clickguimode + 1
+        Config.clickguimode = Config.clickguimode + 1
         changegui = true
       }
     }
@@ -1386,11 +1542,18 @@ register("guiMouseClick", function(x, y, button, state) {
     
     // MACRO
     if (macrotitle.isMouseOver()) {
-      if (button == 0) {
+      if (button == 1) {
         (letmovemacrogui = !letmovemacrogui)
       }
-      if (button == 1) {
-        (showmacro = !showmacro)
+      if (button == 0) {
+        (Config.showmacro = !Config.showmacro)
+        if (Config.clickguimode == 2) {
+          Config.showcombat = false
+          Config.showvisual = false
+          Config.showchatmacro = false
+          Config.showskyblock = false
+          Config.showother = false
+        }
       }
     }
     if (scaffoldbutton.isMouseOver()) {
@@ -1426,11 +1589,18 @@ register("guiMouseClick", function(x, y, button, state) {
 
     // CHAT MACRO
     if (chatmacrotitle.isMouseOver()) {
-      if (button == 0) {
+      if (button == 1) {
         (letmovecmacrogui = !letmovecmacrogui)
       }
-      if (button == 1) {
-        (showchatmacro = !showchatmacro)
+      if (button == 0) {
+        (Config.showchatmacro = !Config.showchatmacro)
+        if (Config.clickguimode == 2) {
+          Config.showvisual = false
+          Config.showmacro = false
+          Config.showcombat = false
+          Config.showskyblock = false
+          Config.showother = false
+        }
       }
     }
     if (guildwelcbutton.isMouseOver()) {
@@ -1461,11 +1631,18 @@ register("guiMouseClick", function(x, y, button, state) {
 
     // SKYBLOCK
     if (skyblocktitle.isMouseOver()) {
-      if (button == 0) {
+      if (button == 1) {
         (letmoveskyblockgui = !letmoveskyblockgui)
       }
-      if (button == 1) {
-        (showskyblock = !showskyblock)
+      if (button == 0) {
+        (Config.showskyblock = !Config.showskyblock)
+        if (Config.clickguimode == 2) {
+          Config.showvisual = false
+          Config.showmacro = false
+          Config.showchatmacro = false
+          Config.showcombat = false
+          Config.showother = false
+        }
       }
     }
     if (autotermsbutton.isMouseOver()) {
@@ -1506,11 +1683,18 @@ register("guiMouseClick", function(x, y, button, state) {
     
     // OTHER
     if (othertitle.isMouseOver()) {
-      if (button == 0) {
+      if (button == 1) {
         (letmoveothergui = !letmoveothergui)
       }
-      if (button == 1) {
-        (showother = !showother)
+      if (button == 0) {
+        (Config.showother = !Config.showother)
+        if (Config.clickguimode == 2) {
+          Config.showvisual = false
+          Config.showmacro = false
+          Config.showchatmacro = false
+          Config.showskyblock = false
+          Config.showcombat = false
+        }
       }
     }
     if (hilaritybutton.isMouseOver()) {
@@ -1549,9 +1733,9 @@ register("guiMouseClick", function(x, y, button, state) {
   }
 })
 
+let showeverything = true
 let funnybackground = false
 let letmovecombatgui = false
-let showcombat = true
 let killauraextra = false
 let throughwalls = false
 let nowallextra = false
@@ -1572,28 +1756,22 @@ let killauraextras
 let nowallextras
 let autoblockextras
 // VISUAL
-let showvisual = true
 let letmovevisualgui = false
 let clickbindnow = false
 let extraclickgui = false
 let drawheightslide = false
 let drawwidthslide = false
-let clickguimode = 1
 
 // MACRO
-let showmacro = true
 let letmovemacrogui = false
 
 // CHAT MACRO
-let showchatmacro = true
 let letmovecmacrogui = false
 
 // SKYBLOCK
-let showskyblock = true
 let letmoveskyblockgui = false
 
 // OTHER
-let showother = true
 let letmoveothergui = false
 let freezebindnow = false
 let freezeextras = false
@@ -1691,5 +1869,6 @@ register("tick", () => {
     (Config.clickguieybind = "dont")
   }
 });
+  
 
 export {mushroomshadowimg, logo, backgroundfunny}

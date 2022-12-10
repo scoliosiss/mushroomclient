@@ -6,6 +6,7 @@ const skullespkey = new KeyBind("ESP", Keyboard.KEY_NONE, "Mushroom");
 let queueRenderGreen = []
 register('renderWorld', () => {
     if (Config.skullesppogger) {
+        if (!Config.blockesptoggle) return;
     queueRenderGreen.forEach( (i) => {
         RenderLib.drawInnerEspBox(i.x + 0.5, i.y, i.z + 0.5, 0.5, 0.5, 1, 0, 0, 0.4, true); // Red box
     })
@@ -23,6 +24,7 @@ function seeskulls () {
 
 register("step", () => {
     if (Config.skullesppogger) {
+        if (!Config.blockesptoggle) return;
         seeskulls()
     }
 }).setDelay(1)

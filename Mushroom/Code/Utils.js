@@ -36,11 +36,8 @@ const noscaffoldblock = ["minecraft:air","minecraft:stone_button","minecraft:che
 const scaffoldblocks = ["Wool", "Stone", "Planks", "Sand", "Sponge"];
 const getVersion = () => JSON.parse(FileLib.read("Mushroom", "metadata.json")).version
 const stripRank = (rankedPlayer) => rankedPlayer.replace(/\[[\w+\+-]+] /, "").trim()
-const getPlayerHead = (playername) => {
-    let player = World.getPlayerByName(playername)
-    if (!player) return
-    return new Image(javax.imageio.ImageIO.read(new java.net.URL(`https://crafatar.com/avatars/${player.getUUID()}`)))
-}
+const getPlayerHead = new Image("PlayerFace.png", `https://crafthead.net/avatar/${Player.getUUID()}`)
+const getPlayerSkin = new Image("PlayerSkin.png", `https://crafthead.net/armor/body/${Player.getUUID()}`);
 function radians_to_degrees(radians) {
     var pi = Math.PI;
     return radians * (180/pi);
@@ -76,4 +73,4 @@ function distanceToPlayer(x,y,z) {
     return dis2
 }
 
-export {prefix, colors, BP, swaptoslot, holdright, stripRank, C08PacketPlayerBlockPlacement, cancelrightclick, positionset, setPosition, mc, LeftClick, RightClick, WalkForward, WalkRight, WalkLeft, WalkBackward, Jump, Shift, Sprint, blockbreak, pa, EnumFacing, BlockPoss, BlockAir, Vec3, BlockChest, BlockLever, BlockSkull, ArrayLists, noghostblock, noscaffoldblock, scaffoldblocks, getVersion, getPlayerHead, radians_to_degrees, lookAt, distanceToPlayer}
+export {prefix, colors, BP, swaptoslot, holdright, stripRank, C08PacketPlayerBlockPlacement, cancelrightclick, positionset, setPosition, mc, LeftClick, RightClick, WalkForward, WalkRight, WalkLeft, WalkBackward, Jump, Shift, Sprint, blockbreak, pa, EnumFacing, BlockPoss, BlockAir, Vec3, BlockChest, BlockLever, BlockSkull, ArrayLists, noghostblock, noscaffoldblock, scaffoldblocks, getVersion, getPlayerHead, getPlayerSkin, radians_to_degrees, lookAt, distanceToPlayer}
