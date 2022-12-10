@@ -20,6 +20,7 @@ import "./Code/Visual/SkullESP"
 
 import "./Code/Macros/Autoclicker"
 import "./Code/Macros/ChestAura"
+import "./Code/Macros/GhostMacro"
 import "./Code/Macros/InvWalk"
 import "./Code/Macros/LeverAura"
 import "./Code/Macros/Scaffold"
@@ -725,11 +726,12 @@ fakebany = (nickhidery + Config.buttonheightcon)
 macroxtit = (Config.macroxpog)
 macrox = (Config.macroxpog)
 macroy = (Config.macroypog)
-scaffoldy = (macroy + Config.buttonheightcon)
+ghostmacroy = (macroy + Config.buttonheightcon)
 if (Config.clickguimode == 2) {
   macrox = macrox + 200
-  scaffoldy = combattitley
+  ghostmacroy = combattitley
 }
+scaffoldy = (ghostmacroy + Config.buttonheightcon)
 invwalky = (scaffoldy + Config.buttonheightcon)
 chestauray = (invwalky + Config.buttonheightcon)
 skullauray = (chestauray + Config.buttonheightcon)
@@ -891,7 +893,8 @@ fakebanbutton = new buttondraw(visualx,fakebany, Config.buttonwidthcon, Config.b
 
 // MACRO
 macrotitle = new buttondraw(macroxtit,macroy,Config.buttonwidthcon,Config.buttonheightcon, "Macro");
-macrotitler = new buttondraw(macrox,scaffoldy - Config.buttonheightcon,Config.buttonwidthcon,Config.buttonheightcon, "Macro");
+macrotitler = new buttondraw(macrox,ghostmacroy - Config.buttonheightcon,Config.buttonwidthcon,Config.buttonheightcon, "Macro");
+ghostmacrobutton = new buttondraw(macrox,ghostmacroy,Config.buttonwidthcon,Config.buttonheightcon, "Ghost Macro");
 scaffoldbutton = new buttondraw(macrox,scaffoldy, Config.buttonwidthcon, Config.buttonheightcon, "Scaffold");
 invwalkbutton = new buttondraw(macrox,invwalky, Config.buttonwidthcon, Config.buttonheightcon, "Inventory Walk");
 chestaurabutton = new buttondraw(macrox,chestauray, Config.buttonwidthcon, Config.buttonheightcon, "Chest Aura");
@@ -1124,13 +1127,17 @@ register("renderOverlay", function() {
           macrotitle.titlebutton();
           if (Config.showmacro) {
           macrotitle.titlebuttonon();
-          macrotitler.okbutton();  
+          macrotitler.okbutton();
+          ghostmacrobutton.drawButton();
           scaffoldbutton.drawButton();
           invwalkbutton.drawButton();
           chestaurabutton.drawButton();
           skullaurabutton.drawButton();
           leveraurabutton.drawButton();
           swordswapbutton.drawButton();
+          if (ghostmacrobutton.isMouseOver()) {
+            configGui.drawCreativeTabHoveringString("Kills ghosts for you!", Client.getMouseX(), Client.getMouseY());
+          }
           if (scaffoldbutton.isMouseOver()) {
             configGui.drawCreativeTabHoveringString("Bridges for you when you face in a direction", Client.getMouseX(), Client.getMouseY());
           }
@@ -1148,6 +1155,9 @@ register("renderOverlay", function() {
           }
           if (swordswapbutton.isMouseOver()) {
             configGui.drawCreativeTabHoveringString("Swaps to snowballs / fishing rod on click for extra kb", Client.getMouseX(), Client.getMouseY());
+          }
+          if (Config.ghostmacrotoggle) {
+            ghostmacrobutton.clickedbutton();
           }
           if (Config.scaffoldi) {
             scaffoldbutton.clickedbutton();
@@ -1554,6 +1564,11 @@ register("guiMouseClick", function(x, y, button, state) {
           Config.showskyblock = false
           Config.showother = false
         }
+      }
+    }
+    if (ghostmacrobutton.isMouseOver()) {
+      if (button == 0) {
+        (Config.ghostmacrotoggle = !Config.ghostmacrotoggle)
       }
     }
     if (scaffoldbutton.isMouseOver()) {

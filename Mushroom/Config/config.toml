@@ -1,8 +1,8 @@
 
 [click_gui]
 	showcombat = false
-	showvisual = true
-	showmacro = false
+	showvisual = false
+	showmacro = true
 	showchatmacro = false
 	showskyblock = false
 	showother = false
@@ -29,6 +29,7 @@
 [macro]
 	"&cchest_stealer" = false
 	"&cskull_aura" = false
+	ghost_macro = false
 	"&clever_aura" = false
 	"&csword_swap" = false
 	"&cchest_aura" = false

@@ -308,6 +308,14 @@ class Config {
 // Macro
 
 @SwitchProperty({
+    name: "ghost macro",
+    description: "ghost macro",
+    category: "Macro",
+    subcategory: ""
+})
+ghostmacrotoggle = false;
+
+@SwitchProperty({
     name: "&cChest Aura",
     description: "&4Auto opens nearby chests and steals items",
     category: "Macro",
