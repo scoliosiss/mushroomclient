@@ -1,31 +1,23 @@
-import {prefix, RightClick, LeftClick, mc} from "../Utils";
+import {prefix, RightClick, LeftClick, mc, distanceToPlayer, holdright} from "../Utils";
 import Config from "../../Config/Config"
-
-const autoblocktoggle = new KeyBind("Autoblock", Keyboard.KEY_NONE, "Mushroom");
 
 register("step", () => {
     if (Config.autoblockpog) {
         if (Player.getHeldItem() !== null) {
             if (Player.getHeldItem().getName().includes("Sword")) {
-                if (Client.currentGui.get() == null) {
-                    new Thread(() => {
-                        LeftClick.invoke(mc);
-                        Thread.sleep(50);
-                        RightClick.invoke(mc);
-                    }).start()
+                allplayer = World.getAllPlayers()
+                for(let i = 0; i < allplayer.length; i++) {
+                    if(distanceToPlayer(allplayer[i].getX(), allplayer[i].getY(), allplayer[i].getZ()) > 0.1) {
+                        if(distanceToPlayer(allplayer[i].getX(), allplayer[i].getY(), allplayer[i].getZ()) < 3) {
+                            holdright.setState(true)
+                            LeftClick.invoke(mc)
+                        }
+                        else if(distanceToPlayer(allplayer[i].getX(), allplayer[i].getY(), allplayer[i].getZ()) < 3.5) {
+                            holdright.setState(false)
+                        }
+                    }
                 }
             }
         }
     }
 }).setFps(8);
-
-register("tick", () => {
-    if (autoblocktoggle.isPressed()) {
-        ChatLib.chat(`${
-            (Config.autoblockpog = !Config.autoblockpog) 
-            ? prefix + " >" + "&r&a Autoblock" 
-            : prefix + " >" + "&r&c Autoblock"
-        }`
-        );
-    }
-});

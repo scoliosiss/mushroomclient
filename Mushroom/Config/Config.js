@@ -106,6 +106,14 @@ class Config {
     reach = false;
 
     @SwitchProperty({
+        name: "triggerbot",
+        description: "hits players within reaching distance",
+        category: "Combat",
+        subcategory: "  "
+    })
+    triggerbottoggle = false;
+
+    @SwitchProperty({
         name: "&cNo walls",
         description: "&4Lets you hit through walls",
         category: "Combat",
@@ -314,6 +322,22 @@ class Config {
     subcategory: ""
 })
 ghostmacrotoggle = false;
+
+@SwitchProperty({
+    name: "auto w tap",
+    description: "w taps for you for extra kb and harder to hit you",
+    category: "Macro",
+    subcategory: ""
+})
+autowtaptoggle = false;
+
+@SwitchProperty({
+    name: "aimbot",
+    description: "CONTROLLER PLAYER AHHHHHHH",
+    category: "Macro",
+    subcategory: ""
+})
+aimbottoggle = false;
 
 @SwitchProperty({
     name: "&cChest Aura",
@@ -998,6 +1022,14 @@ Join() {
         subcategory: "  "
         })
         mushroomshadow = false;
+
+        @SwitchProperty({
+            name: "derp",
+            description: "spin go brrrr",
+            category: "Other",
+            subcategory: "  "
+            })
+            derptoggle = false;
     
       @SwitchProperty({
         name: "&2Mushroom Rainbow",

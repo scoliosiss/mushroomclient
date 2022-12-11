@@ -1,4 +1,4 @@
-import { distanceToPlayer, LeftClick, lookAt, mc, RightClick, Shift, Sprint, swaptoslot, WalkForward } from "../Utils"
+import { distanceToPlayer, LeftClick, lookAt, mc, prefix, RightClick, Shift, Sprint, swaptoslot, WalkForward } from "../Utils"
 import Config from "../../Config/Config"
 import RenderLib from "../../../RenderLib/index"
 const esppog = (x, y, z, height) => {RenderLib.drawInnerEspBox(x, y-height, z, 1, height, 50,250,200, 1, true)}
@@ -25,6 +25,7 @@ register("step", () => {
                                 if (!runcommand) {
                                     runcommand = true
                                         for(let s = 0; s < players.length; s++) {
+                                            ChatLib.chat(prefix + " > &4Failsafe Activating")
                                             if (Player.getInventory().getStackInSlot(s).getName().includes("Aspect of the ")) {
                                                 Client.sendPacket(new swaptoslot(s));
                                                 Thread.sleep(3000)

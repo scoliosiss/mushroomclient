@@ -4,6 +4,7 @@ import request from "request/index"
 import Config from "./Config/Config"
 import Discord from "./Code/Other//Discord"
 
+import "./Code/Combat/Aimbot"
 import "./Code/Combat/AntiKnockback"
 import "./Code/Combat/Autoblock"
 import "./Code/Combat/BlockHit"
@@ -11,6 +12,7 @@ import "./Code/Combat/Clickmultiplier"
 import "./Code/Combat/Killaura"
 import "./Code/Combat/NoWalls"
 import "./Code/Combat/Reach"
+import "./Code/Combat/TriggerBot"
 
 import "./Code/Visual/Esp"
 import "./Code/Visual/Ranks"
@@ -19,6 +21,7 @@ import "./Code/Visual/ChestESP"
 import "./Code/Visual/SkullESP"
 
 import "./Code/Macros/Autoclicker"
+import "./Code/Macros/AutoWtap"
 import "./Code/Macros/ChestAura"
 import "./Code/Macros/GhostMacro"
 import "./Code/Macros/InvWalk"
@@ -49,10 +52,12 @@ import "./Code/Skyblock/MelodyMacro"
 import "./Code/Other/BANKEY"
 import "./Code/Other/ChatCopy"
 import "./Code/Other/Clip"
+import "./Code/Other/derp"
 import "./Code/Other/DUPEAHHHHH"
 import "./Code/Other/FREEZE"
 import "./Code/Other/Hilarity"
 import "./Code/Other/ImagePaste"
+import "./Code/Other/SessionLogin"
 import "./Code/Other/UpdateChecker"
 
 import {prefix, getVersion, getPlayerSkin} from "./Code/Utils"
@@ -658,15 +663,17 @@ nowallkeybindy = nowally
 //
 autoblocky = (nowallkeybindy + Config.buttonheightcon)
 if (autoblockextra) {
-autoblockextray = (autoblocky + Config.buttonheightcon)
-autoblockkeybindy = (autoblocky + (Config.buttonheightcon * 2))
+autoblockkeybindy = (autoblocky + (Config.buttonheightcon))
 }
 if (!autoblockextra) {
-autoblockextray = autoblocky
 autoblockkeybindy = autoblocky
 }
 //
-blockhity = autoblockkeybindy + Config.buttonheightcon
+aimboty = (autoblockkeybindy + Config.buttonheightcon)
+//
+triggerboty = (aimboty + Config.buttonheightcon)
+//
+blockhity = triggerboty + Config.buttonheightcon
 //
 cpsmultipliery = (blockhity + Config.buttonheightcon)
 if (cpsmultiplierextra) {
@@ -732,7 +739,8 @@ if (Config.clickguimode == 2) {
   ghostmacroy = combattitley
 }
 scaffoldy = (ghostmacroy + Config.buttonheightcon)
-invwalky = (scaffoldy + Config.buttonheightcon)
+autowtapy = (scaffoldy + Config.buttonheightcon)
+invwalky = (autowtapy + Config.buttonheightcon)
 chestauray = (invwalky + Config.buttonheightcon)
 skullauray = (chestauray + Config.buttonheightcon)
 leverauray = (skullauray + Config.buttonheightcon)
@@ -781,7 +789,13 @@ spanishy = (hilarityy + Config.buttonheightcon)
 discordrpcy = (spanishy + Config.buttonheightcon)
 showupdatesy = (discordrpcy + Config.buttonheightcon)
 freezey = (showupdatesy + Config.buttonheightcon)
-freezeextrasy = (freezey + Config.buttonheightcon)
+if (freezeextras) {
+  freezeextrasy = (freezey + Config.buttonheightcon)
+}
+if (!freezeextras) {
+  freezeextrasy = (freezey)
+}
+derpy = (freezeextrasy + Config.buttonheightcon)
 
 // ---------------------
 if (killauratypeallow) {
@@ -861,10 +875,11 @@ nowallextras = new buttondraw(combatx,nowallextray,Config.buttonwidthcon,Config.
 nowallkeybinddraw = new buttondraw(combatx,nowallkeybindy,Config.buttonwidthcon,Config.buttonheightcon, "");
 nowallkeybindtext = new Text(nowallkeybinded, combatx + (Config.buttonwidthcon * 0.89), nowallkeybindy + 1);
 autoblock2 = new buttondraw(combatx,autoblocky, Config.buttonwidthcon, Config.buttonheightcon, "Autoblock");
-autoblockextras = new buttondraw(combatx,autoblockextray, Config.buttonwidthcon, Config.buttonheightcon, "always");
+triggerbotbutton = new buttondraw(combatx,triggerboty, Config.buttonwidthcon, Config.buttonheightcon, "Trigger Bot");
 autoblockkeybinddraw = new buttondraw(combatx,autoblockkeybindy,Config.buttonwidthcon,Config.buttonheightcon, "");
 autoblockkeybindtext = new Text(autoblockbinded, combatx + (Config.buttonwidthcon * 0.89), autoblockkeybindy + 1);
 blockhitbox = new buttondraw(combatx,blockhity,Config.buttonwidthcon,Config.buttonheightcon, "Block Hit");
+aimbotbutton = new buttondraw(combatx,aimboty, Config.buttonwidthcon, Config.buttonheightcon, "Aimbot");
 cpsmultiplier = new buttondraw(combatx,cpsmultipliery,Config.buttonwidthcon,Config.buttonheightcon, "CPS multiplier");
 cpsmultiplierextra1 = new buttondraw(combatx,cpsmultiplierextra1y,Config.buttonwidthcon,Config.buttonheightcon, "right clicks");
 cpsmultiplierextra2 = new buttondraw(combatx,cpsmultiplierextra2y,Config.buttonwidthcon,Config.buttonheightcon, "left clicks");
@@ -896,6 +911,7 @@ macrotitle = new buttondraw(macroxtit,macroy,Config.buttonwidthcon,Config.button
 macrotitler = new buttondraw(macrox,ghostmacroy - Config.buttonheightcon,Config.buttonwidthcon,Config.buttonheightcon, "Macro");
 ghostmacrobutton = new buttondraw(macrox,ghostmacroy,Config.buttonwidthcon,Config.buttonheightcon, "Ghost Macro");
 scaffoldbutton = new buttondraw(macrox,scaffoldy, Config.buttonwidthcon, Config.buttonheightcon, "Scaffold");
+autowtapbutton = new buttondraw(macrox,autowtapy, Config.buttonwidthcon, Config.buttonheightcon, "Auto W-Tap");
 invwalkbutton = new buttondraw(macrox,invwalky, Config.buttonwidthcon, Config.buttonheightcon, "Inventory Walk");
 chestaurabutton = new buttondraw(macrox,chestauray, Config.buttonwidthcon, Config.buttonheightcon, "Chest Aura");
 skullaurabutton = new buttondraw(macrox,skullauray, Config.buttonwidthcon, Config.buttonheightcon, "Skull Aura"); 
@@ -930,6 +946,7 @@ spanishbutton = new buttondraw(otherx,spanishy,Config.buttonwidthcon,Config.butt
 discordrpcbutton = new buttondraw(otherx,discordrpcy,Config.buttonwidthcon,Config.buttonheightcon, "Discord RPC");
 updatesbutton = new buttondraw(otherx,showupdatesy,Config.buttonwidthcon,Config.buttonheightcon, "Updates");
 freezebutton = new buttondraw(otherx,freezey,Config.buttonwidthcon,Config.buttonheightcon, "Freeze");
+derpbutton = new buttondraw(otherx,derpy,Config.buttonwidthcon,Config.buttonheightcon, "Derp");
 freezekeybinddraw = new buttondraw(otherx,freezeextrasy,Config.buttonwidthcon,Config.buttonheightcon, "");
 freezekeybindtext = new Text(freezebinded, otherx + (Config.buttonwidthcon * 0.89), freezeextrasy + 1);
 });
@@ -961,6 +978,8 @@ register("renderOverlay", function() {
       blockhitbox.drawButton();
       cpsmultiplier.drawButton();
       reach.drawButton();
+      aimbotbutton.drawButton();
+      triggerbotbutton.drawButton();
       antiknockbackbox.drawButton();
       if (killaura2.isMouseOver()) {
         configGui.drawCreativeTabHoveringString("I AM BECOME DEATH, DESTROYER OF WORLDS", Client.getMouseX(), Client.getMouseY());
@@ -983,6 +1002,12 @@ register("renderOverlay", function() {
       if (antiknockbackbox.isMouseOver()) {
         configGui.drawCreativeTabHoveringString("Remove knockback packets", Client.getMouseX(), Client.getMouseY());
       }
+      if (aimbotbutton.isMouseOver()) {
+        configGui.drawCreativeTabHoveringString("AHHHHHHHHH CONTROLLER PLAYER", Client.getMouseX(), Client.getMouseY());
+      }
+      if (triggerbotbutton.isMouseOver()) {
+        configGui.drawCreativeTabHoveringString("Hits any entity infront of you", Client.getMouseX(), Client.getMouseY());
+      }
       if (Config.killaura) {
         killaura2.clickedbutton();
       }
@@ -1000,6 +1025,12 @@ register("renderOverlay", function() {
       }
       if (Config.blockhit) {
         blockhitbox.clickedbutton();
+      }
+      if (Config.triggerbottoggle) {
+        triggerbotbutton.clickedbutton();
+      }
+      if (Config.aimbottoggle) {
+        aimbotbutton.clickedbutton();
       }
       if (killauraextra) {
         killauraextras.extrabutton();
@@ -1046,12 +1077,8 @@ register("renderOverlay", function() {
         }
       }
       if (autoblockextra) {
-        autoblockextras.extrabutton();
         autoblockkeybinddraw.keybindbutton();
         autoblockkeybindtext.draw();
-        if (alwaysab) {
-          autoblockextras.extrabuttontoggled();
-        }
       }
       if (cpsmultiplierextra) {
         cpsmultiplierextra1.extrabutton();
@@ -1130,6 +1157,7 @@ register("renderOverlay", function() {
           macrotitler.okbutton();
           ghostmacrobutton.drawButton();
           scaffoldbutton.drawButton();
+          autowtapbutton.drawButton();
           invwalkbutton.drawButton();
           chestaurabutton.drawButton();
           skullaurabutton.drawButton();
@@ -1140,6 +1168,9 @@ register("renderOverlay", function() {
           }
           if (scaffoldbutton.isMouseOver()) {
             configGui.drawCreativeTabHoveringString("Bridges for you when you face in a direction", Client.getMouseX(), Client.getMouseY());
+          }
+          if (autowtapbutton.isMouseOver()) {
+            configGui.drawCreativeTabHoveringString("Automatically W-Taps for you, gives you more kb and take less + harder to hit", Client.getMouseX(), Client.getMouseY());
           }
           if (invwalkbutton.isMouseOver()) {
             configGui.drawCreativeTabHoveringString("Allows you to move while in inventorys", Client.getMouseX(), Client.getMouseY());
@@ -1161,6 +1192,9 @@ register("renderOverlay", function() {
           }
           if (Config.scaffoldi) {
             scaffoldbutton.clickedbutton();
+          }
+          if (Config.autowtaptoggle) {
+            autowtapbutton.clickedbutton();
           }
           if (Config.invwalk) {
             invwalkbutton.clickedbutton();
@@ -1287,6 +1321,7 @@ register("renderOverlay", function() {
           discordrpcbutton.drawButton();
           updatesbutton.drawButton();
           freezebutton.drawButton();
+          derpbutton.drawButton();
           if (hilaritybutton.isMouseOver()) {
             configGui.drawCreativeTabHoveringString("big funny haha lololol funny!", Client.getMouseX(), Client.getMouseY());
           }
@@ -1302,6 +1337,9 @@ register("renderOverlay", function() {
           if (freezebutton.isMouseOver()) {
             configGui.drawCreativeTabHoveringString("Stops you from recieving packets", Client.getMouseX(), Client.getMouseY());
           }
+          if (derpbutton.isMouseOver()) {
+            configGui.drawCreativeTabHoveringString("SPIN GO BRRRRRRR", Client.getMouseX(), Client.getMouseY());
+          }
           if (Config.hilarity) {
             hilaritybutton.clickedbutton();
           }
@@ -1316,6 +1354,9 @@ register("renderOverlay", function() {
           }
           if (Config.freezeme) {
             freezebutton.clickedbutton();
+          }
+          if (Config.derptoggle) {
+            derpbutton.clickedbutton();
           }
           if (freezeextras) {
             freezekeybinddraw.keybindbutton();
@@ -1430,15 +1471,15 @@ register("guiMouseClick", function(x, y, button, state) {
         return;
       }
     }
-    if (autoblockextras.isMouseOver()) {
-      if (button == 0) {
-        (alwaysab = !alwaysab)
-        return;
-      }
-    }
     if (autoblockkeybinddraw.isMouseOver()) {
       if (button == 0) {
         (autoblockbindnow = !autoblockbindnow)
+        return;
+      }
+    }
+    if (triggerbotbutton.isMouseOver()) {
+      if (button == 0) {
+        (Config.triggerbottoggle = !Config.triggerbottoggle)
         return;
       }
     }
@@ -1574,6 +1615,16 @@ register("guiMouseClick", function(x, y, button, state) {
     if (scaffoldbutton.isMouseOver()) {
       if (button == 0) {
         (Config.scaffoldi = !Config.scaffoldi)
+      }
+    }
+    if (autowtapbutton.isMouseOver()) {
+      if (button == 0) {
+        (Config.autowtaptoggle = !Config.autowtaptoggle)
+      }
+    }
+    if (aimbotbutton.isMouseOver()) {
+      if (button == 0) {
+        (Config.aimbottoggle = !Config.aimbottoggle)
       }
     }
     if (invwalkbutton.isMouseOver()) {
@@ -1743,6 +1794,11 @@ register("guiMouseClick", function(x, y, button, state) {
     if (freezekeybinddraw.isMouseOver()) {
       if (button == 0) {
         (freezebindnow = !freezebindnow)
+      }
+    }
+    if (derpbutton.isMouseOver()) {
+      if (button == 0) {
+        (Config.derptoggle = !Config.derptoggle)
       }
     }
   }

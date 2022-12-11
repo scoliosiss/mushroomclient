@@ -20,6 +20,7 @@ register("chat", (event) => {
   }})
 register("command", () => {ChatLib.say("؜")}).setName("empty");
 register("command", () => {ChatLib.chat(Player.getName().length)}).setName("namelength");
+register("command", () => {ChatLib.chat(Player.lookingAt().getClass().toString())}).setName("lookingatrn");
 register("command", () => {ChatLib.chat("&e⬛⬛&c⬛&e⬛⬛&c⬛&e⬛⬛\n&e⬛⬛⬛⬛⬛⬛⬛⬛\n&e⬛⬛⬛⬛⬛⬛⬛⬛\n&c⬛⬛⬛⬛⬛⬛⬛⬛\n&0⬛&c⬛&0⬛⬛⬛⬛&c⬛&0⬛\n&6⬛⬛&4⬛&0⬛&6⬛⬛⬛⬛\n&6⬛⬛⬛⬛⬛⬛⬛⬛\n&6⬛⬛⬛⬛⬛⬛⬛⬛")}).setName("scalesy");
 register("command", () => {ChatLib.chat("&9-----------------------------------------------------\n                                                 &6Friends (Page 0 of 0) \n\n\n\n\n                                                  &6(u have no friends)\n\n\n\n&9-----------------------------------------------------")}).setName("lf");
 register("command", () => {ChatLib.chat("&9-----------------------------------------------------\n&c[&fYOUTUBE&c] RageTrain &e has invited you to join their party!\n&eYou have &c60 &eseconds to accept. &6Click here to join!\n&9-----------------------------------------------------\n")}).setName("fakepartyinv");

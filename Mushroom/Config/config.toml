@@ -2,8 +2,8 @@
 [click_gui]
 	showcombat = false
 	showvisual = false
-	showmacro = false
-	showchatmacro = true
+	showmacro = true
+	showchatmacro = false
 	showskyblock = false
 	showother = false
 
@@ -28,8 +28,10 @@
 
 [macro]
 	"&cchest_stealer" = false
+	aimbot = false
 	"&cskull_aura" = false
 	ghost_macro = false
+	auto_w_tap = false
 	"&clever_aura" = false
 	"&csword_swap" = false
 	"&cchest_aura" = false
@@ -40,13 +42,14 @@
 
 	[macro._]
 		"&cscaffold" = false
-		invwalk = false
+		invwalk = true
 
 [other]
 
 	[other.__]
 		"&2mushroom_rainbow" = true
 		"&bmushroom_client_text" = true
+		derp = false
 		"&cmushroom_client_on_top" = true
 		"&9mushroom_shadow" = false
 		"&amushroom_client_logo" = false
@@ -107,7 +110,7 @@
 	[keybind.___]
 		antikb_keybind = 1000
 		nowall_keybind = 1000
-		autoblock_keybind = 1000
+		autoblock_keybind = 19
 		freeze_keybind = 1000
 		clickgui_keybind = 157
 		killaura_keybind = 1000
@@ -141,7 +144,7 @@
 		"&c300_score_message" = "lunar client > 269 score"
 
 [visual]
-	"&cplayer_esp" = true
+	"&cplayer_esp" = false
 	"&citem_esp" = true
 	"&aesp_color" = "255,0,255,0"
 	"&cesp_armorstands" = false
@@ -161,7 +164,7 @@
 
 	[visual._]
 		"&bfake_rank_you_want_to_show" = "§c§lM§f§lu§c§ls§f§lh§c§lr§f§lo§c§lo§f§lo§c§lm §lClient§f§l"
-		"&3fakename" = true
+		"&3fakename" = false
 		"&bfake_name_you_want_to_show" = "§c§lM§f§lu§c§ls§f§lh§c§lr§f§lo§c§lo§f§lo§c§lm §lClient§f§l"
 
 [combat]
@@ -177,6 +180,7 @@
 		"&ckillaura_mobs" = false
 		"&ckillaura_autoblock" = true
 		"&ckillaura" = false
+		triggerbot = false
 		"&canti_knockback" = false
 
 	[combat._]
