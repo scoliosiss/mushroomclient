@@ -70,6 +70,7 @@ register("step", () => {
 }).setFps(9)
 
 register("renderEntity", (entity) => {
+    if (!Config.ghostmacrotoggle) return;
     if (entity.getClassName() == "EntityCreeper") {
         esppog(entity.getX(), entity.getY(), entity.getZ(), -1.8)
     }

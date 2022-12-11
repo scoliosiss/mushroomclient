@@ -1,7 +1,7 @@
 import { distanceToPlayer, LeftClick, mc } from "../Utils"
 import Config from "../../Config/Config"
 
-register("step", () => {
+register("tick", () => {
     if (!Config.triggerbottoggle) return;
     allplayer = World.getAllPlayers()
     for(let i = 0; i < allplayer.length; i++) {
@@ -14,4 +14,4 @@ register("step", () => {
             }
         }
     }
-}).setFps(12)
+});

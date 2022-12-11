@@ -21,6 +21,7 @@ import "./Code/Visual/ChestESP"
 import "./Code/Visual/SkullESP"
 
 import "./Code/Macros/Autoclicker"
+import "./Code/Macros/AutoRod"
 import "./Code/Macros/AutoWtap"
 import "./Code/Macros/ChestAura"
 import "./Code/Macros/GhostMacro"
@@ -1006,7 +1007,7 @@ register("renderOverlay", function() {
         configGui.drawCreativeTabHoveringString("AHHHHHHHHH CONTROLLER PLAYER", Client.getMouseX(), Client.getMouseY());
       }
       if (triggerbotbutton.isMouseOver()) {
-        configGui.drawCreativeTabHoveringString("Hits any entity infront of you", Client.getMouseX(), Client.getMouseY());
+        configGui.drawCreativeTabHoveringString("Hits player infront of you", Client.getMouseX(), Client.getMouseY());
       }
       if (Config.killaura) {
         killaura2.clickedbutton();
@@ -1916,30 +1917,5 @@ register("step", () => {
     }
   }
 }).setFps(10)
-
-register("tick", () => {
-  if(Config.killaurakeybindconfig == "") {
-    (Config.killaurakeybindconfig = "dont")
-  }
-  if(Config.nowallkeybindconfig == "") {
-    (Config.nowallkeybindconfig = "dont")
-  }
-  if(Config.autoblockkeybindconfig == "") {
-    (Config.autoblockkeybindconfig = "dont")
-  }
-  if(Config.cpsmultikeybindconfig == "") {
-    (Config.cpsmultikeybindconfig = "dont")
-  }
-  if(Config.antikbkeybindconfig == "") {
-    (Config.antikbkeybindconfig = "dont")
-  }
-  if(Config.freezekeybindconfig == "") {
-    (Config.freezekeybindconfig = "dont")
-  }
-  if(Config.clickguieybind == "") {
-    (Config.clickguieybind = "dont")
-  }
-});
-  
 
 export {mushroomshadowimg, logo, backgroundfunny}

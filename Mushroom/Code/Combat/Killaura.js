@@ -4,7 +4,7 @@ import { hitthroughwalls } from "./NoWalls";
 const killaurakey = new KeyBind("Chest aura", Keyboard.KEY_NONE, "Mushroom");
 
 // gaming
-register("step", () => {
+register("tick", () => {
     if (!Config.killaura) return;
     allEntity = World.getAllPlayers()
     if (Config.killauramobs) {
@@ -36,4 +36,4 @@ register("step", () => {
         }
     }
 }
-}).setFps(12)
+});

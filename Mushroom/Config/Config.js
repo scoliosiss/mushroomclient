@@ -285,7 +285,7 @@ class Config {
         subcategory: "  ",
         options: ['outline', 'square'],
     })
-    espboxtype = 0;
+    espboxtype = 2;
 
     @SwitchProperty({
         name: "&cClick gui",
@@ -322,6 +322,14 @@ class Config {
     subcategory: ""
 })
 ghostmacrotoggle = false;
+
+@SwitchProperty({
+    name: "autorod",
+    description: "automatically looks at and rods nearby players",
+    category: "Macro",
+    subcategory: ""
+})
+rodaimbottoggle = false;
 
 @SwitchProperty({
     name: "auto w tap",

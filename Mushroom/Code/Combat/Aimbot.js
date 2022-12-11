@@ -1,7 +1,7 @@
 import Config from "../../Config/Config"
 import { distanceToPlayer, lookAt } from "../Utils";
 
-register("step", () => {
+register("tick", () => {
     if (!Config.aimbottoggle) return;
     allEntity = World.getAllPlayers()
     for(let i = 0; i < allEntity.length; i++) {
