@@ -18,6 +18,8 @@
 - vclip (WIP)
 - Reach (WIP)
 #### Macros:
+- ghost macro
+- auto w-tap 
 - chest, skull and lever aura (work anywhere but mainly used for secret aura)
 skull aura is very good for halloween simualtor!
 - chest stealer too (takes every item in a chest)
