@@ -91,6 +91,11 @@ ChatLib.chat(ChatLib.getCenteredText("&6&lTo check commands do /mhelp"));
 ChatLib.chat(ChatLib.getCenteredText("")); // awesome text man
 ChatLib.chat(ChatLib.getChatBreak("&9-"));
 
+"                  ..----.._    _              "
+"                .' .--.    '-.(O)_            "
+"    '-.__.-'''=:|  ,  _)_ |__ . c'-..        "
+"                 ''------'---''---'-'         "
+
 register("renderOverlay", Mushroomclientlogo);
 
 const logo = new Image("Mushroom_Client.png", "https://imgur.com/EVwWOG6.png");
