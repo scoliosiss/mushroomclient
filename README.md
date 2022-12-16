@@ -4,8 +4,8 @@
 ## its a very cool chattriggers cheating module
 ### yes I am aware all of this code is awful, I dont care about optimization I just want it working.
 ### also WIP basically just means not working
-### NEW GUI COMING SOON™!
-![newguisoon tm](https://i.imgur.com/6sI8w0Q.png)
+### GUI (thanks swig for telling me it looked ugly i agree, it no ugly now)
+![newguisoon tm](https://i.imgur.com/kjp5sQq.jpg)
 ### Feature list: 
 
 #### Combat cheats:
