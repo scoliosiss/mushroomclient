@@ -4,7 +4,7 @@
 ## its a very cool chattriggers cheating module
 ### yes I am aware all of this code is awful, I dont care about optimization I just want it working.
 ### also WIP basically just means not working
-### GUI (thanks swig for telling me it looked ugly i agree, it no ugly now)
+### GUI (thanks swig for telling me it looked ugly i agree, it no ugly now) gui still wip so if you want specific settings use /mco gui
 ![newguisoon tm](https://i.imgur.com/kjp5sQq.jpg)
 ### Feature list: 
 
@@ -13,7 +13,7 @@
 - antikb
 - autoclicker
 - Swordswap (auto swap to snowballs when you click with sword for more kb)
-- autoblock (not working...)
+- autoblock
 - clickmultiplier (kinda mid)
 - vclip (WIP)
 - Reach (WIP)
@@ -27,7 +27,7 @@ skull aura is very good for halloween simualtor!
 ![im very good at halloween simulator](https://cdn.discordapp.com/attachments/865636628318912522/1038930195962400848/halloween_simulator.png)
 
 - Zombies macro (swaps guns in zombies for maxium damage)
-- Scaffold (semi WIP)
+- Scaffold (WIP)
 #### Chat Macros:
 - Images in chat (uploads image to imgur to copy paste images)
 - Autoquickmaths 
