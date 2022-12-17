@@ -1,4 +1,3 @@
-/// <reference lib="es2015" />
 import request from "request/index"
 import Config from "./Config/Config"
 import Discord from "./Code/Other//Discord"
