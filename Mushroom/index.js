@@ -57,7 +57,7 @@ var text = new Text(prefix, 55, 17.5);
 var text2 = new Text(prefix, 5, 17.5);
 register("command", () => {
 Config.openGUI();
-}).setName("mco")
+}).setName("mco");
 register("command", () => {
 Config.openGUI();
 }).setName("mushroomclient");
