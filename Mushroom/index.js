@@ -1,84 +1,72 @@
-import request from "request/index"
-import Config from "./Config/Config"
-import Discord from "./Code/Other//Discord"
-
-import "./Code/Combat/Aimbot"
-import "./Code/Combat/AntiKnockback"
-import "./Code/Combat/Autoblock"
-import "./Code/Combat/BlockHit"
-import "./Code/Combat/Clickmultiplier"
-import "./Code/Combat/Killaura"
-import "./Code/Combat/NoWalls"
-import "./Code/Combat/Reach"
-import "./Code/Combat/TriggerBot"
-
-import "./Code/Visual/Esp"
-import "./Code/Visual/Ranks"
-import "./Code/Visual/FakeBan"
-import "./Code/Visual/ChestESP"
-import "./Code/Visual/SkullESP"
-
-import "./Code/Macros/Autoclicker"
-import "./Code/Macros/AutoRod"
-import "./Code/Macros/AutoWtap"
-import "./Code/Macros/ChestAura"
-import "./Code/Macros/GhostMacro"
-import "./Code/Macros/InvWalk"
-import "./Code/Macros/LeverAura"
-import "./Code/Macros/Scaffold"
-import "./Code/Macros/SkullAura"
-import "./Code/Macros/Swordswap"
-import "./Code/Macros/ZombiesMacro"
-
-import "./Code/ChatMacros/Autoptransfer"
-import "./Code/ChatMacros/ChatMacros"
-import "./Code/ChatMacros/Emotes"
-import "./Code/ChatMacros/GuildBridge"
-import "./Code/ChatMacros/MathsBot"
-import "./Code/ChatMacros/PartyAdvertise"
-import "./Code/ChatMacros/RandomCommands"
-
-import "./Code/Skyblock/AuctionSnipe"
-import "./Code/Skyblock/Autoterms"
-import "./Code/Skyblock/Bonzomask"
-import "./Code/Skyblock/DungeonScore"
-import "./Code/Skyblock/DungeonScoreMessage"
-import "./Code/Skyblock/Dungeonshitter"
-import "./Code/Skyblock/GhostBlocks"
-import "./Code/Skyblock/GyroTimer"
-import "./Code/Skyblock/MelodyMacro"
-
-import "./Code/Other/BANKEY"
-import "./Code/Other/ChatCopy"
-import "./Code/Other/Clip"
-import "./Code/Other/derp"
-import "./Code/Other/DUPEAHHHHH"
-import "./Code/Other/FREEZE"
-import "./Code/Other/Hilarity"
-import "./Code/Other/ImagePaste"
-import "./Code/Other/SessionLogin"
-import "./Code/Other/UpdateChecker"
-
-import {prefix, getVersion, getPlayerSkin} from "./Code/Utils"
+import request from "request/index";
+import Config from "./Config/Config";
+import Discord from "./Code/Other//Discord";
+import "./Code/Combat/Aimbot";
+import "./Code/Combat/AntiKnockback";
+import "./Code/Combat/Autoblock";
+import "./Code/Combat/BlockHit";
+import "./Code/Combat/Clickmultiplier";
+import "./Code/Combat/Killaura";
+import "./Code/Combat/NoWalls";
+import "./Code/Combat/Reach";
+import "./Code/Combat/TriggerBot";
+import "./Code/Visual/Esp";
+import "./Code/Visual/Ranks";
+import "./Code/Visual/FakeBan";
+import "./Code/Visual/ChestESP";
+import "./Code/Visual/SkullESP";
+import "./Code/Macros/Autoclicker";
+import "./Code/Macros/AutoRod";
+import "./Code/Macros/AutoWtap";
+import "./Code/Macros/ChestAura";
+import "./Code/Macros/GhostMacro";
+import "./Code/Macros/InvWalk";
+import "./Code/Macros/LeverAura";
+import "./Code/Macros/Scaffold";
+import "./Code/Macros/SkullAura";
+import "./Code/Macros/Swordswap";
+import "./Code/Macros/ZombiesMacro";
+import "./Code/ChatMacros/Autoptransfer";
+import "./Code/ChatMacros/ChatMacros";
+import "./Code/ChatMacros/Emotes";
+import "./Code/ChatMacros/GuildBridge";
+import "./Code/ChatMacros/MathsBot";
+import "./Code/ChatMacros/PartyAdvertise";
+import "./Code/ChatMacros/RandomCommands";
+import "./Code/Skyblock/AuctionSnipe";
+import "./Code/Skyblock/Autoterms";
+import "./Code/Skyblock/Bonzomask";
+import "./Code/Skyblock/DungeonScore";
+import "./Code/Skyblock/DungeonScoreMessage";
+import "./Code/Skyblock/Dungeonshitter";
+import "./Code/Skyblock/GhostBlocks";
+import "./Code/Skyblock/GyroTimer";
+import "./Code/Skyblock/MelodyMacro";
+import "./Code/Other/BANKEY";
+import "./Code/Other/ChatCopy";
+import "./Code/Other/Clip";
+import "./Code/Other/derp";
+import "./Code/Other/DUPEAHHHHH";
+import "./Code/Other/FREEZE";
+import "./Code/Other/Hilarity";
+import "./Code/Other/ImagePaste";
+import "./Code/Other/SessionLogin";
+import "./Code/Other/UpdateChecker";
+import {prefix, getVersion, getPlayerSkin} from "./Code/Utils";
 var text = new Text(prefix, 55, 17.5);
 var text2 = new Text(prefix, 5, 17.5);
-
-// DONT MIND ANY OF THIS CODE ITS SO BAD IK
-
-register("command", () => { // why different commands...?
-Config.openGUI()
+register("command", () => {
+Config.openGUI();
 }).setName("mco")
 register("command", () => {
-Config.openGUI()
+Config.openGUI();
 }).setName("mushroomclient");
 register("command", () => {
-  Config.openGUI()
+  Config.openGUI();
   }).setName("mushroom");
 register("command", () => {
-Config.openGUI()
+Config.openGUI();
 }).setName("mush");
-
-// multiple strings go hard
 ChatLib.chat(ChatLib.getChatBreak("&9-"));
 ChatLib.chat(ChatLib.getCenteredText(`&b&l&nMushroom Client v${getVersion()}`));
 ChatLib.chat(ChatLib.getCenteredText(""));
@@ -88,20 +76,14 @@ ChatLib.chat(ChatLib.getCenteredText("&e&lTo see the old gui run &4&l/mco"));
 ChatLib.chat(ChatLib.getCenteredText("&6&lTo check commands do /mhelp"));
 ChatLib.chat(ChatLib.getCenteredText("")); // awesome text man
 ChatLib.chat(ChatLib.getChatBreak("&9-"));
-
 register("renderOverlay", Mushroomclientlogo);
-
 const logo = new Image("Mushroom_Client.png", "https://imgur.com/EVwWOG6.png");
-
 function Mushroomclientlogo() {
   if (!Config.showmushroomlogo) return;
 logo.draw(0, 0);
 }
-
 register("renderWorld", mushroomshado);
-
 const mushroomshadowimg = new Image("footsteps.png", "https://imgur.com/cJPhnHq.png");
-
 function mushroomshado(partialTicks) {
 const lastX = new Entity(Player.getPlayer()).getLastX(); // LITTERALLY THE CODE FROM THE CHATTRIGGERS WEBSITE
 const lastY = new Entity(Player.getPlayer()).getLastY();
@@ -123,11 +105,6 @@ const currentZ = Player.getZ();
       .pos(0.5, 0.5, -0.5).tex(1, 0)
       .draw();
   }
-
-// each letter rendered in seperate variables :skull:
-// prob why my fps dies
-
-
 register("renderOverlay", rainbowMushroomclienttextwithlogo);
 var exampleImportStep = 1;
 function rainbowMushroomclienttextwithlogo() {
