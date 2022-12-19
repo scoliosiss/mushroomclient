@@ -18,7 +18,13 @@ banmepog = false
 register("packetReceived", (packet, event) => {
     if (banmepog) {
        // if (!packet.toString().includes("net.minecraft.network.play.server.S32PacketConfirmTransaction")) return;
+    //   if (packet.toString().includes("S12") || packet.toString().includes("S14") || packet.toString().includes("S19") || packet.toString().includes("S18") || packet.toString().includes("S20") || packet.toString().includes("S21") || packet.toString().includes("S26") || packet.toString().includes("S1") || packet.toString().includes("S03") || packet.toString().includes("S04") || packet.toString().includes("S0F") || packet.toString().includes("S00") || packet.toString().includes("S29") || packet.toString().includes("S35")) return;
         ChatLib.chat(packet)
-        cancel(event)
+       // cancel(event)
     }
 })
+
+register("command", () => {
+    (banmepog = !banmepog)
+    ChatLib.chat("beamed")
+}).setName("actuallybanme")

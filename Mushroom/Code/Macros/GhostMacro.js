@@ -3,7 +3,7 @@ import Config from "../../Config/Config"
 import RenderLib from "../../../RenderLib/index"
 const esppog = (x, y, z, height) => {RenderLib.drawInnerEspBox(x, y-height, z, 1, height, 50,250,200, 1, true)}
 runcommand = false
-register("step", () => {
+register("tick", () => {
     new Thread(() => {
     if (!Config.ghostmacrotoggle) return;
     if (runcommand) return;
@@ -52,9 +52,9 @@ register("step", () => {
         })
     }
 }).start()
-}).setFps(8)
+})
 
-register("step", () => {
+register("tick", () => {
     if (Config.ghostmacrotoggle) {
     creeper = World.getAllEntities()
     for(let i = 0; i < creeper.length; i++) {
@@ -67,7 +67,7 @@ register("step", () => {
         }
         }
     }
-}).setFps(9)
+})
 
 register("renderEntity", (entity) => {
     if (!Config.ghostmacrotoggle) return;

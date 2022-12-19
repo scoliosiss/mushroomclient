@@ -5,7 +5,7 @@ const colors = ["&a","&b","&c","&d","&e","&f","&0","&1","&2","&3","&4","&5","&6"
 const BP = Java.type("net.minecraft.util.BlockPos");
 const swaptoslot = Java.type("net.minecraft.network.play.client.C09PacketHeldItemChange");
 const C08PacketPlayerBlockPlacement = Java.type("net.minecraft.network.play.client.C08PacketPlayerBlockPlacement");
-const cancelrightclick = Java.type("net.minecraft.network.play.client.C07PacketPlayerDigging");
+const C07PacketPlayerDigging = Java.type("net.minecraft.network.play.client.C07PacketPlayerDigging")
 const positionset = Java.type("net.minecraft.network.play.client.Packet11PlayerPosition"); 
 const setPosition = Java.type("net.minecraft.entity.player.EntityPlayer.setPosition")
 const mc = Client.getMinecraft();
@@ -19,15 +19,16 @@ const Jump = new KeyBind(mc.field_71474_y.field_74314_A);
 const Shift = new KeyBind(mc.field_71474_y.field_74311_E);
 const Sprint = new KeyBind(mc.field_71474_y.field_151444_V);
 const holdright = new KeyBind(mc.field_71474_y.field_74313_G);
+const openinv = new KeyBind(mc.field_71474_y.field_151445_Q)
 LeftClick.setAccessible(true);
 RightClick.setAccessible(true);
 const blockbreak = Java.type("net.minecraft.network.play.client.C0APacketAnimation");
 const pa = Java.type("net.minecraft.network.play.client.C0APacketAnimation");
 const EnumFacing = Java.type("net.minecraft.util.EnumFacing");
-const BlockPoss = Java.type("net.minecraft.util.BlockPos");
 const BlockAir = Java.type("net.minecraft.block.BlockAir");
 const Vec3 = Java.type("net.minecraft.util.Vec3");
 const BlockChest = Java.type("net.minecraft.block.BlockChest");
+const BlockBed = Java.type("net.minecraft.block.BlockBed");
 const BlockLever = Java.type("net.minecraft.block.BlockLever");
 const BlockSkull = Java.type("net.minecraft.block.BlockSkull");
 const ArrayLists = Java.type("java.util.ArrayList");
@@ -60,6 +61,11 @@ function radians_to_degrees(radians) {
         AngleYaw = radians_to_degrees(Math.atan(dZ/dX))
     }
     hoekYaw = AngleYaw - PlayerAngleYaw + 90
+    if(hoekYaw > 180) {
+        hoekYaw -= 360
+    } if(hoekYaw < -180) {
+        hoekYaw += 360
+    }
     Player.getPlayer().field_70177_z += hoekYaw 
     hoekPitch = radians_to_degrees(Math.atan(dY/dis)) - Player.getPlayer().field_70125_A
     Player.getPlayer().field_70125_A += hoekPitch 
@@ -73,4 +79,4 @@ function distanceToPlayer(x,y,z) {
     return dis2
 }
 
-export {prefix, colors, BP, swaptoslot, holdright, stripRank, C08PacketPlayerBlockPlacement, cancelrightclick, positionset, setPosition, mc, LeftClick, RightClick, WalkForward, WalkRight, WalkLeft, WalkBackward, Jump, Shift, Sprint, blockbreak, pa, EnumFacing, BlockPoss, BlockAir, Vec3, BlockChest, BlockLever, BlockSkull, ArrayLists, noghostblock, noscaffoldblock, scaffoldblocks, getVersion, getPlayerHead, getPlayerSkin, radians_to_degrees, lookAt, distanceToPlayer}
+export {prefix, openinv, colors, BP, swaptoslot, holdright, stripRank, C08PacketPlayerBlockPlacement, C07PacketPlayerDigging, positionset, setPosition, mc, LeftClick, RightClick, WalkForward, WalkRight, WalkLeft, WalkBackward, Jump, Shift, Sprint, blockbreak, pa, EnumFacing, BlockAir, Vec3, BlockChest, BlockLever, BlockSkull, BlockBed, ArrayLists, noghostblock, noscaffoldblock, scaffoldblocks, getVersion, getPlayerHead, getPlayerSkin, radians_to_degrees, lookAt, distanceToPlayer}

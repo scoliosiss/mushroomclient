@@ -26,6 +26,7 @@ register("step", (mesa) => {
                     if (timetospam2) {
                         timetospam2 = false
                         if (Config.chatspamtype == 0) {
+                            WalkForward.setState(true)
                             lookAt(allEntity[l].getX(), allEntity[l].getY(), allEntity[l].getZ())
                         }
                         if (Config.chatspamtype == 1) {

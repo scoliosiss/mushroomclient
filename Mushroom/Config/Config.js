@@ -324,6 +324,14 @@ class Config {
 ghostmacrotoggle = false;
 
 @SwitchProperty({
+    name: "BED NUKER",
+    description: "beams beds",
+    category: "Macro",
+    subcategory: ""
+})
+bednuker = false;
+
+@SwitchProperty({
     name: "autorod",
     description: "automatically looks at and rods nearby players",
     category: "Macro",
@@ -1046,6 +1054,14 @@ Join() {
         subcategory: "  "
         })
         Mushroomrainbow = true;
+
+        @SwitchProperty({
+            name: "&2NO FALL!",
+            description: "prob flags idfk i dont test this shit it litterally cancels fall damage packets",
+            category: "Other",
+            subcategory: "  "
+            })
+        nofall = false;
     
       @SwitchProperty({
         name: "&3Discord RPC",

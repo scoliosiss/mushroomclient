@@ -8,7 +8,7 @@ register("tick", () => {
     if (!rodnow) return;
     allEntity = World.getAllPlayers()
     for(let i = 0; i < allEntity.length; i++) {
-        if(distanceToPlayer(allEntity[i].getX(), allEntity[i].getY(), allEntity[i].getZ()) < 6) {
+        if(distanceToPlayer(allEntity[i].getX(), allEntity[i].getY(), allEntity[i].getZ()) < 5) {
             if(distanceToPlayer(allEntity[i].getX(), allEntity[i].getY(), allEntity[i].getZ()) > 4) {
                 rodnow = false
                 for (let l = 0; l < 9; l++) {

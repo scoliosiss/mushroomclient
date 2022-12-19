@@ -1,72 +1,89 @@
-import request from "request/index";
-import Config from "./Config/Config";
-import Discord from "./Code/Other//Discord";
-import "./Code/Combat/Aimbot";
-import "./Code/Combat/AntiKnockback";
-import "./Code/Combat/Autoblock";
-import "./Code/Combat/BlockHit";
-import "./Code/Combat/Clickmultiplier";
-import "./Code/Combat/Killaura";
-import "./Code/Combat/NoWalls";
-import "./Code/Combat/Reach";
-import "./Code/Combat/TriggerBot";
-import "./Code/Visual/Esp";
-import "./Code/Visual/Ranks";
-import "./Code/Visual/FakeBan";
-import "./Code/Visual/ChestESP";
-import "./Code/Visual/SkullESP";
-import "./Code/Macros/Autoclicker";
-import "./Code/Macros/AutoRod";
-import "./Code/Macros/AutoWtap";
-import "./Code/Macros/ChestAura";
-import "./Code/Macros/GhostMacro";
-import "./Code/Macros/InvWalk";
-import "./Code/Macros/LeverAura";
-import "./Code/Macros/Scaffold";
-import "./Code/Macros/SkullAura";
-import "./Code/Macros/Swordswap";
-import "./Code/Macros/ZombiesMacro";
-import "./Code/ChatMacros/Autoptransfer";
-import "./Code/ChatMacros/ChatMacros";
-import "./Code/ChatMacros/Emotes";
-import "./Code/ChatMacros/GuildBridge";
-import "./Code/ChatMacros/MathsBot";
-import "./Code/ChatMacros/PartyAdvertise";
-import "./Code/ChatMacros/RandomCommands";
-import "./Code/Skyblock/AuctionSnipe";
-import "./Code/Skyblock/Autoterms";
-import "./Code/Skyblock/Bonzomask";
-import "./Code/Skyblock/DungeonScore";
-import "./Code/Skyblock/DungeonScoreMessage";
-import "./Code/Skyblock/Dungeonshitter";
-import "./Code/Skyblock/GhostBlocks";
-import "./Code/Skyblock/GyroTimer";
-import "./Code/Skyblock/MelodyMacro";
-import "./Code/Other/BANKEY";
-import "./Code/Other/ChatCopy";
-import "./Code/Other/Clip";
-import "./Code/Other/derp";
-import "./Code/Other/DUPEAHHHHH";
-import "./Code/Other/FREEZE";
-import "./Code/Other/Hilarity";
-import "./Code/Other/ImagePaste";
-import "./Code/Other/SessionLogin";
-import "./Code/Other/UpdateChecker";
-import {prefix, getVersion, getPlayerSkin} from "./Code/Utils";
+/// <reference lib="es2015" />  
+
+import request from "requestV2/index"
+import Config from "./Config/Config"
+import Discord from "./Code/Other//Discord"
+
+import "./Code/Combat/Aimbot"
+import "./Code/Combat/AntiKnockback"
+import "./Code/Combat/Autoblock"
+import "./Code/Combat/BlockHit"
+import "./Code/Combat/Clickmultiplier"
+import "./Code/Combat/Killaura"
+import "./Code/Combat/NoWalls"
+import "./Code/Combat/Reach"
+import "./Code/Combat/TriggerBot"
+
+import "./Code/Visual/Esp"
+import "./Code/Visual/Ranks"
+import "./Code/Visual/FakeBan"
+import "./Code/Visual/ChestESP"
+import "./Code/Visual/SkullESP"
+
+import "./Code/Macros/Autoclicker"
+import "./Code/Macros/AutoRod"
+import "./Code/Macros/AutoWtap"
+import "./Code/Macros/BedNuker"
+import "./Code/Macros/ChestAura"
+import "./Code/Macros/GhostMacro"
+import "./Code/Macros/InvWalk"
+import "./Code/Macros/LeverAura"
+import "./Code/Macros/Scaffold"
+import "./Code/Macros/SkullAura"
+import "./Code/Macros/Swordswap"
+import "./Code/Macros/ZombiesMacro"
+
+import "./Code/ChatMacros/Autoptransfer"
+import "./Code/ChatMacros/ChatMacros"
+import "./Code/ChatMacros/Emotes"
+import "./Code/ChatMacros/GuildBridge"
+import "./Code/ChatMacros/MathsBot"
+import "./Code/ChatMacros/PartyAdvertise"
+import "./Code/ChatMacros/RandomCommands"
+
+import "./Code/Skyblock/AuctionSnipe"
+import "./Code/Skyblock/Autoterms"
+import "./Code/Skyblock/Bonzomask"
+import "./Code/Skyblock/DungeonScore"
+import "./Code/Skyblock/DungeonScoreMessage"
+import "./Code/Skyblock/Dungeonshitter"
+import "./Code/Skyblock/GhostBlocks"
+import "./Code/Skyblock/GyroTimer"
+import "./Code/Skyblock/MelodyMacro"
+
+import "./Code/Other/BANKEY"
+import "./Code/Other/ChatCopy"
+import "./Code/Other/Clip"
+import "./Code/Other/derp"
+import "./Code/Other/DUPEAHHHHH"
+import "./Code/Other/FREEZE"
+import "./Code/Other/Hilarity"
+import "./Code/Other/ImagePaste"
+import "./Code/Other/NoFall"
+import "./Code/Other/NoRotate"
+import "./Code/Other/SessionLogin"
+import "./Code/Other/UpdateChecker"
+
+import {prefix, getVersion, getPlayerSkin} from "./Code/Utils"
 var text = new Text(prefix, 55, 17.5);
 var text2 = new Text(prefix, 5, 17.5);
+
+// DONT MIND ANY OF THIS CODE ITS SO BAD IK
+
+register("command", () => { // why different commands...?
+Config.openGUI()
+}).setName("mco")
 register("command", () => {
-Config.openGUI();
-}).setName("mco");
-register("command", () => {
-Config.openGUI();
+Config.openGUI()
 }).setName("mushroomclient");
 register("command", () => {
-  Config.openGUI();
+  Config.openGUI()
   }).setName("mushroom");
 register("command", () => {
-Config.openGUI();
+Config.openGUI()
 }).setName("mush");
+
+// multiple strings go hard
 ChatLib.chat(ChatLib.getChatBreak("&9-"));
 ChatLib.chat(ChatLib.getCenteredText(`&b&l&nMushroom Client v${getVersion()}`));
 ChatLib.chat(ChatLib.getCenteredText(""));
@@ -76,14 +93,20 @@ ChatLib.chat(ChatLib.getCenteredText("&e&lTo see the old gui run &4&l/mco"));
 ChatLib.chat(ChatLib.getCenteredText("&6&lTo check commands do /mhelp"));
 ChatLib.chat(ChatLib.getCenteredText("")); // awesome text man
 ChatLib.chat(ChatLib.getChatBreak("&9-"));
+
 register("renderOverlay", Mushroomclientlogo);
+
 const logo = new Image("Mushroom_Client.png", "https://imgur.com/EVwWOG6.png");
+
 function Mushroomclientlogo() {
   if (!Config.showmushroomlogo) return;
 logo.draw(0, 0);
 }
+
 register("renderWorld", mushroomshado);
+
 const mushroomshadowimg = new Image("footsteps.png", "https://imgur.com/cJPhnHq.png");
+
 function mushroomshado(partialTicks) {
 const lastX = new Entity(Player.getPlayer()).getLastX(); // LITTERALLY THE CODE FROM THE CHATTRIGGERS WEBSITE
 const lastY = new Entity(Player.getPlayer()).getLastY();
@@ -105,6 +128,11 @@ const currentZ = Player.getZ();
       .pos(0.5, 0.5, -0.5).tex(1, 0)
       .draw();
   }
+
+// each letter rendered in seperate variables :skull:
+// prob why my fps dies
+
+
 register("renderOverlay", rainbowMushroomclienttextwithlogo);
 var exampleImportStep = 1;
 function rainbowMushroomclienttextwithlogo() {
@@ -231,12 +259,13 @@ register("step", () => {
 })
 */
 class buttondraw {
-    constructor(x, y, width, height, text) {
+    constructor(x, y, width, height, text, toggle) {
         this.x = x;
         this.y = y;
         this.width = width;
         this.height = height;
         this.text = text;
+        this.toggle = toggle;
     }
   
 okbutton() {
@@ -287,14 +316,20 @@ titlebuttonon() {
         let buttony = this.y + (this.height / 2 - 4);
         let mx = Client.getMouseX();
         let my = Client.getMouseY();
+        if (!this.toggle) {
         if (mx >= this.x && mx <= this.x + this.width && my >= this.y && my <= this.y + this.height) {
             Renderer.drawRect(Renderer.color(10, 10, 150, 150), this.x, this.y, this.width, this.height);
         } else {
             Renderer.drawRect(Renderer.color(10, 10, 10, 150), this.x, this.y, this.width, this.height);
         }
         Renderer.drawString("&c" + buttontext, buttonx, buttony);
+      }
+      else {
+        Renderer.drawRect(Renderer.color(20, 0, 150, 250), this.x, this.y, this.width, this.height);
+        Renderer.drawString("&a" + buttontext, buttonx, buttony);
+      }
     }
-
+/*
     clickedbutton() {
       let buttontext = this.text;
       let buttonx = this.x + (this.width / 2 - Renderer.getStringWidth(this.text) / 2);
@@ -302,7 +337,7 @@ titlebuttonon() {
       Renderer.drawRect(Renderer.color(20, 0, 150, 250), this.x, this.y, this.width, this.height);
       Renderer.drawString("&a" + buttontext, buttonx, buttony);
   }
-
+*/
     extrabutton() {
       let buttontext = this.text;
       let buttonx = this.x + (this.width / 2 - Renderer.getStringWidth(this.text) / 1.5);
@@ -827,12 +862,11 @@ if (!Config.showother) {
   otherx = 10000
 }
 
-
 titlepog = new buttondraw(combatxtit,combattitley - Config.buttonheightcon,Config.buttonwidthcon,Config.buttonheightcon, categorytext + "Category");
 // COMBAT
 combattitle = new buttondraw(combatxtit,combattitley,Config.buttonwidthcon,Config.buttonheightcon, "Combat");
 combattitler = new buttondraw(combatx,killauray - Config.buttonheightcon,Config.buttonwidthcon,Config.buttonheightcon, "Combat");
-killaura2 = new buttondraw(combatx,killauray, Config.buttonwidthcon, Config.buttonheightcon, "Kill Aura");
+killaura2 = new buttondraw(combatx,killauray, Config.buttonwidthcon, Config.buttonheightcon, "Kill Aura", Config.killaura);
 killauraextras = new buttondraw(combatx,killauraextray,Config.buttonwidthcon,Config.buttonheightcon, "through walls");
 killauramobsbutton = new buttondraw(combatx,killauramobsy,Config.buttonwidthcon,Config.buttonheightcon, "mobs");
 killauraautoblockbutton = new buttondraw(combatx,killauraaby,Config.buttonwidthcon,Config.buttonheightcon, "autoblock");
@@ -846,28 +880,28 @@ killaurakeybind = new buttondraw(combatx,killaurakeybindy,Config.buttonwidthcon,
 //selection2 = new Text("cheating", combatx + 52, killauraselecty + 1);
 //selection3 = new Text("security", combatx + 52, killauraselecty + 1);
 killaurakeybindtext = new Text(killaurakeybinded, combatx + (Config.buttonwidthcon * 0.89), killaurakeybindy + 1);
-nowall = new buttondraw(combatx,nowally, Config.buttonwidthcon, Config.buttonheightcon, "No Walls");
+nowall = new buttondraw(combatx,nowally, Config.buttonwidthcon, Config.buttonheightcon, "No Walls", Config.nowalls);
 nowallextras = new buttondraw(combatx,nowallextray,Config.buttonwidthcon,Config.buttonheightcon, "right clicks");
 nowallkeybinddraw = new buttondraw(combatx,nowallkeybindy,Config.buttonwidthcon,Config.buttonheightcon, "");
 nowallkeybindtext = new Text(nowallkeybinded, combatx + (Config.buttonwidthcon * 0.89), nowallkeybindy + 1);
-autoblock2 = new buttondraw(combatx,autoblocky, Config.buttonwidthcon, Config.buttonheightcon, "Autoblock");
-triggerbotbutton = new buttondraw(combatx,triggerboty, Config.buttonwidthcon, Config.buttonheightcon, "Trigger Bot");
+autoblock2 = new buttondraw(combatx,autoblocky, Config.buttonwidthcon, Config.buttonheightcon, "Autoblock", Config.autoblockpog);
+triggerbotbutton = new buttondraw(combatx,triggerboty, Config.buttonwidthcon, Config.buttonheightcon, "Trigger Bot", Config.triggerbottoggle);
 autoblockkeybinddraw = new buttondraw(combatx,autoblockkeybindy,Config.buttonwidthcon,Config.buttonheightcon, "");
 autoblockkeybindtext = new Text(autoblockbinded, combatx + (Config.buttonwidthcon * 0.89), autoblockkeybindy + 1);
-blockhitbox = new buttondraw(combatx,blockhity,Config.buttonwidthcon,Config.buttonheightcon, "Block Hit");
-aimbotbutton = new buttondraw(combatx,aimboty, Config.buttonwidthcon, Config.buttonheightcon, "Aimbot");
-cpsmultiplier = new buttondraw(combatx,cpsmultipliery,Config.buttonwidthcon,Config.buttonheightcon, "CPS multiplier");
+blockhitbox = new buttondraw(combatx,blockhity,Config.buttonwidthcon,Config.buttonheightcon, "Block Hit", Config.blockhit);
+aimbotbutton = new buttondraw(combatx,aimboty, Config.buttonwidthcon, Config.buttonheightcon, "Aimbot", Config.aimbottoggle);
+cpsmultiplier = new buttondraw(combatx,cpsmultipliery,Config.buttonwidthcon,Config.buttonheightcon, "CPS multiplier", Config.cpsmultiplierer);
 cpsmultiplierextra1 = new buttondraw(combatx,cpsmultiplierextra1y,Config.buttonwidthcon,Config.buttonheightcon, "right clicks");
 cpsmultiplierextra2 = new buttondraw(combatx,cpsmultiplierextra2y,Config.buttonwidthcon,Config.buttonheightcon, "left clicks");
 cpsmultiplierkeybinddraw = new buttondraw(combatx,cpsmultiplierkeybindy,Config.buttonwidthcon,Config.buttonheightcon, "");
 cpsmultiplierkeybindtext = new Text(cpsmultiplierbinded, combatx + Config.buttonheightcon, cpsmultiplierkeybindy + 1);
-antiknockbackbox = new buttondraw(combatx,antikby, Config.buttonwidthcon, Config.buttonheightcon, "Anti Knockback");
-reach = new buttondraw(combatx,reachy, Config.buttonwidthcon, Config.buttonheightcon, "Reach");
+antiknockbackbox = new buttondraw(combatx,antikby, Config.buttonwidthcon, Config.buttonheightcon, "Anti Knockback", Config.antiknockback);
+reach = new buttondraw(combatx,reachy, Config.buttonwidthcon, Config.buttonheightcon, "Reach", Config.reach);
 
 // VISUAL
 visualtitle = new buttondraw(visualxtit,visualy,Config.buttonwidthcon,Config.buttonheightcon, "Visual");
 visualtitler = new buttondraw(visualx,clickguiy - Config.buttonheightcon,Config.buttonwidthcon,Config.buttonheightcon, "Visual");
-clickguibutton = new buttondraw(visualx,clickguiy, Config.buttonwidthcon, Config.buttonheightcon, "Click GUI");
+clickguibutton = new buttondraw(visualx,clickguiy, Config.buttonwidthcon, Config.buttonheightcon, "Click GUI", Config.clickguipogg);
 clickguiheightbutton = new buttondraw(visualx,clickguiy + Config.buttonheightcon,Config.buttonwidthcon,Config.buttonheightcon, "height");
 clickguiwidthbutton = new buttondraw(visualx,clickguiy + (Config.buttonheightcon * 2),Config.buttonwidthcon,Config.buttonheightcon, "width");
 clickguiheightnum = new Text(Config.buttonheightcon, visualx + (Config.buttonwidthcon * 0.8), clickguiy + Config.buttonheightcon + (Config.buttonheightcon / 2));
@@ -877,52 +911,52 @@ clickguikeybindbox = new buttondraw(visualx,clickguikeybindy,Config.buttonwidthc
 clickguikeybindtext = new Text(clickguibinded, visualx + (Config.buttonwidthcon * 0.89), clickguikeybindy + 1);
 guimode1 = new Text("Oringo", visualx + (Config.buttonwidthcon * 0.6), clickguiselecty + (Config.buttonheightcon * 0.2));
 guimode2 = new Text("Raven", visualx + (Config.buttonwidthcon * 0.6), clickguiselecty + (Config.buttonheightcon * 0.2));
-playerespbutton = new buttondraw(visualx,playerespy, Config.buttonwidthcon, Config.buttonheightcon, "Player ESP");
-blockespbutton = new buttondraw(visualx,blockespy, Config.buttonwidthcon, Config.buttonheightcon, "Block ESP");
-nickhiderbutton = new buttondraw(visualx,nickhidery, Config.buttonwidthcon, Config.buttonheightcon, "Nick Hider");
-fakebanbutton = new buttondraw(visualx,fakebany, Config.buttonwidthcon, Config.buttonheightcon, "Fakeban");
+playerespbutton = new buttondraw(visualx,playerespy, Config.buttonwidthcon, Config.buttonheightcon, "Player ESP", Config.PlayerESP);
+blockespbutton = new buttondraw(visualx,blockespy, Config.buttonwidthcon, Config.buttonheightcon, "Block ESP", Config.blockesptoggle);
+nickhiderbutton = new buttondraw(visualx,nickhidery, Config.buttonwidthcon, Config.buttonheightcon, "Nick Hider", Config.nickhider);
+fakebanbutton = new buttondraw(visualx,fakebany, Config.buttonwidthcon, Config.buttonheightcon, "Fakeban", Config.showfakeban);
 
 // MACRO
 macrotitle = new buttondraw(macroxtit,macroy,Config.buttonwidthcon,Config.buttonheightcon, "Macro");
 macrotitler = new buttondraw(macrox,ghostmacroy - Config.buttonheightcon,Config.buttonwidthcon,Config.buttonheightcon, "Macro");
-ghostmacrobutton = new buttondraw(macrox,ghostmacroy,Config.buttonwidthcon,Config.buttonheightcon, "Ghost Macro");
-scaffoldbutton = new buttondraw(macrox,scaffoldy, Config.buttonwidthcon, Config.buttonheightcon, "Scaffold");
-autowtapbutton = new buttondraw(macrox,autowtapy, Config.buttonwidthcon, Config.buttonheightcon, "Auto W-Tap");
-invwalkbutton = new buttondraw(macrox,invwalky, Config.buttonwidthcon, Config.buttonheightcon, "Inventory Walk");
-chestaurabutton = new buttondraw(macrox,chestauray, Config.buttonwidthcon, Config.buttonheightcon, "Chest Aura");
-skullaurabutton = new buttondraw(macrox,skullauray, Config.buttonwidthcon, Config.buttonheightcon, "Skull Aura"); 
-leveraurabutton = new buttondraw(macrox,leverauray, Config.buttonwidthcon, Config.buttonheightcon, "Lever Aura"); 
-swordswapbutton = new buttondraw(macrox,swordswapy, Config.buttonwidthcon, Config.buttonheightcon, "Sword Swap");
+ghostmacrobutton = new buttondraw(macrox,ghostmacroy,Config.buttonwidthcon,Config.buttonheightcon, "Ghost Macro", Config.ghostmacrotoggle);
+scaffoldbutton = new buttondraw(macrox,scaffoldy, Config.buttonwidthcon, Config.buttonheightcon, "Scaffold",Config.scaffoldi);
+autowtapbutton = new buttondraw(macrox,autowtapy, Config.buttonwidthcon, Config.buttonheightcon, "Auto W-Tap",Config.autowtaptoggle);
+invwalkbutton = new buttondraw(macrox,invwalky, Config.buttonwidthcon, Config.buttonheightcon, "Inventory Walk",Config.invwalk);
+chestaurabutton = new buttondraw(macrox,chestauray, Config.buttonwidthcon, Config.buttonheightcon, "Chest Aura",Config.chestaurabased);
+skullaurabutton = new buttondraw(macrox,skullauray, Config.buttonwidthcon, Config.buttonheightcon, "Skull Aura",Config.skuller); 
+leveraurabutton = new buttondraw(macrox,leverauray, Config.buttonwidthcon, Config.buttonheightcon, "Lever Aura",Config.leverer); 
+swordswapbutton = new buttondraw(macrox,swordswapy, Config.buttonwidthcon, Config.buttonheightcon, "Sword Swap",Config.swrodswap);
 
 // CHAT MACRO
 chatmacrotitle = new buttondraw(cmacroxtit,cmacroy,Config.buttonwidthcon,Config.buttonheightcon, "Chat Macro");
 chatmacrotitler = new buttondraw(cmacrox,guildwelcy - Config.buttonheightcon,Config.buttonwidthcon,Config.buttonheightcon, "Chat Macro");
-guildwelcbutton = new buttondraw(cmacrox,guildwelcy,Config.buttonwidthcon,Config.buttonheightcon, "Guild welcomer");
-guildbotbutton = new buttondraw(cmacrox,guildboty,Config.buttonwidthcon,Config.buttonheightcon, "Guild Bot");
-quickmathsbutton = new buttondraw(cmacrox,quickmathsolvery,Config.buttonwidthcon,Config.buttonheightcon, "Quickmaths");
-quotesbutton = new buttondraw(cmacrox,quotesy,Config.buttonwidthcon,Config.buttonheightcon, "Quotes");
-autoptransferbutton = new buttondraw(cmacrox,autoptransfery,Config.buttonwidthcon,Config.buttonheightcon, "Party Transfer");
+guildwelcbutton = new buttondraw(cmacrox,guildwelcy,Config.buttonwidthcon,Config.buttonheightcon, "Guild welcomer",Config.welcomeguild);
+guildbotbutton = new buttondraw(cmacrox,guildboty,Config.buttonwidthcon,Config.buttonheightcon, "Guild Bot",Config.guildbottoggle);
+quickmathsbutton = new buttondraw(cmacrox,quickmathsolvery,Config.buttonwidthcon,Config.buttonheightcon, "Quickmaths",Config.quickmathssolver);
+quotesbutton = new buttondraw(cmacrox,quotesy,Config.buttonwidthcon,Config.buttonheightcon, "Quotes",Config.quotespog);
+autoptransferbutton = new buttondraw(cmacrox,autoptransfery,Config.buttonwidthcon,Config.buttonheightcon, "Party Transfer",Config.autoTransfer);
 
 // SKYBLOCK
 skyblocktitle = new buttondraw(skyblockxtit,skyblocky,Config.buttonwidthcon,Config.buttonheightcon, "Skyblock");
 skyblocktitler = new buttondraw(skyblockx,autotermy - Config.buttonheightcon,Config.buttonwidthcon,Config.buttonheightcon, "Skyblock");
-autotermsbutton = new buttondraw(skyblockx,autotermy,Config.buttonwidthcon,Config.buttonheightcon, "Autoterms");
-dungeonscorecalcbutton = new buttondraw(skyblockx,dungeonscorecalcy,Config.buttonwidthcon,Config.buttonheightcon, "Dungeon Score");
-shitterwarningbutton = new buttondraw(skyblockx,shitterwarningy,Config.buttonwidthcon,Config.buttonheightcon, "Shit Warning");
-autoharpbutton = new buttondraw(skyblockx,autoharpy,Config.buttonwidthcon,Config.buttonheightcon, "Auto Harp");
-ghostblockbutton = new buttondraw(skyblockx,ghostblocky,Config.buttonwidthcon,Config.buttonheightcon, "Ghost Blocks");
-gyrotimerbutton = new buttondraw(skyblockx,gyrotimery,Config.buttonwidthcon,Config.buttonheightcon, "Gyro Times");
-lguydiedbutton = new buttondraw(skyblockx,lguydiedy,Config.buttonwidthcon,Config.buttonheightcon, "Toxic Death");
+autotermsbutton = new buttondraw(skyblockx,autotermy,Config.buttonwidthcon,Config.buttonheightcon, "Autoterms",Config.autoterms);
+dungeonscorecalcbutton = new buttondraw(skyblockx,dungeonscorecalcy,Config.buttonwidthcon,Config.buttonheightcon, "Dungeon Score",Config.scorecalc);
+shitterwarningbutton = new buttondraw(skyblockx,shitterwarningy,Config.buttonwidthcon,Config.buttonheightcon, "Shit Warning",Config.shitterwarning);
+autoharpbutton = new buttondraw(skyblockx,autoharpy,Config.buttonwidthcon,Config.buttonheightcon, "Auto Harp",Config.autoharp);
+ghostblockbutton = new buttondraw(skyblockx,ghostblocky,Config.buttonwidthcon,Config.buttonheightcon, "Ghost Blocks",Config.ghostblockstoggle);
+gyrotimerbutton = new buttondraw(skyblockx,gyrotimery,Config.buttonwidthcon,Config.buttonheightcon, "Gyro Times",Config.m6gyros);
+lguydiedbutton = new buttondraw(skyblockx,lguydiedy,Config.buttonwidthcon,Config.buttonheightcon, "Toxic Death",Config.toxicdeath);
 
 // OTHER
 othertitle = new buttondraw(otherxtit,othery,Config.buttonwidthcon,Config.buttonheightcon, "Other");
 othertitler = new buttondraw(otherx,hilarityy - Config.buttonheightcon,Config.buttonwidthcon,Config.buttonheightcon, "Other");
-hilaritybutton = new buttondraw(otherx,hilarityy,Config.buttonwidthcon,Config.buttonheightcon, "Hilarity");
-spanishbutton = new buttondraw(otherx,spanishy,Config.buttonwidthcon,Config.buttonheightcon, "NOT ENOUGH SPANISH");
-discordrpcbutton = new buttondraw(otherx,discordrpcy,Config.buttonwidthcon,Config.buttonheightcon, "Discord RPC");
-updatesbutton = new buttondraw(otherx,showupdatesy,Config.buttonwidthcon,Config.buttonheightcon, "Updates");
-freezebutton = new buttondraw(otherx,freezey,Config.buttonwidthcon,Config.buttonheightcon, "Freeze");
-derpbutton = new buttondraw(otherx,derpy,Config.buttonwidthcon,Config.buttonheightcon, "Derp");
+hilaritybutton = new buttondraw(otherx,hilarityy,Config.buttonwidthcon,Config.buttonheightcon, "Hilarity",Config.hilarity);
+spanishbutton = new buttondraw(otherx,spanishy,Config.buttonwidthcon,Config.buttonheightcon, "NOT ENOUGH SPANISH",Config.spanish);
+discordrpcbutton = new buttondraw(otherx,discordrpcy,Config.buttonwidthcon,Config.buttonheightcon, "Discord RPC",Config.discordrpc);
+updatesbutton = new buttondraw(otherx,showupdatesy,Config.buttonwidthcon,Config.buttonheightcon, "Updates",Config.ComingSoon);
+freezebutton = new buttondraw(otherx,freezey,Config.buttonwidthcon,Config.buttonheightcon, "Freeze",Config.freezeme);
+derpbutton = new buttondraw(otherx,derpy,Config.buttonwidthcon,Config.buttonheightcon, "Derp",Config.derptoggle);
 freezekeybinddraw = new buttondraw(otherx,freezeextrasy,Config.buttonwidthcon,Config.buttonheightcon, "");
 freezekeybindtext = new Text(freezebinded, otherx + (Config.buttonwidthcon * 0.89), freezeextrasy + 1);
 });
@@ -984,6 +1018,7 @@ register("renderOverlay", function() {
       if (triggerbotbutton.isMouseOver()) {
         configGui.drawCreativeTabHoveringString("Hits player infront of you", Client.getMouseX(), Client.getMouseY());
       }
+      /*
       if (Config.killaura) {
         killaura2.clickedbutton();
       }
@@ -1008,6 +1043,7 @@ register("renderOverlay", function() {
       if (Config.aimbottoggle) {
         aimbotbutton.clickedbutton();
       }
+      */
       if (killauraextra) {
         killauraextras.extrabutton();
         killauramobsbutton.extrabutton();
@@ -1074,7 +1110,7 @@ register("renderOverlay", function() {
           if (Config.showvisual) {
           visualtitle.titlebuttonon();
           visualtitler.okbutton();  
-          clickguibutton.clickedbutton();
+          clickguibutton.drawButton();
           playerespbutton.drawButton();
           blockespbutton.drawButton();
           nickhiderbutton.drawButton();
@@ -1094,6 +1130,7 @@ register("renderOverlay", function() {
           if (fakebanbutton.isMouseOver()) {
             configGui.drawCreativeTabHoveringString("Shows you a fake ban screen when you press your keybind", Client.getMouseX(), Client.getMouseY());
           }
+          /*
           if (Config.PlayerESP) {
             playerespbutton.clickedbutton();
           }
@@ -1103,6 +1140,7 @@ register("renderOverlay", function() {
           if (Config.nickhider) {
             nickhiderbutton.clickedbutton();
           }
+          */
           if (extraclickgui) {
             clickguiselectbox.selectbutton();
             clickguiheightbutton.sliderdraw();
@@ -1163,6 +1201,7 @@ register("renderOverlay", function() {
           if (swordswapbutton.isMouseOver()) {
             configGui.drawCreativeTabHoveringString("Swaps to snowballs / fishing rod on click for extra kb", Client.getMouseX(), Client.getMouseY());
           }
+          /*
           if (Config.ghostmacrotoggle) {
             ghostmacrobutton.clickedbutton();
           }
@@ -1187,6 +1226,7 @@ register("renderOverlay", function() {
           if (Config.swrodswap) {
             swordswapbutton.clickedbutton();
           }
+          */
         }
     
           // CHAT MACRO
@@ -1214,6 +1254,7 @@ register("renderOverlay", function() {
           if (autoptransferbutton.isMouseOver()) {
             configGui.drawCreativeTabHoveringString("Automatically transfers party away if someone transfer party to you", Client.getMouseX(), Client.getMouseY());
           }
+          /*
           if (Config.welcomeguild) {
             guildwelcbutton.clickedbutton();
           }
@@ -1229,6 +1270,7 @@ register("renderOverlay", function() {
           if (Config.autoTransfer) {
             autoptransferbutton.clickedbutton();
           }
+          */
         }
     
           // SKYBLOCK
@@ -1264,6 +1306,7 @@ register("renderOverlay", function() {
           if (lguydiedbutton.isMouseOver()) {
             configGui.drawCreativeTabHoveringString("Bullys people for dying in your dungeon runs", Client.getMouseX(), Client.getMouseY());
           }
+          /*
           if (Config.scorecalc) {
             dungeonscorecalcbutton.clickedbutton();
           }
@@ -1284,7 +1327,7 @@ register("renderOverlay", function() {
           }
           if (Config.toxicdeath) {
             lguydiedbutton.clickedbutton();
-          }
+          }*/
         }
           
           // OTHER
@@ -1316,6 +1359,7 @@ register("renderOverlay", function() {
           if (derpbutton.isMouseOver()) {
             configGui.drawCreativeTabHoveringString("SPIN GO BRRRRRRR", Client.getMouseX(), Client.getMouseY());
           }
+          /*
           if (Config.hilarity) {
             hilaritybutton.clickedbutton();
           }
@@ -1334,6 +1378,7 @@ register("renderOverlay", function() {
           if (Config.derptoggle) {
             derpbutton.clickedbutton();
           }
+          */
           if (freezeextras) {
             freezekeybinddraw.keybindbutton();
             freezekeybindtext.draw();
