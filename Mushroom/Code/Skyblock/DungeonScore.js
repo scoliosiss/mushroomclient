@@ -1,5 +1,8 @@
 import Config from "../../Config/Config"
 
+// CODE STOLEN (without permission ._.) From unclaimedbloom
+// https://www.chattriggers.com/modules/v/BetterMap he has alot of cool (way better coded) modules
+
 const floorSecrets = {
     "F1": 0.3,
     "F2": 0.4,
