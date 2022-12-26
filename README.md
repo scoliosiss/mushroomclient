@@ -1,6 +1,6 @@
 # Mushroom Client
 
-## Mushroom client is a qol hypixel mod made by Scale#6623, i love rat#9200 and Swig#3676
+## Mushroom client is a qol hypixel mod made by Scale#1337, i love rat#9200 and Swig#3676 along with some code stolen from chattriggers modules
 ## its a very cool chattriggers cheating module
 ### yes I am aware all of this code is awful, I dont care about optimization I just want it working.
 ### also WIP basically just means not working
