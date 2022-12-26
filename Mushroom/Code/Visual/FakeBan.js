@@ -1,6 +1,8 @@
 import Config from "../../Config/Config"
 import {prefix, mc} from "../Utils"
 
+// STOLEN FROM A FAKEBAN MODULE ON THE CHATTRIGGERS WEBSITE
+
 var BanKey = Client.getKeyBindFromKey(Keyboard.KEY_HOME, "FakeBan","Mushroom");
 this.DisconnectKey = new KeyBind("Disconnect", Keyboard.KEY_NONE, "Mushroom");
 const ChatComponentText = Java.type("net.minecraft.util.ChatComponentText");
