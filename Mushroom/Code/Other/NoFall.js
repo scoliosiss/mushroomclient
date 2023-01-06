@@ -1,3 +1,6 @@
+// DOESNT WORK AND I WONT GET WORKING
+
+/*
 import Config from "../../Config/Config"
 
 register("packetReceived", (packet, event) => {
@@ -8,3 +11,4 @@ register("packetReceived", (packet, event) => {
        }
     }
 })
+*/

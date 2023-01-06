@@ -25,7 +25,7 @@ RightClick.setAccessible(true);
 const blockbreak = Java.type("net.minecraft.network.play.client.C0APacketAnimation");
 const pa = Java.type("net.minecraft.network.play.client.C0APacketAnimation");
 const EnumFacing = Java.type("net.minecraft.util.EnumFacing");
-const BlockAir = Java.type("net.minecraft.block.BlockAir");
+const BlockAir = Java.type("minecraft:air");
 const Vec3 = Java.type("net.minecraft.util.Vec3");
 const BlockChest = Java.type("net.minecraft.block.BlockChest");
 const BlockBed = Java.type("net.minecraft.block.BlockBed");
@@ -61,11 +61,11 @@ function radians_to_degrees(radians) {
         AngleYaw = radians_to_degrees(Math.atan(dZ/dX))
     }
     hoekYaw = AngleYaw - PlayerAngleYaw + 90
-    if(hoekYaw > 180) {
+    /*if(hoekYaw > 180) {
         hoekYaw -= 360
     } if(hoekYaw < -180) {
         hoekYaw += 360
-    }
+    }*/
     Player.getPlayer().field_70177_z += hoekYaw 
     hoekPitch = radians_to_degrees(Math.atan(dY/dis)) - Player.getPlayer().field_70125_A
     Player.getPlayer().field_70125_A += hoekPitch 

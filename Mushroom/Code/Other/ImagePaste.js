@@ -1,8 +1,10 @@
+// CODE BY squagward https://www.chattriggers.com/modules/v/PasteImage
+// CODE BY squagward https://www.chattriggers.com/modules/v/PasteImage
+// CODE BY squagward https://www.chattriggers.com/modules/v/PasteImage
+// CODE BY squagward https://www.chattriggers.com/modules/v/PasteImage
+// CODE BY squagward https://www.chattriggers.com/modules/v/PasteImage
+
 import { request } from "../../../requestV2";
-
-// CODE BY https://www.chattriggers.com/modules/v/PasteImage
-// friend asked me to add to mushroom so here it is
-
 const DataFlavor = java.awt.datatransfer.DataFlavor;
 const Toolkit = java.awt.Toolkit;
 const ByteArrayOutputStream = java.io.ByteArrayOutputStream;

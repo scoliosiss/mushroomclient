@@ -22,12 +22,18 @@ import "./Code/Visual/SkullESP"
 
 import "./Code/Macros/Autoclicker"
 import "./Code/Macros/AutoRod"
+import "./Code/Macros/AutoStrafe"
 import "./Code/Macros/AutoWtap"
 import "./Code/Macros/BedNuker"
+import "./Code/Macros/BowAimbot"
 import "./Code/Macros/ChestAura"
+import "./Code/Macros/DodgeArrows"
+import "./Code/Macros/FastBreak"
 import "./Code/Macros/GhostMacro"
 import "./Code/Macros/InvWalk"
 import "./Code/Macros/LeverAura"
+import "./Code/Macros/Nuker"
+import "./Code/Macros/ParkorMacro"
 import "./Code/Macros/Scaffold"
 import "./Code/Macros/SkullAura"
 import "./Code/Macros/Swordswap"
@@ -236,13 +242,13 @@ mcversion.draw();
 }
 
 // omg small bit of code wtf!?!?!?
-
+/*
 register("renderPlayerList", () => {
   if (!Config.mushroomclientontop) return;
     TabList.setHeader("§c§lM§f§lu§c§ls§f§lh§c§lr§f§lo§c§lo§f§lo§c§lm §lClient on top!\n");
   }
 );
-
+*/
 // ---------------------------------------------------------
 const backgroundfunny = new Image("MushroomBackground.png", "https://imgur.com/yNqJf5D.png");
 
@@ -265,7 +271,7 @@ class buttondraw {
         this.width = width;
         this.height = height;
         this.text = text;
-        this.toggle = toggle;
+        // this.toggle = toggle;
     }
   
 okbutton() {
@@ -282,18 +288,18 @@ okbutton() {
   Renderer.drawString("&a" + buttontext, buttonx, buttony);
 }
 
-  titlebutton() {
-    let buttontext = this.text;
-    let buttonx = this.x + (this.width / 2 - Renderer.getStringWidth(this.text) / 2);
-    let buttony = this.y + (this.height / 2 - 4);
-    let mx = Client.getMouseX();
-    let my = Client.getMouseY();
-    if (mx >= this.x && mx <= this.x + this.width && my >= this.y && my <= this.y + this.height) {
-        Renderer.drawRect(Renderer.color(0,0,100,200), this.x, this.y, this.width, this.height);
-    } else {
-      Renderer.drawRect(Renderer.color(50,50,50,200), this.x, this.y, this.width, this.height);
-    }
-    Renderer.drawString("&c" + buttontext, buttonx, buttony);
+titlebutton() {
+  let buttontext = this.text;
+  let buttonx = this.x + (this.width / 2 - Renderer.getStringWidth(this.text) / 2);
+  let buttony = this.y + (this.height / 2 - 4);
+  let mx = Client.getMouseX();
+  let my = Client.getMouseY();
+  if (mx >= this.x && mx <= this.x + this.width && my >= this.y && my <= this.y + this.height) {
+      Renderer.drawRect(Renderer.color(0,0,100,200), this.x, this.y, this.width, this.height);
+  } else {
+    Renderer.drawRect(Renderer.color(50,50,50,200), this.x, this.y, this.width, this.height);
+  }
+  Renderer.drawString("&c" + buttontext, buttonx, buttony);
 }
 
 titlebuttonon() {
@@ -310,53 +316,56 @@ titlebuttonon() {
   Renderer.drawString("&a" + buttontext, buttonx, buttony); // yes i made a whole new function to change one letter, i am a coding god
 }
 
-    drawButton() {
-        let buttontext = this.text;
-        let buttonx = this.x + (this.width / 2 - Renderer.getStringWidth(this.text) / 2);
-        let buttony = this.y + (this.height / 2 - 4);
-        let mx = Client.getMouseX();
-        let my = Client.getMouseY();
-        if (!this.toggle) {
-        if (mx >= this.x && mx <= this.x + this.width && my >= this.y && my <= this.y + this.height) {
-            Renderer.drawRect(Renderer.color(10, 10, 150, 150), this.x, this.y, this.width, this.height);
-        } else {
-            Renderer.drawRect(Renderer.color(10, 10, 10, 150), this.x, this.y, this.width, this.height);
-        }
-        Renderer.drawString("&c" + buttontext, buttonx, buttony);
-      }
-      else {
-        Renderer.drawRect(Renderer.color(20, 0, 150, 250), this.x, this.y, this.width, this.height);
-        Renderer.drawString("&a" + buttontext, buttonx, buttony);
-      }
+drawButton() {
+  let buttontext = this.text;
+  let buttonx = this.x + (this.width / 2 - Renderer.getStringWidth(this.text) / 2);
+  let buttony = this.y + (this.height / 2 - 4);
+  let mx = Client.getMouseX();
+  let my = Client.getMouseY();
+  if (mx >= this.x && mx <= this.x + this.width && my >= this.y && my <= this.y + this.height) { // checks if mouse is over button
+    Renderer.drawRect(Renderer.color(10, 10, 150, 150), this.x, this.y, this.width, this.height); // changes color of button
+    if (clicker) { // checks if you left clicked
+      (this.toggle = !this.toggle) // toggles option
+      clicker = false // set left clicked false
     }
-/*
-    clickedbutton() {
-      let buttontext = this.text;
-      let buttonx = this.x + (this.width / 2 - Renderer.getStringWidth(this.text) / 2);
-      let buttony = this.y + (this.height / 2 - 4);
+  }
+  if (!this.toggle) {
+    Renderer.drawRect(Renderer.color(10, 10, 10, 150), this.x, this.y, this.width, this.height);
+    Renderer.drawString("&c" + buttontext, buttonx, buttony);
+    }
+  else {
       Renderer.drawRect(Renderer.color(20, 0, 150, 250), this.x, this.y, this.width, this.height);
       Renderer.drawString("&a" + buttontext, buttonx, buttony);
-  }
+    }
+}
+/*
+clickedbutton() {
+  let buttontext = this.text;
+  let buttonx = this.x + (this.width / 2 - Renderer.getStringWidth(this.text) / 2);
+  let buttony = this.y + (this.height / 2 - 4);
+  Renderer.drawRect(Renderer.color(20, 0, 150, 250), this.x, this.y, this.width, this.height);
+  Renderer.drawString("&a" + buttontext, buttonx, buttony);
+}
 */
-    extrabutton() {
-      let buttontext = this.text;
-      let buttonx = this.x + (this.width / 2 - Renderer.getStringWidth(this.text) / 1.5);
-      let buttony = this.y + (this.height / 2 - 4);
-      let mx = Client.getMouseX(); 
-      let my = Client.getMouseY();
-      Renderer.drawRect(Renderer.color(25, 25, 25, 250), this.x, this.y, this.width, this.height);
-      Renderer.drawRect(Renderer.color(250, 250, 250, 250), this.x + (Config.buttonwidthcon * 0.85), this.y + (Config.buttonheightcon / 2), this.width / (Config.buttonwidthcon / 8.5), this.height / (Config.buttonheightcon / 8));
-      if (mx >= this.x && mx <= this.x + this.width && my >= this.y && my <= this.y + this.height) {
-        Renderer.drawRect(Renderer.color(0, 0, 250, 150), this.x + (Config.buttonwidthcon * 0.85) + 1, this.y + (Config.buttonheightcon / 2) + 1, this.width / (Config.buttonwidthcon / 8.5) - 2, this.height / (Config.buttonheightcon / 8) - 2);
-      }
-      Renderer.drawString(buttontext, buttonx, buttony);
+extrabutton() {
+  let buttontext = this.text;
+  let buttonx = this.x + (this.width / 2 - Renderer.getStringWidth(this.text) / 1.5);
+  let buttony = this.y + (this.height / 2 - 4);
+  let mx = Client.getMouseX(); 
+  let my = Client.getMouseY();
+  Renderer.drawRect(Renderer.color(25, 25, 25, 250), this.x, this.y, this.width, this.height);
+  Renderer.drawRect(Renderer.color(250, 250, 250, 250), this.x + (Config.buttonwidthcon * 0.85), this.y + (Config.buttonheightcon / 2), this.width / (Config.buttonwidthcon / 8.5), this.height / (Config.buttonheightcon / 8));
+  if (mx >= this.x && mx <= this.x + this.width && my >= this.y && my <= this.y + this.height) {
+    Renderer.drawRect(Renderer.color(0, 0, 250, 150), this.x + (Config.buttonwidthcon * 0.85) + 1, this.y + (Config.buttonheightcon / 2) + 1, this.width / (Config.buttonwidthcon / 8.5) - 2, this.height / (Config.buttonheightcon / 8) - 2);
   }
-  extrabuttontoggled() {
-    let buttontext = this.text;
-    let buttonx = this.x + (this.width / 2 - Renderer.getStringWidth(this.text) / 1.5);
-    let buttony = this.y + (this.height / 2 - 4);
-    Renderer.drawRect(Renderer.color(0, 0, 250, 250), this.x + (Config.buttonwidthcon * 0.85) + 1, this.y + (Config.buttonheightcon / 2) + 1, this.width / (Config.buttonwidthcon / 8.5) - 2, this.height / (Config.buttonheightcon / 8) - 2);
-    Renderer.drawString(buttontext, buttonx, buttony);
+  Renderer.drawString(buttontext, buttonx, buttony);
+}
+extrabuttontoggled() {
+  let buttontext = this.text;
+  let buttonx = this.x + (this.width / 2 - Renderer.getStringWidth(this.text) / 1.5);
+  let buttony = this.y + (this.height / 2 - 4);
+  Renderer.drawRect(Renderer.color(0, 0, 250, 250), this.x + (Config.buttonwidthcon * 0.85) + 1, this.y + (Config.buttonheightcon / 2) + 1, this.width / (Config.buttonwidthcon / 8.5) - 2, this.height / (Config.buttonheightcon / 8) - 2);
+  Renderer.drawString(buttontext, buttonx, buttony);
 }
 sliderdraw() {
   let buttontext = this.text;
@@ -933,7 +942,7 @@ chatmacrotitle = new buttondraw(cmacroxtit,cmacroy,Config.buttonwidthcon,Config.
 chatmacrotitler = new buttondraw(cmacrox,guildwelcy - Config.buttonheightcon,Config.buttonwidthcon,Config.buttonheightcon, "Chat Macro");
 guildwelcbutton = new buttondraw(cmacrox,guildwelcy,Config.buttonwidthcon,Config.buttonheightcon, "Guild welcomer",Config.welcomeguild);
 guildbotbutton = new buttondraw(cmacrox,guildboty,Config.buttonwidthcon,Config.buttonheightcon, "Guild Bot",Config.guildbottoggle);
-quickmathsbutton = new buttondraw(cmacrox,quickmathsolvery,Config.buttonwidthcon,Config.buttonheightcon, "Quickmaths",Config.quickmathssolver);
+quickmathsbutton = new buttondraw(cmacrox,quickmathsolvery,Config.buttonwidthcon,Config.buttonheightcon, "Quickmaths",Config.generalquickmaths);
 quotesbutton = new buttondraw(cmacrox,quotesy,Config.buttonwidthcon,Config.buttonheightcon, "Quotes",Config.quotespog);
 autoptransferbutton = new buttondraw(cmacrox,autoptransfery,Config.buttonwidthcon,Config.buttonheightcon, "Party Transfer",Config.autoTransfer);
 
@@ -1387,9 +1396,14 @@ register("renderOverlay", function() {
   }
 })
 
+let clicker = false
 register("guiMouseClick", function(x, y, button, state) {
-  if (button >= 2) return;
-  if (configGui.isOpen()) {
+  new Thread(() => {
+    if (configGui.isOpen()) {
+    if (button >= 2) return;
+    if (button == 0) {
+      clicker = true
+    }
     if (titlepog.isMouseOver()) {
       showeverything = !showeverything
     }
@@ -1410,13 +1424,8 @@ register("guiMouseClick", function(x, y, button, state) {
       }
     }
     if (killaura2.isMouseOver()) {
-      if (button == 0) {
-        (Config.killaura = !Config.killaura)
-        return;
-      }
       if (button == 1) {
         (killauraextra = !killauraextra)
-        return;
       }
     }
     if (killauraextras.isMouseOver()) {
@@ -1823,6 +1832,7 @@ register("guiMouseClick", function(x, y, button, state) {
       }
     }
   }
+}).start();
 })
 
 let showeverything = true

@@ -1,5 +1,7 @@
 import Config from "../../Config/Config"
 
+// best code ever
+
 register("step", () => {
     if (!Config.derptoggle) return;
     Player.getPlayer().field_70177_z = Math.random() * 360

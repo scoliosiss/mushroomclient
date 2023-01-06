@@ -2,6 +2,9 @@ import { distanceToPlayer, LeftClick, lookAt, mc, prefix, RightClick, Shift, Spr
 import Config from "../../Config/Config"
 import RenderLib from "../../../RenderLib/index"
 const esppog = (x, y, z, height) => {RenderLib.drawInnerEspBox(x, y-height, z, 1, height, 50,250,200, 1, true)}
+
+// not sure if this works, it might idk, also tell me good ideas for failsafes
+
 runcommand = false
 register("tick", () => {
     new Thread(() => {

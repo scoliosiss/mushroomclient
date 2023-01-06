@@ -3,23 +3,15 @@ import {prefix, swaptoslot, RightClick, mc} from "../Utils"
 const swapmacro = new KeyBind("Gun Swap macro", Keyboard.KEY_NONE, "Mushroom");
 let zs = false;
 
+// ILL UPDATE THIS SOON ;)
 
 register("step", () => {
     if (zs) {
-        if (Date.now() - swap_time > Config.Zombiesgunmacrospeed) {
-            new Thread(() => {
-                Thread.sleep(Config.Zombiesgunmacrospeed);
-                Client.sendPacket(new swaptoslot(1));
-                RightClick.invoke(mc);
-                Thread.sleep(Config.Zombiesgunmacrospeed);
-                Client.sendPacket(new swaptoslot(2));
-                RightClick.invoke(mc);
-                Thread.sleep(Config.Zombiesgunmacrospeed);
-                Client.sendPacket(new swaptoslot(3));
-                RightClick.invoke(mc);
-                swap_time = Date.now();
-            }).start()
-        }
+        new Thread(() => {
+            Client.sendPacket(new swaptoslot(1));
+            Thread.sleep(Config.Zombiesgunmacrospeed);
+            RightClick.invoke(mc);
+        }).start()
     }
 });
 
@@ -34,4 +26,3 @@ register("tick", () => {
         );
     }
 });
-let swap_time = Date.now();

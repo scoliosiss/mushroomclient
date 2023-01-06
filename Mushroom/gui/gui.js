@@ -1,7 +1,7 @@
 // yes im using vigilances code for the gui
 // all credit to gui goes to FalseHonesty
 // https://www.chattriggers.com/modules/v/Vigilance
-// ^^ very cool gui i just wantted to make it look better
+// ^^ very cool gui!
 
 const VigilantClass = Java.type("gg.essential.vigilance.Vigilant");
 const PropertyCollector = Java.type("gg.essential.vigilance.data.PropertyCollector");

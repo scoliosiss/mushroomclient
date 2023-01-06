@@ -2,6 +2,10 @@ import Config from "../../Config/Config"
 import {prefix, mc, swaptoslot, EnumFacing, Vec3, noscaffoldblock, scaffoldblocks, RightClick, lookAt, BP} from "../Utils";
 
 const scaffoldtoggle = new KeyBind("Scaffold", Keyboard.KEY_NONE, "Mushroom");
+
+// one day i will get this working :(
+// i suck with packets
+
 /*
 function randomIntFromInterval(min, max) { // i dont like functions.
     return Math.floor(Math.random() * (max - min + 1) + min)

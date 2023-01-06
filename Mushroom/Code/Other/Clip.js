@@ -1,8 +1,9 @@
+/*
 import {prefix, mc, positionset} from "../Utils"
 const vclipkey = new KeyBind("V-Clip", Keyboard.KEY_NONE, "Mushroom");
 
-// clip patched on hypixel
-/*
+// CLIP PATCHED ON HYPIXEL SO UNLESS I FIND BYPASS I WONT GET THIS WORKING
+
 register("tick", () => {
     if (vclipkey.isPressed()) {
         ChatLib.chat(prefix + " >" + "&a V-Clip");

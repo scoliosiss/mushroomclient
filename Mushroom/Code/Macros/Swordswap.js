@@ -3,6 +3,8 @@ import {prefix, swaptoslot, RightClick, mc} from "../Utils";
 const snowtoggle = new KeyBind("Auto snowball toggle", Keyboard.KEY_NONE, "Mushroom");
 const rodtoggle = new KeyBind("Auto rod toggle", Keyboard.KEY_NONE, "Mushroom");
 
+// ILL NEATEN THIS CODE UP SOON
+
 register("clicked", () => {
     if (Client.currentGui.get() == null) {
         if (Player.getHeldItem() !== null) {

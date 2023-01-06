@@ -1,4 +1,5 @@
 // hit through walls!
+// i think u can send an hit packets to the entity instead
 import Config from "../../Config/Config";
 import { BP, EnumFacing, LeftClick, mc, Vec3 } from "../Utils";
 

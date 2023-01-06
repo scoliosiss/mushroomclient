@@ -1,3 +1,5 @@
+
+// might work im not sure, kinda useless tho
 /*
 register("step", () => {
     new Thread(() => {

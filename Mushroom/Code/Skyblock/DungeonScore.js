@@ -1,7 +1,12 @@
 import Config from "../../Config/Config"
 
-// CODE STOLEN (without permission ._.) From unclaimedbloom
-// https://www.chattriggers.com/modules/v/BetterMap he has alot of cool (way better coded) modules
+// CODE BY UNCLAIMED BLOOM https://www.chattriggers.com/modules/v/Bloom 
+// CODE BY UNCLAIMED BLOOM https://www.chattriggers.com/modules/v/Bloom 
+// CODE BY UNCLAIMED BLOOM https://www.chattriggers.com/modules/v/Bloom 
+// CODE BY UNCLAIMED BLOOM https://www.chattriggers.com/modules/v/Bloom 
+// CODE BY UNCLAIMED BLOOM https://www.chattriggers.com/modules/v/Bloom 
+// CODE BY UNCLAIMED BLOOM https://www.chattriggers.com/modules/v/Bloom 
+
 
 const floorSecrets = {
     "F1": 0.3,

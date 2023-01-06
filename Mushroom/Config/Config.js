@@ -332,6 +332,55 @@ ghostmacrotoggle = false;
 bednuker = false;
 
 @SwitchProperty({
+    name: "PARKOR macro",
+    description: "pain",
+    category: "Macro",
+    subcategory: ""
+})
+parkormacro = false;
+
+@SwitchProperty({
+    name: "nuker",
+    description: "death to blocks",
+    category: "Macro",
+    subcategory: ""
+})
+nukenoww = false;
+
+@SwitchProperty({
+    name: "fastbreak",
+    description: "pickaxe go brrr",
+    category: "Macro",
+    subcategory: ""
+})
+fatbreak = false;
+
+@SwitchProperty({
+    name: "dodge arrows",
+    description: "strafes away from arrows",
+    category: "Macro",
+    subcategory: ""
+})
+dodgearrowers = false;
+
+@SwitchProperty({
+    name: "auto strafe",
+    description: "strafes when hitting players making you harder to hit",
+    category: "Macro",
+    subcategory: ""
+})
+autostrafer = false;
+
+
+@SwitchProperty({
+    name: "boww aimbot",
+    description: "strafes when hitting players making you harder to hit",
+    category: "Macro",
+    subcategory: ""
+})
+bowaimbo = false;
+
+@SwitchProperty({
     name: "autorod",
     description: "automatically looks at and rods nearby players",
     category: "Macro",
@@ -623,7 +672,7 @@ invwalk = false;
         subcategory: "  ",
         options: ['party people', 'party me'],
     })
-    chatspamtype = 0;
+    chatspamtype = 1;
 
 // --------------------------------------------------------------------------------
 //Fake Ban
@@ -746,7 +795,7 @@ showfakeban = false;
 
     @SliderProperty({
         name: "&4right click auto Clicker Speed",
-        description: "&cSpeed of autoclicker\n&aRun /ct load to change speed",
+        description: "&cSpeed of autoclicker",
         category: "Sliders",
         subcategory: "   ",
         min: 1,
@@ -757,7 +806,7 @@ showfakeban = false;
     
     @SliderProperty({
         name: "&4left click auto Clicker Speed",
-        description: "&cSpeed of autoclicker\n&aRun /ct load to change speed",
+        description: "&cSpeed of autoclicker",
         category: "Sliders",
         subcategory: "   ",
         min: 1,

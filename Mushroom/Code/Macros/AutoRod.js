@@ -2,6 +2,8 @@ import Config from "../../Config/Config"
 import { distanceToPlayer, lookAt, mc, RightClick, swaptoslot } from "../Utils";
 let rodnow = true
 
+// useless i think...
+
 register("tick", () => {
     if (!Config.rodaimbottoggle) return;
     new Thread(() => {

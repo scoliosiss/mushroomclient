@@ -1,6 +1,8 @@
 import Config from "../../Config/Config"
 import {prefix, mc, WalkForward, WalkBackward, WalkLeft, WalkRight, Jump, Sprint, Shift} from "../Utils";
 
+// ill fix it requiring specific keys soon
+
 let addyaw = Player.getPlayer().field_70177_z
 let addpitch = Player.getPlayer().field_70125_A
 let movexrn = Client.getMouseX().toFixed(1)

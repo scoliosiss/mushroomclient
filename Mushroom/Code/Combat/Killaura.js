@@ -3,7 +3,7 @@ import {prefix, mc, Vec3, EnumFacing, LeftClick, BP, radians_to_degrees, distanc
 import { hitthroughwalls } from "./NoWalls";
 let lookingatrightnow = Player.getPlayer().field_70177_z
 let lookingatpitch = Player.getPlayer().field_70125_A
-// gaming
+// messy code but oh well
 register("tick", () => {
     if (!Config.killaura) return;
     new Thread(() => {

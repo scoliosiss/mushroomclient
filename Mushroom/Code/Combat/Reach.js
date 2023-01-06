@@ -1,6 +1,9 @@
+// PLEASE SOMEONE SEND ME A PACKET FOR THIS
+
+/*
 import {prefix} from "../Utils"
 import Config from "../../Config/Config"
-/*
+
 const reach = new KeyBind("Reach", Keyboard.KEY_NONE, "Mushroom");
 
 register("tick", () => {
