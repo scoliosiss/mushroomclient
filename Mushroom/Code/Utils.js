@@ -28,6 +28,7 @@ const EnumFacing = Java.type("net.minecraft.util.EnumFacing");
 const BlockAir = Java.type("minecraft:air");
 const Vec3 = Java.type("net.minecraft.util.Vec3");
 const BlockChest = Java.type("net.minecraft.block.BlockChest");
+const BlockClay = Java.type("net.minecraft.block.BlockClay"); // minecraft:stained_hardened_clay
 const BlockBed = Java.type("net.minecraft.block.BlockBed");
 const BlockLever = Java.type("net.minecraft.block.BlockLever");
 const BlockSkull = Java.type("net.minecraft.block.BlockSkull");
@@ -79,4 +80,4 @@ function distanceToPlayer(x,y,z) {
     return dis2
 }
 
-export {prefix, openinv, colors, BP, swaptoslot, holdright, stripRank, C08PacketPlayerBlockPlacement, C07PacketPlayerDigging, positionset, setPosition, mc, LeftClick, RightClick, WalkForward, WalkRight, WalkLeft, WalkBackward, Jump, Shift, Sprint, blockbreak, pa, EnumFacing, BlockAir, Vec3, BlockChest, BlockLever, BlockSkull, BlockBed, ArrayLists, noghostblock, noscaffoldblock, scaffoldblocks, getVersion, getPlayerHead, getPlayerSkin, radians_to_degrees, lookAt, distanceToPlayer}
+export {prefix, openinv, colors, BP, swaptoslot, holdright, stripRank, C08PacketPlayerBlockPlacement, C07PacketPlayerDigging, positionset, setPosition, mc, LeftClick, RightClick, WalkForward, WalkRight, WalkLeft, WalkBackward, Jump, Shift, Sprint, blockbreak, pa, EnumFacing, BlockAir, Vec3, BlockChest, BlockClay, BlockLever, BlockSkull, BlockBed, ArrayLists, noghostblock, noscaffoldblock, scaffoldblocks, getVersion, getPlayerHead, getPlayerSkin, radians_to_degrees, lookAt, distanceToPlayer}

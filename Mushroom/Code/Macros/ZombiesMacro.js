@@ -8,9 +8,16 @@ let zs = false;
 register("step", () => {
     if (zs) {
         new Thread(() => {
-            Client.sendPacket(new swaptoslot(1));
-            Thread.sleep(Config.Zombiesgunmacrospeed);
-            RightClick.invoke(mc);
+            for (let i = 1; i < 9; i++) {
+                if (Player.getInventory().getStackInSlot(i) !== null) {
+                if (Player.getInventory().getStackInSlot(i).getNBT().toString().includes("RIGHT-CLICK")) {
+                    Client.sendPacket(new swaptoslot(i));
+                    Thread.sleep(Config.Zombiesgunmacrospeed);
+                    RightClick.invoke(mc);
+                    break;
+                }
+                }
+            }
         }).start()
     }
 });

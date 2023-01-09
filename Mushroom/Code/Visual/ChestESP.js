@@ -8,7 +8,7 @@ register('renderWorld', () => { // yay rendering i love watching my fps die due 
     if (Config.chestesppog) { // if esp on
         if (!Config.blockesptoggle) return;
     queueRenderGreen.forEach( (i) => { // draws box
-        RenderLib.drawInnerEspBox(i.x + 0.5, i.y, i.z + 0.5, 0.8, 0.8, 0, 1, 0.3, 0.4, true) // green box
+        RenderLib.drawInnerEspBox(i.x + 0.5, i.y, i.z + 0.5, 0.8, 0.8, 0, 1, 0.3, 0.4, true) // draws green box
     })
 }
 });
@@ -17,7 +17,7 @@ function seechests () {
     queueRenderGreen = []
     listTileEntitiesData1 = World.getAllTileEntitiesOfType(net.minecraft.tileentity.TileEntityChest) // gets all chests 
     listTileEntitiesData1.forEach((i) => { // for each chest
-                    queueRenderGreen.push(i) // draws the green box!
+        queueRenderGreen.push(i) // draws the green box!
     })
 }
 

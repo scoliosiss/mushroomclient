@@ -1,4 +1,4 @@
-/// <reference lib="es2015" />  
+// <reference lib="es2015" />  
 
 import request from "requestV2/index"
 import Config from "./Config/Config"
@@ -30,6 +30,7 @@ import "./Code/Macros/ChestAura"
 import "./Code/Macros/DodgeArrows"
 import "./Code/Macros/FastBreak"
 import "./Code/Macros/GhostMacro"
+import "./Code/Macros/HoleInTheWall"
 import "./Code/Macros/InvWalk"
 import "./Code/Macros/LeverAura"
 import "./Code/Macros/Nuker"
@@ -62,6 +63,7 @@ import "./Code/Other/ChatCopy"
 import "./Code/Other/Clip"
 import "./Code/Other/derp"
 import "./Code/Other/DUPEAHHHHH"
+import "./Code/Other/Fly"
 import "./Code/Other/FREEZE"
 import "./Code/Other/Hilarity"
 import "./Code/Other/ImagePaste"

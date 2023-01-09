@@ -1,11 +1,11 @@
 
 [click_gui]
-	showcombat = true
+	showcombat = false
 	showvisual = false
 	showmacro = false
 	showchatmacro = false
 	showskyblock = false
-	showother = false
+	showother = true
 
 	[click_gui.__]
 		click_gui_mode = 2
@@ -27,10 +27,10 @@
 		cmacroy = 220
 
 [macro]
-	aimbot = false
 	autorod = false
-	"&cskull_aura" = false
+	aimbot = false
 	boww_aimbot = false
+	"&cskull_aura" = false
 	auto_w_tap = false
 	"&clever_aura" = false
 	"&csword_swap" = false
@@ -39,6 +39,7 @@
 	"&cchest_stealer" = false
 	nuker = false
 	ghost_macro = false
+	hole_in_the_wall_macro = false
 	parkor_macro = false
 	dodge_arrows = false
 	auto_strafe = false
@@ -58,6 +59,7 @@
 		"&2mushroom_rainbow" = true
 		"&bmushroom_client_text" = true
 		derp = false
+		"&2no_rotater" = false
 		"&cmushroom_client_on_top" = true
 		"&2no_fall!" = false
 		"&9mushroom_shadow" = false
@@ -65,11 +67,12 @@
 
 	[other.____]
 		"&aclick_for_updates!" = true
+		vclip = -5
 
 	[other.___]
-		"&cdiscord_rpc_bottom_text" = "i love mushroom client"
-		"&cdiscord_rpc_text" = "hiiiiiii"
-		"&ddiscord_rpc_picture" = 1
+		"&cdiscord_rpc_bottom_text" = "[insert text here]"
+		"&cdiscord_rpc_text" = "[insert text here]"
+		"&ddiscord_rpc_picture" = 0
 		"&3discord_rpc" = true
 		"&3discord_rpc_location" = true
 
@@ -81,17 +84,17 @@
 
 [chat_macro]
 	"&bguild_bridge_bots_name" = ""
-	"&aguild_bot" = false
-	"&awelcome_guild!!!" = false
+	"&aguild_bot" = true
+	"&awelcome_guild!!!" = true
 	"&bwelcome_guild_message" = "Good morning"
 	"&aguild_bridge_bot" = true
 
 	[chat_macro.__]
-		"&cgeneral_quickmaths" = false
-		quotes_pog = false
+		"&cgeneral_quickmaths" = true
+		quotes_pog = true
 		"&cauto_send_quickmaths_answer" = true
 		"&aquickmaths_solver!" = true
-		chatspam_type = 0
+		chatspam_type = 1
 
 	[chat_macro.____]
 		"&dauto_party_transfer" = true
@@ -127,15 +130,15 @@
 
 [skyblock]
 	"&3auto_kick_shitters" = false
-	"&3autoharp" = false
+	"&3autoharp" = true
 	"&3shitter_warning" = true
-	"&3funny_score_calc" = false
+	"&3funny_score_calc" = true
 	"&3dungeon_score_calc_message" = true
 	"&3dungeon_score_calc" = true
 
 	[skyblock.__]
-		"&3autoterms" = false
-		ghostblocks = false
+		"&3autoterms" = true
+		ghostblocks = true
 		"&3p3_ghostblocks" = true
 
 	[skyblock.______]
@@ -150,7 +153,7 @@
 
 	[skyblock._]
 		"&c270_score_message" = "lunar client > 269 score"
-		"&c300_score_message" = "anyone else really love men? me too"
+		"&c300_score_message" = "lunar client > 269 score"
 
 [visual]
 	"&cplayer_esp" = false
@@ -159,7 +162,7 @@
 	"&cesp_armorstands" = false
 	"&cclick_gui" = false
 	"&cskull_esp" = false
-	"&cchest_esp" = true
+	"&cchest_esp" = false
 	"&cblock_esp" = false
 
 	[visual.__]
@@ -185,11 +188,11 @@
 	[combat.__]
 		"&cno_walls" = false
 		"&creach" = false
-		"&ckillaura_through_walls" = true
+		"&ckillaura_through_walls" = false
 		"&ckillaura_mobs" = false
 		"&ckillaura_autoblock" = false
-		"&ckillaura" = false
 		triggerbot = false
+		"&ckillaura" = false
 		"&canti_knockback" = false
 
 	[combat._]
@@ -197,7 +200,7 @@
 		blockhit = false
 
 [sliders]
-	"&4hilarity_speed" = 885
+	"&4hilarity_speed" = 1000
 
 	[sliders.____]
 		"&4autoterm_speed" = 200
@@ -211,5 +214,5 @@
 		"&cskull_aura_reach" = 5
 		"&clever_aura_reach" = 5
 		"&bquickmaths_solver_speed" = 50
-		"&cchest_aura_reach" = 6
+		"&cchest_aura_reach" = 5
 

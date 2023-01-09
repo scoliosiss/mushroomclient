@@ -285,7 +285,7 @@ class Config {
         subcategory: "  ",
         options: ['outline', 'square'],
     })
-    espboxtype = 2;
+    espboxtype = 1;
 
     @SwitchProperty({
         name: "&cClick gui",
@@ -403,6 +403,14 @@ autowtaptoggle = false;
     subcategory: ""
 })
 aimbottoggle = false;
+
+@SwitchProperty({
+    name: "hole in the wall macro",
+    description: "no more holes",
+    category: "Macro",
+    subcategory: ""
+})
+holeinthywallmacro = false;
 
 @SwitchProperty({
     name: "&cChest Aura",
@@ -1013,7 +1021,7 @@ showfakeban = false;
         subcategory: " "
         })
     largehilarity = false;
-    
+/*    
   @ButtonProperty({
     name: "join the discord!",
     description: "&cJoin this discord!",
@@ -1046,7 +1054,7 @@ Join() {
   }, delayInMilliseconds);
   ChatLib.chat("&eGG you joined the best guild ww!")
 }
-
+*/
     @SwitchProperty({
         name: "&aCLICK FOR UPDATES!",
         description: "&2Click for updates!!!",
@@ -1111,7 +1119,25 @@ Join() {
             subcategory: "  "
             })
         nofall = false;
-    
+
+        @SwitchProperty({
+            name: "&2NO rotater",
+            description: "W module by forky",
+            category: "Other",
+            subcategory: "  "
+            })
+        norotatetog = false;
+
+        @SliderProperty({
+            name: "vclip",
+            description: "vclip distance",
+            category: "Other",
+            subcategory: "    ",
+            min: -50,
+            max: 50
+        })
+        vclipdist = -5;
+
       @SwitchProperty({
         name: "&3Discord RPC",
         description: "&9Shows ur playing the best client",
@@ -1373,7 +1399,7 @@ Join() {
             subcategory: "  ",
             options: ['Oringo', 'Raven'],
         })
-        clickguimode = 2;
+        clickguimode = 1;
 
         @SwitchProperty({
             name: "showcombat",
